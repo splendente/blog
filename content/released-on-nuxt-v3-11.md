@@ -1,0 +1,30 @@
+---
+title: "Nuxt.js v3.11がリリース"
+description: "2024年3月16日にリリースされたNuxt.js v3.11の内容をまとめる。"
+icon: "&#127881;"
+tag: "Nuxt.js"
+createdAt: "2024-3-24"
+updatedAt: "2024-3-24"
+---
+
+2024年3月16日にNuxt.js v3.11がリリースされた。  
+
+[https://nuxt.com/blog/v3-11](https://nuxt.com/blog/v3-11) 
+
+Nuxt.js v4リリース前の最後のマイナーバージョンリリースとのことである。  
+Nuxt.js公式のブログを参考に気になる内容をまとめる。  
+
+## SSR時のログ出力
+
+SSRのアプリケーションを開発する際に`console.log`の内容をブラウザコンソールに出力できるようになった。  
+
+## Server Componentをpages単位で利用可能
+
+Server Componentをpagesディレクトリ配下のVue.jsファイルにも適用することができるようになった。  
+Server Componentを使用する際は、componentsディレクトリで使用するときと同様にファイル名.server.vueという命名にする必要がある。  
+しかし、Server Componentは実験的な機能であるため、使用時には注意が必要そうである。  
+Nuxt.js v4のリリース時には安定版の機能として採用されることを期待したい。  
+
+## Teleportのターゲットが追加
+
+組み込みコンポーネントであるTeloportの新しいターゲットとしてbodyタグ配下に`<div id="teleports"></div>`が追加された。  
