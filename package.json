@@ -8,7 +8,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "prettier": "npx prettier . --write"
+    "prettier": "npx prettier . --write",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*": "npm run prettier"
   },
   "dependencies": {
     "@nuxt/content": "^2.12.1",
@@ -18,6 +22,8 @@
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "3.2.5"
   }
 }
