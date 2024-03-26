@@ -2,7 +2,6 @@
 title: "Nuxt.js v3.11がリリース"
 description: "2024年3月16日にリリースされたNuxt.js v3.11の内容をまとめる。"
 icon: "&#127881;"
-tag: "Nuxt.js"
 createdAt: "2024-3-24"
 updatedAt: "2024-3-24"
 ---
