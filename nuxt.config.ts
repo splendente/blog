@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/fonts", "@nuxt/content"],
+  modules: ["@nuxt/fonts", "@nuxt/content", "@nuxt/test-utils/module"],
   experimental: {
     componentIslands: true,
   },
