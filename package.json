@@ -31,6 +31,8 @@
     "lint-staged": "^15.2.2",
     "nuxt-feedme": "^1.0.0",
     "prettier": "3.2.5",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
     "vitest": "^1.4.0"
   }
 }
