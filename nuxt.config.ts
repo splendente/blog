@@ -6,7 +6,13 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ["@nuxt/fonts", "@nuxt/content", "@nuxt/test-utils/module"],
+  modules: [
+    "@nuxt/fonts",
+    "@nuxt/content",
+    "@nuxt/test-utils/module",
+    "@nuxtjs/sitemap",
+    "nuxt-feedme",
+  ],
   experimental: {
     componentIslands: true,
   },
