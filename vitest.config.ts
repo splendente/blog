@@ -10,6 +10,6 @@ export default defineVitestConfig({
     AutoImportComponents({ dirs: ["components"] }),
   ],
   test: {
-    environment: "happy-dom",
+    environment: "jsdom",
   },
 });
