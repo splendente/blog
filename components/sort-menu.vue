@@ -36,8 +36,9 @@ div {
 
 div::before {
   content: "";
-  border: 0.5px solid #3c3c3c;
   align-self: stretch;
+  width: 1px;
+  background-color: #3c3c3c;
   order: 2;
 }
 
