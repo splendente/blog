@@ -20,6 +20,10 @@ defineProps({
     type: String,
     required: true,
   },
+  tags: {
+    type: Array,
+    required: true,
+  },
 });
 </script>
 
@@ -30,6 +34,9 @@ defineProps({
       <p class="created-at">{{ formatDateString(createdAt) }}</p>
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>
+      <div>
+        <p v-for="(tag, index) in tags" :key="index" class="tag"># {{ tag }}</p>
+      </div>
     </article>
   </NuxtLink>
 </template>
@@ -60,7 +67,7 @@ defineProps({
 }
 
 .card article span {
-  grid-row: 1 / 4;
+  grid-row: 1 / 5;
   grid-column: 1 / 2;
   width: 48px;
   height: 48px;
@@ -99,5 +106,22 @@ defineProps({
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+
+.card > article > div {
+  grid-row: 4 / 5;
+  grid-column: 2 / 3;
+  display: flex;
+  gap: 2px 8px;
+  flex-wrap: wrap;
+}
+
+.card > article > div > .tag {
+  font-size: 12px;
+  color: #3c3c3c;
+  background-color: #fff;
+  padding: 2px 8px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
 }
 </style>

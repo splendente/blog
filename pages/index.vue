@@ -30,6 +30,7 @@ const query = computed(() => {
         :title="article.title"
         :description="article.description"
         :createdAt="article.createdAt"
+        :tags="article.tags"
       />
     </ContentList>
   </main>
