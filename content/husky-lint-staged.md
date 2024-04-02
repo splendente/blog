@@ -4,6 +4,7 @@ description: "2024年3月26日時点のHuskyとlint-stagedの設定手順につ�
 icon: "&#129529;"
 createdAt: "2024-3-26"
 updatedAt: "2024-3-26"
+tags: ['husky', 'lint-staged']
 ---
 
 ## パッケージ情報
