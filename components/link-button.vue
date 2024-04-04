@@ -18,7 +18,7 @@ const props = defineProps({
   },
 });
 
-// NuxtLinkの場合に設定する属性情報
+// NuxtLinkコンポーネントの場合に設定する属性情報
 const nuxtLinkProps = {
   to: props.to,
 };
@@ -29,6 +29,10 @@ const anchorProps = {
   target: props.target,
 };
 
+/**
+ * NuxtLinkという文字列からNuxtLinkコンポーネントを作成する
+ * @returns {Component} NuxtLinkコンポーネント
+ */
 const nuxtLinkComponent = computed(() => {
   return resolveComponent("NuxtLink");
 });
