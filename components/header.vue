@@ -23,6 +23,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: calc(infinity);
 }
 
 header .title {
