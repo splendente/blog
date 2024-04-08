@@ -20,7 +20,7 @@
 .wrapper div {
   flex: 1;
   width: 100%;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 32px 16px;
 }
