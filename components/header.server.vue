@@ -2,6 +2,9 @@
   <header>
     <NuxtLink to="/" class="title">Blog</NuxtLink>
     <div>
+      <LinkButton :is-nuxt-link="false" href="#" target="_blank">
+        <img class="icon" src="@/assets/images/x-twitter.svg" />
+      </LinkButton>
       <LinkButton
         :is-nuxt-link="false"
         href="https://github.com/splendente/blog"
