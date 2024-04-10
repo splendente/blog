@@ -3,7 +3,7 @@
     <NuxtLink to="/privacy-policy" class="privacy-policy" target="_blank">
       Privacy Policy
     </NuxtLink>
-    <p class="copyright">&copy; 2023 Hikaru Kobayashi.</p>
+    <p class="copyright">&copy; 2024 Hikaru Kobayashi.</p>
   </footer>
 </template>
 
