@@ -16,10 +16,15 @@ const toggleSort = () => {
 const query = computed(() => {
   return { createdAt: desc.value ? -1 : 1, $numeric: true };
 });
+
+const date = new Date();
+const targetYear = ref(date.getFullYear());
 </script>
 
 <template>
   <main>
+    <YearSelect class="year-select" v-model="targetYear" />
+    <CalendarHeatmap :target-year="Number(targetYear)" />
     <SortMenu :desc="desc" @toggle-sort="toggleSort" class="sort-menu" />
     <ContentList path="/" v-slot="{ list }" :sort="query">
       <Card
@@ -43,7 +48,8 @@ main {
   gap: 32px 0;
 }
 
-main > .sort-menu {
+main > .sort-menu,
+main > .year-select {
   justify-self: right;
 }
 </style>
