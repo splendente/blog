@@ -12,4 +12,9 @@ export default defineVitestConfig({
   test: {
     environment: "jsdom",
   },
+  resolve: {
+    alias: {
+      "@": `${__dirname}/`,
+    },
+  },
 });
