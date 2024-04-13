@@ -1,4 +1,6 @@
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
+import path from "path";
+
 const config = {
   stories: [
     "../stories/**/*.mdx",
@@ -18,6 +20,14 @@ const config = {
   },
   docs: {
     autodocs: "tag",
+  },
+  async viteFinal(config) {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@": path.resolve(__dirname, "../"),
+    };
+
+    return config;
   },
 };
 
