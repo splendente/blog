@@ -1,8 +1,8 @@
-import footer from "@/components/footer.server.vue";
+import Footer from "@/components/footer.server.vue";
 
 export default {
   title: "components/footer",
-  component: footer,
+  component: Footer,
   tags: ["autodocs"],
 };
 

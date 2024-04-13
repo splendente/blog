@@ -1,8 +1,8 @@
-import header from "@/components/header.server.vue";
+import Header from "@/components/header.server.vue";
 
 export default {
   title: "components/header",
-  component: header,
+  component: Header,
   tags: ["autodocs"],
 };
 
