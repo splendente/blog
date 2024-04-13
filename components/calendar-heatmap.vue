@@ -93,22 +93,96 @@ const activeDates = computed(() => {
 const checkActiveDate = (date: string) => {
   return Boolean(activeDates.value.includes(date));
 };
+
+// ツールチップの表示状態（true: 表示, false: 非表示）
+const isTooltipVisible = ref(false);
+
+/**
+ * ツールチップの表示状態を切り替える
+ * @param {Boolean} status - 表示するか非表示にするか
+ */
+const toggleTooltipVisibleStatus = (status: boolean) => {
+  isTooltipVisible.value = status;
+};
+
+// tooltipコンポーネントで表示するテキスト
+const tooltipText = ref("");
+
+/**
+ * ツールチップのテキストを設定
+ * @param {String} date - カレンダーの日付
+ */
+const setTooltipText = (date: string) => {
+  tooltipText.value = date;
+};
+
+// tooltipコンポーネントを表示する位置
+const targetPosition = ref({
+  top: 0,
+  left: 0,
+});
+
+/**
+ * ツールチップの表示位置を設定
+ * @param {MouseEvent} event - イベント情報
+ */
+const setTooltipPosition = (event: MouseEvent) => {
+  // マウスオーバーしている要素
+  const targetElement = event.target as HTMLElement;
+
+  // マウスオーバーしている要素があれば実行
+  if (targetElement) {
+    const thisRect = targetElement.getBoundingClientRect();
+
+    // ツールチップの表示位置を設定
+    targetPosition.value.top = thisRect.top + window.scrollY;
+    targetPosition.value.left = thisRect.left;
+  } else {
+    // ツールチップの表示位置を初期状態に設定
+    targetPosition.value.top = 0;
+    targetPosition.value.left = 0;
+  }
+};
 </script>
 
 <template>
   <div>
-    <ul>
-      <li
-        v-for="(date, index) in pastYearDates"
-        :key="index"
-        :class="checkActiveDate(date) && 'active'"
+    <Transition appear>
+      <Tooltip
+        :is-visible="isTooltipVisible"
+        :date="tooltipText"
+        :top="targetPosition.top"
+        :left="targetPosition.left"
       />
-    </ul>
+    </Transition>
+    <div class="calendar-heatmap">
+      <ul>
+        <li
+          v-for="(date, index) in pastYearDates"
+          :key="index"
+          :class="checkActiveDate(date) && 'active'"
+          @mouseover="
+            (event) => {
+              toggleTooltipVisibleStatus(true);
+              setTooltipText(date);
+              setTooltipPosition(event);
+            }
+          "
+          @mouseleave="
+            (event) => {
+              toggleTooltipVisibleStatus(false);
+              setTooltipText('');
+              setTooltipPosition(event);
+            }
+          "
+        ></li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
-div {
+.calendar-heatmap {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
@@ -121,7 +195,7 @@ div {
 ul {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fill, minmax(14px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12px, 1fr));
   grid-template-rows: repeat(7, 1fr);
   gap: 2px;
   list-style: none;
@@ -140,5 +214,15 @@ ul > li::after {
 ul > .active::after {
   background-color: #87ceeb;
   border-color: #1e90ff;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
