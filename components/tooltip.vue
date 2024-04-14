@@ -17,6 +17,14 @@ const props = defineProps({
     required: true,
   },
 });
+
+/**
+ * 日付情報のフォーマットを変更する
+ * @returns {String} - 日付情報
+ */
+const formatDate = computed(() => {
+  return formatDateString(props.date);
+});
 </script>
 
 <template>
@@ -25,7 +33,7 @@ const props = defineProps({
     :style="`top:${top - 24}px;left:${left - 55}px;`"
     class="tooltip"
   >
-    <p>{{ formatDateString(date) }}</p>
+    <p>{{ formatDate }}</p>
   </div>
 </template>
 
