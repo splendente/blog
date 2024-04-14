@@ -29,7 +29,7 @@ const formatDate = computed(() => {
 
 <template>
   <div
-    v-if="isVisible && 0 < props.date.length"
+    v-if="isVisible && 0 < date.length"
     :style="`top:${top - 24}px;left:${left - 55}px;`"
     class="tooltip"
   >
