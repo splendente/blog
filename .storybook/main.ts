@@ -2,6 +2,8 @@
 import AutoImportFunctions from "unplugin-auto-import/vite";
 import AutoImportComponents from "unplugin-vue-components/vite";
 import path from "path";
+import { mergeConfig } from "vite";
+import Vue from "@vitejs/plugin-vue";
 
 const config = {
   stories: [
@@ -40,7 +42,9 @@ const config = {
       );
     }
 
-    return config;
+    return mergeConfig(config, {
+      plugins: [Vue()],
+    });
   },
 };
 
