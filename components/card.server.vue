@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({
+const props = defineProps({
   to: {
     type: String,
     required: true,
@@ -25,13 +25,21 @@ defineProps({
     required: true,
   },
 });
+
+/**
+ * 日付情報のフォーマットを変更する
+ * @returns {String} - 日付情報
+ */
+const formatDate = computed(() => {
+  return formatDateString(props.createdAt);
+});
 </script>
 
 <template>
   <NuxtLink :to="to" class="card">
     <article>
       <span v-html="icon" />
-      <p class="created-at">{{ formatDateString(createdAt) }}</p>
+      <p class="created-at">{{ formatDate }}</p>
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>
       <div>
