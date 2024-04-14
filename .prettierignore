@@ -2,3 +2,4 @@ content
 package.json
 pnpm-lock.yaml
 .github/dependabot.yml
+components.d.ts

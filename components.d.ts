@@ -5,17 +5,17 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
-    CalendarHeatmap: (typeof import("./components/calendar-heatmap.vue"))["default"];
-    "Card.server": (typeof import("./components/card.server.vue"))["default"];
-    "Footer.server": (typeof import("./components/footer.server.vue"))["default"];
-    "Header.server": (typeof import("./components/header.server.vue"))["default"];
-    LinkButton: (typeof import("./components/link-button.vue"))["default"];
-    RouterLink: (typeof import("vue-router"))["RouterLink"];
-    RouterView: (typeof import("vue-router"))["RouterView"];
-    SortMenu: (typeof import("./components/sort-menu.vue"))["default"];
-    Tooltip: (typeof import("./components/tooltip.vue"))["default"];
-    YearSelect: (typeof import("./components/year-select.vue"))["default"];
+    CalendarHeatmap: typeof import('./components/calendar-heatmap.vue')['default']
+    'Card.server': typeof import('./components/card.server.vue')['default']
+    'Footer.server': typeof import('./components/footer.server.vue')['default']
+    'Header.server': typeof import('./components/header.server.vue')['default']
+    LinkButton: typeof import('./components/link-button.vue')['default']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    SortMenu: typeof import('./components/sort-menu.vue')['default']
+    Tooltip: typeof import('./components/tooltip.vue')['default']
+    YearSelect: typeof import('./components/year-select.vue')['default']
   }
 }
