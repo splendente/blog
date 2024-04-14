@@ -1,4 +1,6 @@
 /** @type { import('@storybook/vue3-vite').StorybookConfig } */
+import AutoImportFunctions from "unplugin-auto-import/vite";
+import AutoImportComponents from "unplugin-vue-components/vite";
 import path from "path";
 
 const config = {
@@ -26,6 +28,17 @@ const config = {
       ...config.resolve.alias,
       "@": path.resolve(__dirname, "../"),
     };
+
+    if (config.plugins) {
+      config.plugins.push(
+        AutoImportFunctions({
+          imports: ["vue"],
+          dirs: ["utils/**"],
+          dts: "../auto-import-functions.d.ts",
+        }),
+        AutoImportComponents({ dirs: ["components"] }),
+      );
+    }
 
     return config;
   },
