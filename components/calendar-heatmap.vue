@@ -135,8 +135,8 @@ const setTooltipPosition = (event: MouseEvent) => {
     const thisRect = targetElement.getBoundingClientRect();
 
     // ツールチップの表示位置を設定
-    targetPosition.value.top = thisRect.top + window.scrollY;
-    targetPosition.value.left = thisRect.left;
+    targetPosition.value.top = thisRect.top + window.scrollY - 24;
+    targetPosition.value.left = thisRect.left - 55;
   } else {
     // ツールチップの表示位置を初期状態に設定
     targetPosition.value.top = 0;

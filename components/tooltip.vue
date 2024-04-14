@@ -30,7 +30,7 @@ const formatDate = computed(() => {
 <template>
   <div
     v-if="isVisible && 0 < date.length"
-    :style="`top:${top - 24}px;left:${left - 55}px;`"
+    :style="`top:${top}px;left:${left}px;`"
     class="tooltip"
   >
     <p>{{ formatDate }}</p>
