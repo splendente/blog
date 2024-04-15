@@ -21,7 +21,7 @@ const props = defineProps({
     required: true,
   },
   tags: {
-    type: Array,
+    type: Array as () => string[],
     required: true,
   },
 });
@@ -43,7 +43,7 @@ const formatDate = computed(() => {
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>
       <div>
-        <p v-for="(tag, index) in tags" :key="index" class="tag"># {{ tag }}</p>
+        <Tag v-for="(tag, index) in tags" :key="index" :text="tag" />
       </div>
     </article>
   </NuxtLink>
@@ -121,14 +121,5 @@ const formatDate = computed(() => {
   display: flex;
   gap: 2px 8px;
   flex-wrap: wrap;
-}
-
-.card > article > div > .tag {
-  font-size: 12px;
-  color: #3c3c3c;
-  background-color: #fff;
-  padding: 2px 8px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
 }
 </style>
