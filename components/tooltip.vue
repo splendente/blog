@@ -1,10 +1,6 @@
 <script setup lang="ts">
 defineProps({
-  isVisible: {
-    type: Boolean,
-    required: true,
-  },
-  date: {
+  text: {
     type: String,
     required: true,
   },
@@ -20,12 +16,8 @@ defineProps({
 </script>
 
 <template>
-  <div
-    v-if="isVisible && 0 < date.length"
-    :style="`top:${top}px;left:${left}px;`"
-    class="tooltip"
-  >
-    <p>{{ date }}</p>
+  <div :style="`top:${top}px;left:${left}px;`" class="tooltip">
+    <p>{{ text }}</p>
   </div>
 </template>
 
