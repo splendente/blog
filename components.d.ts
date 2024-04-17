@@ -15,6 +15,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SortMenu: typeof import('./components/sort-menu.vue')['default']
+    'Tag.server': typeof import('./components/tag.server.vue')['default']
     Tooltip: typeof import('./components/tooltip.vue')['default']
     YearSelect: typeof import('./components/year-select.vue')['default']
   }
