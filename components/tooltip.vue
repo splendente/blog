@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   isVisible: {
     type: Boolean,
     required: true,
@@ -17,14 +17,6 @@ const props = defineProps({
     required: true,
   },
 });
-
-/**
- * 日付情報のフォーマットを変更する
- * @returns {String} - 日付情報
- */
-const formatDate = computed(() => {
-  return formatDateString(props.date);
-});
 </script>
 
 <template>
@@ -33,7 +25,7 @@ const formatDate = computed(() => {
     :style="`top:${top}px;left:${left}px;`"
     class="tooltip"
   >
-    <p>{{ formatDate }}</p>
+    <p>{{ date }}</p>
   </div>
 </template>
 

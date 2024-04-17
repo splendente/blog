@@ -113,7 +113,7 @@ const tooltipText = ref("");
  * @param {String} date - カレンダーの日付
  */
 const setTooltipText = (date: string) => {
-  tooltipText.value = date;
+  tooltipText.value = formatDateString(date);
 };
 
 // tooltipコンポーネントを表示する位置
