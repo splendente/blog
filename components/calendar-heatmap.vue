@@ -149,8 +149,8 @@ const setTooltipPosition = (event: MouseEvent) => {
   <div>
     <Transition appear>
       <Tooltip
-        :is-visible="isTooltipVisible"
-        :date="tooltipText"
+        v-if="isTooltipVisible && 0 < tooltipText.length"
+        :text="tooltipText"
         :top="targetPosition.top"
         :left="targetPosition.left"
       />
