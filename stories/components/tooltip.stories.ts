@@ -13,8 +13,7 @@ export default {
 
 export const Default = {
   args: {
-    isVisible: true,
-    date: "2024-1-1",
+    text: "2024-1-1",
     top: 0,
     left: 0,
   },
