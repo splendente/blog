@@ -134,9 +134,13 @@ const setTooltipPosition = (event: MouseEvent) => {
   if (targetElement) {
     const thisRect = targetElement.getBoundingClientRect();
 
-    // ツールチップの表示位置を設定
-    targetPosition.value.top = thisRect.top + window.scrollY - 24;
-    targetPosition.value.left = thisRect.left - 55;
+    // ツールチップの表示位置（上からの距離）を設定
+    const topOffset = thisRect.top + window.scrollY - 24;
+    targetPosition.value.top = 0 <= topOffset ? topOffset : 0; // 最小値を0に設定する
+
+    // ツールチップの表示位置（左からの距離）を設定
+    const leftOffset = thisRect.left - 55;
+    targetPosition.value.left = 0 <= leftOffset ? leftOffset : 0; // 最小値を0に設定する
   } else {
     // ツールチップの表示位置を初期状態に設定
     targetPosition.value.top = 0;
