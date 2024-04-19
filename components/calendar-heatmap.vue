@@ -4,6 +4,10 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  activeDates: {
+    type: Array as () => string[],
+    required: true,
+  },
 });
 
 const date = new Date();
@@ -53,45 +57,12 @@ const pastYearDates = computed(() => {
 });
 
 /**
- * contentディレクトリ配下のコンテンツの全ての情報を取得する
- */
-const { data: page } = await useAsyncData("articles", () =>
-  queryContent("/").find(),
-);
-
-/**
- * コンテンツの作成日と更新日を取得する
- * @returns {Array} - 日付情報
- */
-const activeDates = computed(() => {
-  // 作成日と更新日を格納する配列
-  const createdAtAndUpdatedAt: string[] = [];
-
-  // コンテンツが存在した場合のみ実行
-  if (page.value && 0 < page.value.length) {
-    page.value.forEach((obj) => {
-      Object.keys(obj).forEach((key) => {
-        if (key === "createdAt" || key === "updatedAt") {
-          // 既に同一稼働日がある場合、配列への追加は行わない
-          if (!createdAtAndUpdatedAt.includes(obj[key])) {
-            // 重複しない場合、配列に日付を追加する
-            createdAtAndUpdatedAt.push(obj[key]);
-          }
-        }
-      });
-    });
-  }
-
-  return createdAtAndUpdatedAt;
-});
-
-/**
  * カレンダーの日にちがコンテンツの作成日もしくは更新日に該当するかどうか
  * @param {String} date - カレンダーの日付
  * @returns {Boolean} - 該当する場合はtrue、該当しない場合はfalseを返す
  */
 const checkActiveDate = (date: string) => {
-  return Boolean(activeDates.value.includes(date));
+  return Boolean(props.activeDates.includes(date));
 };
 
 // ツールチップの表示状態（true: 表示, false: 非表示）
