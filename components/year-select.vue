@@ -4,7 +4,12 @@ const targetYearModel = defineModel();
 
 <template>
   <div>
-    <select name="target-year" id="target-year" v-model="targetYearModel">
+    <select
+      name="target-year"
+      id="target-year"
+      v-model="targetYearModel"
+      aria-label="アクティビティを表示する年を選択する"
+    >
       <option value="2024">2024年</option>
     </select>
   </div>
