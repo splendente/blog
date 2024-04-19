@@ -4,7 +4,7 @@
     <div>
       <LinkButton
         :is-nuxt-link="false"
-        href="https://twitter.com/mr_splendente"
+        href="https://twitter.com/splendente_dev"
         target="_blank"
       >
         <img
