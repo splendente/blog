@@ -55,7 +55,7 @@ const nuxtLinkComponent = computed(() => {
 .link-button {
   display: block;
   width: fit-content;
-  height: auto;
+  height: fit-content;
   padding: 4px;
   border: 1px solid #ddd;
   border-radius: 4px;
