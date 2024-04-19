@@ -12,6 +12,7 @@
           width="16"
           height="16"
           src="@/assets/images/x-twitter.svg"
+          alt="X(Twitter)を新しいタブで表示する"
         />
       </LinkButton>
       <LinkButton
@@ -24,6 +25,7 @@
           width="16"
           height="16"
           src="@/assets/images/github.svg"
+          alt="GitHubを新しいタブで表示する"
         />
       </LinkButton>
       <LinkButton :is-nuxt-link="false" href="/feed.xml" target="_blank">
@@ -32,6 +34,7 @@
           width="16"
           height="16"
           src="@/assets/images/rss.svg"
+          alt="RSSフィードを新しいタブで表示する"
         />
       </LinkButton>
     </div>
