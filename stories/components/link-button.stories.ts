@@ -18,7 +18,7 @@ export default {
     },
     template: `
       <link-button :is-nuxt-link="isNuxtLink" :to="to" :href="href" :target="target">
-        <img src="/assets/images/github.svg" width="16" height="16" style="display:block;" />
+        <img src="/assets/images/github.svg" width="16" height="16" style="display:block;" alt="" />
       </link-button>
     `,
   }),
