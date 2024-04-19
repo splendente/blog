@@ -7,17 +7,32 @@
         href="https://twitter.com/mr_splendente"
         target="_blank"
       >
-        <img class="icon" src="@/assets/images/x-twitter.svg" />
+        <img
+          class="icon"
+          width="16"
+          height="16"
+          src="@/assets/images/x-twitter.svg"
+        />
       </LinkButton>
       <LinkButton
         :is-nuxt-link="false"
         href="https://github.com/splendente/blog"
         target="_blank"
       >
-        <img class="icon" src="@/assets/images/github.svg" />
+        <img
+          class="icon"
+          width="16"
+          height="16"
+          src="@/assets/images/github.svg"
+        />
       </LinkButton>
       <LinkButton :is-nuxt-link="false" href="/feed.xml" target="_blank">
-        <img class="icon" src="@/assets/images/rss.svg" />
+        <img
+          class="icon"
+          width="16"
+          height="16"
+          src="@/assets/images/rss.svg"
+        />
       </LinkButton>
     </div>
   </header>
