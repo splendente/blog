@@ -150,7 +150,7 @@ const setTooltipPosition = (event: MouseEvent) => {
               setTooltipPosition(event);
             }
           "
-        ></li>
+        />
       </ul>
     </div>
   </div>

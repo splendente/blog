@@ -22,12 +22,12 @@ const options = computed(() => {
 <template>
   <div class="year-select">
     <select
-      name="target-year"
       id="target-year"
       v-model="targetYearModel"
+      name="target-year"
       aria-label="アクティビティを表示する年を選択する"
     >
-      <option v-for="option in options" :value="option" :key="option">
+      <option v-for="option in options" :key="option" :value="option">
         {{ option }}年
       </option>
     </select>
