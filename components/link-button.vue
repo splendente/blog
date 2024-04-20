@@ -7,14 +7,17 @@ const props = defineProps({
   to: {
     type: String,
     required: false,
+    default: "",
   },
   href: {
     type: String,
     required: false,
+    default: "",
   },
   target: {
     type: String,
     required: false,
+    default: "_self",
   },
 });
 
