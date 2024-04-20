@@ -1,5 +1,22 @@
 <script setup lang="ts">
-const targetYearModel = defineModel();
+const targetYearModel = defineModel<number>({ default: 2024 });
+
+const thisYear = new Date().getFullYear();
+
+/**
+ * 2024年から現在の年までの期間を算出する
+ * @returns {Array}
+ */
+const options = computed(() => {
+  // 2024年から現在の年までの期間
+  const period = [];
+
+  for (let year = 2024; year <= thisYear; year++) {
+    period.push(year);
+  }
+
+  return period;
+});
 </script>
 
 <template>
@@ -10,7 +27,9 @@ const targetYearModel = defineModel();
       v-model="targetYearModel"
       aria-label="アクティビティを表示する年を選択する"
     >
-      <option value="2024">2024年</option>
+      <option v-for="option in options" :value="option" :key="option">
+        {{ option }}年
+      </option>
     </select>
   </div>
 </template>
