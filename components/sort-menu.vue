@@ -10,7 +10,7 @@ defineEmits(["toggleSort"]);
 </script>
 
 <template>
-  <div>
+  <div class="sort-menu">
     <button
       type="button"
       :class="desc ? 'desc' : 'asc'"
@@ -22,7 +22,7 @@ defineEmits(["toggleSort"]);
 </template>
 
 <style scoped>
-div {
+.sort-menu {
   width: fit-content;
   height: fit-content;
   display: flex;
@@ -34,7 +34,7 @@ div {
   border-radius: 8px;
 }
 
-div::before {
+.sort-menu::before {
   content: "";
   align-self: stretch;
   width: 1px;
@@ -42,7 +42,7 @@ div::before {
   order: 2;
 }
 
-button {
+.sort-menu > button {
   display: block;
   width: 16px;
   height: 16px;
@@ -50,15 +50,15 @@ button {
   order: 1;
 }
 
-button.desc {
+.sort-menu > .desc {
   background-image: url("/assets/images/sort-descending.svg");
 }
 
-button.asc {
+.sort-menu > .asc {
   background-image: url("/assets/images/sort-ascending.svg");
 }
 
-p {
+.sort-menu > p {
   font-size: 12px;
   color: #3c3c3c;
   order: 3;

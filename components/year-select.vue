@@ -3,7 +3,7 @@ const targetYearModel = defineModel();
 </script>
 
 <template>
-  <div>
+  <div class="year-select">
     <select
       name="target-year"
       id="target-year"
@@ -16,7 +16,7 @@ const targetYearModel = defineModel();
 </template>
 
 <style scoped>
-div {
+.year-select {
   width: fit-content;
   height: fit-content;
   border: 1px solid #ddd;
@@ -24,13 +24,13 @@ div {
   background-color: #fff;
 }
 
-select {
+.year-select > select {
   padding: 6px 12px;
   font-size: 12px;
   color: #3c3c3c;
 }
 
-select:hover {
+.year-select > select:hover {
   cursor: pointer;
 }
 </style>
