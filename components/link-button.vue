@@ -40,8 +40,8 @@ const nuxtLinkComponent = computed(() => {
 
 <template>
   <component
-    class="link-button"
     :is="isNuxtLink ? nuxtLinkComponent : 'a'"
+    class="link-button"
     v-bind="{
       ...(isNuxtLink && nuxtLinkProps),
       ...(!isNuxtLink && anchorProps),

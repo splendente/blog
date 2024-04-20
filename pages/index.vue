@@ -56,13 +56,13 @@ const activeDates = computed(() => {
 
 <template>
   <main>
-    <YearSelect class="year-select" v-model="targetYear" />
+    <YearSelect v-model="targetYear" class="year-select" />
     <CalendarHeatmap
       :target-year="Number(targetYear)"
       :active-dates="activeDates"
     />
-    <SortMenu :desc="desc" @toggle-sort="toggleSort" class="sort-menu" />
-    <ContentList path="/" v-slot="{ list }" :sort="query">
+    <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
+    <ContentList v-slot="{ list }" path="/" :sort="query">
       <Card
         v-for="(article, index) in list"
         :key="index"
@@ -70,7 +70,7 @@ const activeDates = computed(() => {
         :icon="article.icon"
         :title="article.title"
         :description="article.description"
-        :createdAt="article.createdAt"
+        :created-at="article.createdAt"
         :tags="article.tags"
       />
     </ContentList>
