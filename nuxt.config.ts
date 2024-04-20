@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     "@nuxt/test-utils/module",
     "@nuxtjs/sitemap",
     "nuxt-feedme",
+    "@nuxt/eslint",
   ],
   experimental: {
     componentIslands: true,
