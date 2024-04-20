@@ -4,11 +4,11 @@ const targetYearModel = defineModel<number>({ default: 2024 });
 const thisYear = new Date().getFullYear();
 
 /**
- * 2024年から現在の年までの期間を算出する
+ * 2024年から今年までの期間を算出する
  * @returns {Array}
  */
 const options = computed(() => {
-  // 2024年から現在の年までの期間
+  // 2024年から今年までの期間
   const period = [];
 
   for (let year = 2024; year <= thisYear; year++) {
