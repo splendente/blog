@@ -56,7 +56,7 @@ const formatDate = computed(() => {
   width: 100%;
   height: 100%;
   padding: 24px;
-  background-color: #f6f6f6;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
 }
@@ -79,7 +79,7 @@ const formatDate = computed(() => {
   width: 48px;
   height: 48px;
   font-size: 24px;
-  background-color: #eaeaea;
+  background-color: #f6f6f6;
   border-radius: 8px;
   display: flex;
   justify-content: center;
