@@ -1,6 +1,10 @@
 <script setup lang="ts">
+// 現在のページを取得する
 const route = useRoute();
 
+/**
+ * 現在のページの前後のページ情報を取得する
+ */
 const [prev, next] = await queryContent()
   .only(["_path", "title", "description"])
   .sort({ date: 1 })
