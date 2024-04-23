@@ -1,3 +1,12 @@
+<script setup lang="ts">
+const route = useRoute();
+
+const [prev, next] = await queryContent()
+  .only(["_path", "title", "description"])
+  .sort({ date: 1 })
+  .findSurround(route.path);
+</script>
+
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
@@ -9,6 +18,8 @@
         <ContentRenderer :value="doc" />
       </div>
     </ContentDoc>
+    <span class="border"></span>
+    <Pager :prev-page="prev" :next-page="next" />
   </main>
 </template>
 
@@ -20,14 +31,23 @@
   border-bottom: 1px solid #ddd;
 }
 
-.blog-header > .title {
+.title {
   font-size: 32px;
   color: #3c3c3c;
   margin-bottom: 24px;
 }
 
-.blog-header > .created-at {
+.created-at {
   font-size: 14px;
   color: #3c3c3c;
+}
+
+.border {
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-radius: 2px;
+  background: #ddd;
+  margin: 60px 0;
 }
 </style>
