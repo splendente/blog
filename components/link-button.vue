@@ -21,6 +21,10 @@ const props = defineProps({
   },
 });
 
+defineSlots<{
+  icon: () => HTMLImageElement;
+}>();
+
 // NuxtLinkコンポーネントの場合に設定する属性情報
 const nuxtLinkProps = {
   to: props.to,
@@ -50,7 +54,7 @@ const nuxtLinkComponent = computed(() => {
       ...(!isNuxtLink && anchorProps),
     }"
   >
-    <slot />
+    <slot name="icon" />
   </component>
 </template>
 
