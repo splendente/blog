@@ -7,35 +7,41 @@
         href="https://twitter.com/splendente_dev"
         target="_blank"
       >
-        <img
-          class="icon"
-          width="16"
-          height="16"
-          src="@/assets/images/x-twitter.svg"
-          alt="X(Twitter)を新しいタブで表示する"
-        />
+        <template #icon>
+          <img
+            class="icon"
+            width="16"
+            height="16"
+            src="@/assets/images/x-twitter.svg"
+            alt="X(Twitter)を新しいタブで表示する"
+          />
+        </template>
       </LinkButton>
       <LinkButton
         :is-nuxt-link="false"
         href="https://github.com/splendente/blog"
         target="_blank"
       >
-        <img
-          class="icon"
-          width="16"
-          height="16"
-          src="@/assets/images/github.svg"
-          alt="GitHubを新しいタブで表示する"
-        />
+        <template #icon>
+          <img
+            class="icon"
+            width="16"
+            height="16"
+            src="@/assets/images/github.svg"
+            alt="GitHubを新しいタブで表示する"
+          />
+        </template>
       </LinkButton>
       <LinkButton :is-nuxt-link="false" href="/feed.xml" target="_blank">
-        <img
-          class="icon"
-          width="16"
-          height="16"
-          src="@/assets/images/rss.svg"
-          alt="RSSフィードを新しいタブで表示する"
-        />
+        <template #icon>
+          <img
+            class="icon"
+            width="16"
+            height="16"
+            src="@/assets/images/rss.svg"
+            alt="RSSフィードを新しいタブで表示する"
+          />
+        </template>
       </LinkButton>
     </div>
   </header>
