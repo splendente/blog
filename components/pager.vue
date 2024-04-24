@@ -60,7 +60,7 @@ defineProps({
 .link {
   display: block;
   width: calc(50% - 16px);
-  padding: 24px;
+  padding: 16px 24px;
   border: 1px solid #ddd;
   border-radius: 8px;
   text-decoration: none;
@@ -77,7 +77,7 @@ defineProps({
   height: 100%;
   display: flex;
   align-items: center;
-  gap: 0 24px;
+  gap: 0 16px;
 }
 
 .next-page {
