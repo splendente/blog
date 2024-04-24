@@ -22,16 +22,30 @@ defineProps({
       !nextPage ? 'justify-content: end;' : 'justify-content: space-between;'
     "
   >
-    <NuxtLink v-if="nextPage" :to="nextPage._path" class="link next-page">
-      <div>
-        <p class="title">{{ nextPage.title }}</p>
-        <p class="description">{{ nextPage.description }}</p>
+    <NuxtLink v-if="nextPage" :to="nextPage._path" class="link">
+      <div class="next-page">
+        <button
+          type="button"
+          class="chevron-left"
+          aria-label="前のページに戻る"
+        />
+        <div>
+          <p class="title">{{ nextPage.title }}</p>
+          <p class="description">{{ nextPage.description }}</p>
+        </div>
       </div>
     </NuxtLink>
-    <NuxtLink v-if="prevPage" :to="prevPage._path" class="link prev-page">
-      <div>
-        <p class="title">{{ prevPage.title }}</p>
-        <p class="description">{{ prevPage.description }}</p>
+    <NuxtLink v-if="prevPage" :to="prevPage._path" class="link">
+      <div class="prev-page">
+        <div>
+          <p class="title">{{ prevPage.title }}</p>
+          <p class="description">{{ prevPage.description }}</p>
+        </div>
+        <button
+          type="button"
+          class="chevron-right"
+          aria-label="次のページに進む"
+        />
       </div>
     </NuxtLink>
   </div>
@@ -57,12 +71,39 @@ defineProps({
   background-color: #f6f6f6;
 }
 
+.next-page,
+.prev-page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0 24px;
+}
+
 .next-page {
+  justify-content: start;
   text-align: left;
 }
 
 .prev-page {
+  justify-content: end;
   text-align: right;
+}
+
+.chevron-left,
+.chevron-right {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.chevron-left {
+  background: url(~/assets/images/chevron-left.svg) center top / cover no-repeat;
+}
+
+.chevron-right {
+  background: url(~/assets/images/chevron-right.svg) center top / cover
+    no-repeat;
 }
 
 .title {
