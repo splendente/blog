@@ -28,6 +28,7 @@ const config = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": path.resolve(__dirname, "../"),
+      "~": path.resolve(__dirname, "../"),
     };
 
     if (config.plugins) {
