@@ -121,7 +121,7 @@ const setTooltipPosition = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div>
+  <div class="calendar-heatmap">
     <Transition appear>
       <Tooltip
         v-if="isTooltipVisible && 0 < tooltipText.length"
@@ -130,8 +130,31 @@ const setTooltipPosition = (event: MouseEvent) => {
         :left="targetPosition.left"
       />
     </Transition>
-    <div class="calendar-heatmap">
-      <ul>
+    <div class="calendar">
+      <ul class="months">
+        <li><p>Jan</p></li>
+        <li><p>Feb</p></li>
+        <li><p>Mar</p></li>
+        <li><p>Apr</p></li>
+        <li><p>May</p></li>
+        <li><p>Jun</p></li>
+        <li><p>Jul</p></li>
+        <li><p>Aug</p></li>
+        <li><p>Sep</p></li>
+        <li><p>Oct</p></li>
+        <li><p>Nov</p></li>
+        <li><p>Dec</p></li>
+      </ul>
+      <ul class="days">
+        <li><p>Mon</p></li>
+        <li><p>Tue</p></li>
+        <li><p>Wed</p></li>
+        <li><p>Thu</p></li>
+        <li><p>Fri</p></li>
+        <li><p>Sat</p></li>
+        <li><p>Sun</p></li>
+      </ul>
+      <ul class="date">
         <li
           v-for="(date, index) in pastYearDates"
           :key="index"
@@ -156,39 +179,94 @@ const setTooltipPosition = (event: MouseEvent) => {
   </div>
 </template>
 
-<style scoped>
+<style>
+:root {
+  --calendar-size: 12px;
+  --calendar-gap: 2px;
+  --week-width: calc(var(--calendar-size) + var(--calendar-gap));
+}
+
 .calendar-heatmap {
   width: 100%;
   max-width: 100%;
   overflow-x: auto;
-  margin-inline: auto;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 6px;
+  border-radius: 8px;
+  padding: 24px;
 }
 
-ul {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(auto-fill, minmax(12px, 1fr));
-  grid-template-rows: repeat(7, 1fr);
-  gap: 2px;
+.calendar {
+  display: inline-grid;
+  grid-template-areas:
+    "months month"
+    "days date";
+  grid-template-columns: auto 1fr;
+  grid-gap: 8px;
+}
+
+.months {
+  grid-area: month;
   list-style: none;
 }
 
-ul > li::after {
-  content: "";
-  display: block;
-  width: 12px;
-  height: 12px;
+.days {
+  grid-area: days;
+  list-style: none;
+}
+
+.months > li > p,
+.days > li > p {
+  color: #3c3c3c;
+  font-size: 12px;
+}
+
+.date {
+  grid-area: date;
+  list-style: none;
+}
+
+.date > li {
   border-radius: 3px;
   background-color: #f6f6f6;
   border: 1px solid #ddd;
 }
 
-ul > .active::after {
+.date > .active {
   background-color: #87ceeb;
   border-color: #1e90ff;
+}
+
+.months {
+  display: grid;
+  grid-template-columns:
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 5)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 5)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 5)
+    calc(var(--week-width) * 4)
+    calc(var(--week-width) * 5);
+}
+
+.days,
+.date {
+  display: grid;
+  grid-gap: var(--calendar-gap);
+  grid-template-rows: repeat(7, var(--calendar-size));
+}
+
+.date {
+  grid-auto-flow: column;
+  grid-auto-columns: var(--calendar-size);
+}
+
+.days > li:nth-child(even) {
+  visibility: hidden;
 }
 
 .v-enter-active,
