@@ -15,8 +15,9 @@ const [prev, next] = await queryContent()
   <main>
     <ContentDoc v-slot="{ doc }">
       <div class="blog-header">
-        <h1 class="title">{{ doc.title }}</h1>
         <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
+        <h1 class="title">{{ doc.title }}</h1>
+        <p class="description">{{ doc.description }}</p>
       </div>
       <div id="nuxt-content">
         <ContentRenderer :value="doc" />
@@ -38,12 +39,18 @@ const [prev, next] = await queryContent()
 .title {
   font-size: 32px;
   color: #3c3c3c;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 14px;
+  color: #3c3c3c;
 }
 
 .created-at {
   font-size: 14px;
   color: #3c3c3c;
+  margin-bottom: 16px;
 }
 
 .border {
