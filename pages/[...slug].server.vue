@@ -22,6 +22,7 @@ const [prev, next] = await queryContent()
       <div id="nuxt-content">
         <ContentRenderer :value="doc" />
       </div>
+      <PageEditLink :file-name="doc._file" />
     </ContentDoc>
     <span class="border"></span>
     <Pager :prev-page="prev" :next-page="next" />
