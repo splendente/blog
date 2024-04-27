@@ -12,6 +12,7 @@ declare module 'vue' {
     'Footer.server': typeof import('./components/footer.server.vue')['default']
     'Header.server': typeof import('./components/header.server.vue')['default']
     LinkButton: typeof import('./components/link-button.vue')['default']
+    'LinkToBack.server': typeof import('./components/link-to-back.server.vue')['default']
     'LinkToEdit.server': typeof import('./components/link-to-edit.server.vue')['default']
     'PageEditLink.server': typeof import('./components/page-edit-link.server.vue')['default']
     Pager: typeof import('./components/pager.vue')['default']
