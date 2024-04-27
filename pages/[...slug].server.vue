@@ -13,6 +13,7 @@ const [prev, next] = await queryContent()
 
 <template>
   <main>
+    <LinkToBack />
     <ContentDoc v-slot="{ doc }">
       <div class="blog-header">
         <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
@@ -33,7 +34,7 @@ const [prev, next] = await queryContent()
 .blog-header {
   text-align: center;
   padding-bottom: 32px;
-  margin-bottom: 48px;
+  margin: 32px 0 48px;
   border-bottom: 1px solid #ddd;
 }
 
