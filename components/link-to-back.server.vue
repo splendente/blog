@@ -11,7 +11,7 @@
   font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 0 4px;
+  gap: 0 8px;
 }
 
 .link-to-back:hover {
@@ -24,6 +24,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  background: url(~/assets/images/chevron-left.svg) center top / cover no-repeat;
+  background: url(~/assets/images/arrow-back-up.svg) center top / cover
+    no-repeat;
 }
 </style>
