@@ -39,7 +39,7 @@ const options = computed(() => {
   width: fit-content;
   height: fit-content;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: #fff;
 }
 

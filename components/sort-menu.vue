@@ -31,7 +31,7 @@ defineEmits(["toggleSort"]);
   gap: 0 6px;
   padding: 6px 12px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .sort-menu::before {
