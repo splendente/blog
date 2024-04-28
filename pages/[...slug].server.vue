@@ -13,7 +13,6 @@ const [prev, next] = await queryContent()
 
 <template>
   <main>
-    <LinkToBack />
     <ContentDoc v-slot="{ doc }">
       <div class="blog-header">
         <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
@@ -23,9 +22,11 @@ const [prev, next] = await queryContent()
       <div id="nuxt-content">
         <ContentRenderer :value="doc" />
       </div>
-      <LinkToEdit :file-name="doc._file" />
+      <div class="link-box">
+        <LinkToBack />
+        <LinkToEdit :file-name="doc._file" />
+      </div>
     </ContentDoc>
-    <span class="border"></span>
     <Pager :prev-page="prev" :next-page="next" />
   </main>
 </template>
@@ -55,12 +56,15 @@ const [prev, next] = await queryContent()
   margin-bottom: 16px;
 }
 
-.border {
-  display: block;
-  width: 100%;
-  height: 1px;
-  border-radius: 2px;
-  background: #ddd;
-  margin: 60px 0;
+.link-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 32px 0;
+  margin: 32px 0;
 }
 </style>
