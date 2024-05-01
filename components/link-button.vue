@@ -67,6 +67,7 @@ const nuxtLinkComponent = computed(() => {
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
+  transition: all 0.5s ease;
 }
 
 .link-button:hover {
