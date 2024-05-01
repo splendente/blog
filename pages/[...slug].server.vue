@@ -35,7 +35,7 @@ const [prev, next] = await queryContent()
 .blog-header {
   text-align: center;
   padding-bottom: 32px;
-  margin: 32px 0 48px;
+  margin-bottom: 48px;
   border-bottom: 1px solid #ddd;
 }
 
