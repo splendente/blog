@@ -64,6 +64,7 @@ defineProps({
   border: 1px solid #ddd;
   border-radius: 8px;
   text-decoration: none;
+  transition: all 0.5s ease;
 }
 
 .link:hover {

@@ -31,6 +31,7 @@ defineProps({
   color: #3c3c3c;
   text-decoration: none;
   gap: 0 8px;
+  transition: all 0.5s ease;
 }
 
 .page-edit-link:hover {
