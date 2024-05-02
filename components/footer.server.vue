@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
-    <NuxtLink to="/privacy-policy" class="privacy-policy" target="_blank">
-      Privacy Policy
+    <NuxtLink to="/terms-and-privacy" class="terms-and-privacy" target="_blank">
+      Terms and Privacy
     </NuxtLink>
     <p class="copyright">&copy; 2024 Hikaru Kobayashi.</p>
   </footer>
@@ -14,13 +14,13 @@
   text-align: center;
 }
 
-.privacy-policy,
+.terms-and-privacy,
 .copyright {
   font-size: 14px;
   color: #3c3c3c;
 }
 
-.privacy-policy:hover {
+.terms-and-privacy:hover {
   opacity: 0.7;
 }
 
