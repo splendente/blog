@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer class="footer">
     <NuxtLink to="/privacy-policy" class="privacy-policy" target="_blank">
       Privacy Policy
     </NuxtLink>
@@ -8,23 +8,23 @@
 </template>
 
 <style scoped>
-footer {
+.footer {
   padding: 16px 24px;
   border-top: 1px solid #ddd;
   text-align: center;
 }
 
-footer > .privacy-policy,
-footer > .copyright {
+.privacy-policy,
+.copyright {
   font-size: 14px;
   color: #3c3c3c;
 }
 
-footer > .privacy-policy {
-  text-decoration: underline;
+.privacy-policy:hover {
+  opacity: 0.7;
 }
 
-footer > .copyright {
+.copyright {
   margin-top: 8px;
 }
 </style>
