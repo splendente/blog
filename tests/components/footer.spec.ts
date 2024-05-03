@@ -18,6 +18,8 @@ describe("Footerコンポーネント", () => {
 
   test("Privacy Policyというリンクが表示されている", () => {
     expect(footer.findComponent(RouterLinkStub).exists()).toBe(true);
-    expect(footer.findComponent(RouterLinkStub).text()).toBe("Privacy Policy");
+    expect(footer.findComponent(RouterLinkStub).text()).toBe(
+      "Terms and Privacy",
+    );
   });
 });
