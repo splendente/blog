@@ -1,4 +1,4 @@
-import Footer from "@/components/footer.server.vue";
+import Footer from "@/components/footer.vue";
 
 export default {
   title: "components/footer",

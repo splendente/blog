@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { shallowMount } from "@vue/test-utils";
-import Tag from "@/components/tag.server.vue";
+import Tag from "@/components/tag.vue";
 
 describe("Tagコンポーネント", () => {
   const props = {

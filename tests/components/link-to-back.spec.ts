@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { shallowMount, RouterLinkStub } from "@vue/test-utils";
-import LinkToBack from "@/components/link-to-back.server.vue";
+import LinkToBack from "@/components/link-to-back.vue";
 
 describe("LinkToBackコンポーネント", () => {
   const linkToBack = shallowMount(LinkToBack, {

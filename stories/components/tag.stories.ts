@@ -1,4 +1,4 @@
-import Tag from "@/components/tag.server.vue";
+import Tag from "@/components/tag.vue";
 
 export default {
   title: "components/tag",
