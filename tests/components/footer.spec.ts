@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { shallowMount, RouterLinkStub } from "@vue/test-utils";
-import Footer from "@/components/footer.server.vue";
+import Footer from "@/components/footer.vue";
 
 describe("Footerコンポーネント", () => {
   const footer = shallowMount(Footer, {

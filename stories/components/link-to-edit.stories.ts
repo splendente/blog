@@ -1,4 +1,4 @@
-import LinkToEdit from "@/components/link-to-edit.server.vue";
+import LinkToEdit from "@/components/link-to-edit.vue";
 
 export default {
   title: "components/link-to-edit",
