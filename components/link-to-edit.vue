@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <a
-    :href="`https://github.com/splendente/blog/tree/master/content/${fileName}`"
+    :href="`https://github.com/splendente/blog/tree/main/content/${fileName}`"
     target="_blank"
     class="page-edit-link"
   >
