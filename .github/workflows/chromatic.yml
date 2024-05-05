@@ -1,0 +1,41 @@
+name: Deploy chromatic
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  deploy-chromatic:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Deploy chromatic
+        env:
+          CHROMATIC_PROJECT_TOKEN: ${ secrets.CHROMATIC_PROJECT_TOKEN }
+        run: pnpm chromatic
+
+      - name: Clean up
+        run: |
+          ls -la ./
+          rm -rf ./*
+
+      - name: Clear cache of npm
+        run: pnpm store prune
