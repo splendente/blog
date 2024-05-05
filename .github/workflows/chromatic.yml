@@ -28,9 +28,9 @@ jobs:
         run: pnpm install
 
       - name: Deploy chromatic
-        env:
-          CHROMATIC_PROJECT_TOKEN: ${ secrets.CHROMATIC_PROJECT_TOKEN }
-        run: pnpm chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
       - name: Clean up
         run: |
