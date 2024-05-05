@@ -1,0 +1,20 @@
+name: Run vitest
+
+on:
+  push: "*"
+
+jobs:
+  run-vitest:
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - run: pnpm install
+      - run: pnpm vitest
+      - name: clean up
+        run: |
+          ls -la ./
+          rm -rf ./*
+      - name: clear cache of npm
+        run: pnpm store prune
