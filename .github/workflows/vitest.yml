@@ -9,19 +9,27 @@ jobs:
   run-vitest:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      - uses: pnpm/action-setup@v3
-        name: Install pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
 
-      - run: pnpm install
-      - run: pnpm vitest
-      - name: clean up
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run vitest
+        run: pnpm vitest
+
+      - name: Clean up
         run: |
           ls -la ./
           rm -rf ./*
-      - name: clear cache of npm
+
+      - name: Clear cache of npm
         run: pnpm store prune
