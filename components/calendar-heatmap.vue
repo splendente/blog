@@ -47,7 +47,7 @@ const pastYearDates = computed(() => {
       const $year = $date.getFullYear(); // 年を取得
       const $month = $date.getMonth() + 1; // 月を取得 (0始まりのため、+1する)
       const $day = $date.getDate(); // 日を取得
-      const formattedDate = `${$year}-${String($month).padStart(2, "0")}-${$day}`; // Nuxt Contentの日付情報と同じ形式に変換
+      const formattedDate = `${$year}-${String($month).padStart(2, "0")}-${String($day).padStart(2, "0")}`; // Nuxt Contentの日付情報と同じ形式に変換
 
       dates.push(formattedDate);
     }
