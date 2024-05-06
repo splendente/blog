@@ -121,7 +121,7 @@ const setTooltipPosition = (event: MouseEvent) => {
 </script>
 
 <template>
-  <div class="calendar-heatmap">
+  <div class="calendar-heatmap" tabindex="0">
     <Transition appear>
       <Tooltip
         v-if="isTooltipVisible && 0 < tooltipText.length"
