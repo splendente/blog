@@ -9,6 +9,6 @@ export default {
 export const Default = {
   args: {
     targetYear: 2023,
-    activeDates: ["2023-1-1", "2023-7-19", "2023-12-31"],
+    activeDates: ["2023-01-01", "2023-07-19", "2023-12-31"],
   },
 };
