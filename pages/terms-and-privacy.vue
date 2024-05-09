@@ -1,6 +1,8 @@
 <template>
   <main>
     <h1>利用規約とプライバシーポリシー</h1>
+    <p class="date-of-issue">発行日 2024年5月2日</p>
+
     <p>本規約は、当サイトの利用に関する規定を定めるものです。</p>
     <p>
       当サイトを利用することにより、以下の条件に同意したものとみなされます。
@@ -70,8 +72,6 @@
         https://twitter.com/splendente_dev
       </a>
     </section>
-
-    <p class="last-revised-date">最終改訂日 2024年5月2日</p>
   </main>
 </template>
 
@@ -79,7 +79,7 @@
 h1 {
   font-size: 32px;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 16px;
   color: #3c3c3c;
 }
 
@@ -98,7 +98,11 @@ section > p:last-child {
   margin-bottom: 0;
 }
 
-.last-revised-date {
-  margin: 48px 0 0;
+.date-of-issue {
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 32px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid #ddd;
 }
 </style>
