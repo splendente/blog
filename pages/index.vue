@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // 降順かどうか
-const desc = ref(true);
+const desc = ref<boolean>(true);
 
 /**
  * 降順と昇順を切り替える
@@ -18,7 +18,7 @@ const query = computed(() => {
 });
 
 const date = new Date();
-const targetYear = ref(date.getFullYear());
+const targetYear = ref<number>(date.getFullYear());
 
 /**
  * contentディレクトリ配下のコンテンツの全ての情報を取得する

@@ -66,7 +66,7 @@ const checkActiveDate = (date: string) => {
 };
 
 // ツールチップの表示状態（true: 表示, false: 非表示）
-const isTooltipVisible = ref(false);
+const isTooltipVisible = ref<boolean>(false);
 
 /**
  * ツールチップの表示状態を切り替える
@@ -77,7 +77,7 @@ const toggleTooltipVisibleStatus = (status: boolean) => {
 };
 
 // tooltipコンポーネントで表示するテキスト
-const tooltipText = ref("");
+const tooltipText = ref<string>("");
 
 /**
  * ツールチップのテキストを設定
@@ -87,8 +87,13 @@ const setTooltipText = (date: string) => {
   tooltipText.value = formatDateString(date);
 };
 
+type TargetPosition = {
+  top: number;
+  left: number;
+};
+
 // tooltipコンポーネントを表示する位置
-const targetPosition = ref({
+const targetPosition = ref<TargetPosition>({
   top: 0,
   left: 0,
 });
