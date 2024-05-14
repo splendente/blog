@@ -6,7 +6,9 @@ defineProps({
   },
 });
 
-defineEmits(["toggleSort"]);
+defineEmits<{
+  (e: "toggleSort"): void;
+}>();
 </script>
 
 <template>
