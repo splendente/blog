@@ -2,10 +2,11 @@
   <header>
     <NuxtLink to="/" class="title">Blog</NuxtLink>
     <div>
-      <LinkButton
-        :is-nuxt-link="false"
+      <IconButton
+        element="anchor-link"
         href="https://twitter.com/splendente_dev"
         target="_blank"
+        label="X(Twitter)を新しいタブで表示する"
       >
         <template #icon>
           <img
@@ -16,11 +17,12 @@
             alt="X(Twitter)を新しいタブで表示する"
           />
         </template>
-      </LinkButton>
-      <LinkButton
-        :is-nuxt-link="false"
+      </IconButton>
+      <IconButton
+        element="anchor-link"
         href="https://github.com/splendente/blog"
         target="_blank"
+        label="X(Twitter)を新しいタブで表示する"
       >
         <template #icon>
           <img
@@ -31,8 +33,13 @@
             alt="GitHubを新しいタブで表示する"
           />
         </template>
-      </LinkButton>
-      <LinkButton :is-nuxt-link="false" href="/feed.xml" target="_blank">
+      </IconButton>
+      <IconButton
+        element="anchor-link"
+        href="/feed.xml"
+        target="_blank"
+        label="X(Twitter)を新しいタブで表示する"
+      >
         <template #icon>
           <img
             class="icon"
@@ -42,7 +49,7 @@
             alt="RSSフィードを新しいタブで表示する"
           />
         </template>
-      </LinkButton>
+      </IconButton>
     </div>
   </header>
 </template>
