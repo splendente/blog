@@ -6,7 +6,7 @@
         element="anchor-link"
         href="https://twitter.com/splendente_dev"
         target="_blank"
-        label="X(Twitter)を新しいタブで表示する"
+        label="X(旧Twitter)を新しいタブで表示する"
       >
         <template #icon>
           <img
@@ -14,7 +14,7 @@
             width="16"
             height="16"
             src="@/assets/images/x-twitter.svg"
-            alt="X(Twitter)を新しいタブで表示する"
+            alt="X(旧Twitter)"
           />
         </template>
       </IconButton>
@@ -22,7 +22,7 @@
         element="anchor-link"
         href="https://github.com/splendente/blog"
         target="_blank"
-        label="X(Twitter)を新しいタブで表示する"
+        label="GitHubを新しいタブで表示する"
       >
         <template #icon>
           <img
@@ -30,7 +30,7 @@
             width="16"
             height="16"
             src="@/assets/images/github.svg"
-            alt="GitHubを新しいタブで表示する"
+            alt="GitHub"
           />
         </template>
       </IconButton>
@@ -38,7 +38,7 @@
         element="anchor-link"
         href="/feed.xml"
         target="_blank"
-        label="X(Twitter)を新しいタブで表示する"
+        label="RSSフィードを新しいタブで表示する"
       >
         <template #icon>
           <img
@@ -46,7 +46,7 @@
             width="16"
             height="16"
             src="@/assets/images/rss.svg"
-            alt="RSSフィードを新しいタブで表示する"
+            alt="RSSフィード"
           />
         </template>
       </IconButton>
