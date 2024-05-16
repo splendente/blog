@@ -26,7 +26,7 @@ const toggleNavigationVisibleStatus = () => {
             width="16"
             height="16"
             src="@/assets/images/x-twitter.svg"
-            alt="X(旧Twitter)"
+            alt=""
           />
         </template>
       </IconButton>
@@ -42,7 +42,7 @@ const toggleNavigationVisibleStatus = () => {
             width="16"
             height="16"
             src="@/assets/images/github.svg"
-            alt="GitHub"
+            alt=""
           />
         </template>
       </IconButton>
@@ -58,7 +58,7 @@ const toggleNavigationVisibleStatus = () => {
             width="16"
             height="16"
             src="@/assets/images/rss.svg"
-            alt="RSSフィード"
+            alt=""
           />
         </template>
       </IconButton>
