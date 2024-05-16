@@ -1,7 +1,19 @@
+<script setup lang="ts">
+// ナビゲーションメニューの表示・非表示状態を管理
+const navigationVisibleStatus = ref<boolean>(false);
+
+/**
+ * ナビゲーションメニューの表示・非表示を切り替える
+ */
+const toggleNavigationVisibleStatus = () => {
+  navigationVisibleStatus.value = !navigationVisibleStatus.value;
+};
+</script>
+
 <template>
   <header>
     <NuxtLink to="/" class="title">Blog</NuxtLink>
-    <div>
+    <div class="icons">
       <IconButton
         element="anchor-link"
         href="https://twitter.com/splendente_dev"
@@ -51,6 +63,23 @@
         </template>
       </IconButton>
     </div>
+    <IconButton
+      class="navigation-button"
+      element="button"
+      label="ナビゲーションメニューを表示する"
+      @on-click="toggleNavigationVisibleStatus"
+    >
+      <template #icon>
+        <img
+          class="icon"
+          width="16"
+          height="16"
+          src="@/assets/images/menu.svg"
+          alt=""
+        />
+      </template>
+    </IconButton>
+    <NavigationMenu :visible="navigationVisibleStatus" />
   </header>
 </template>
 
@@ -82,5 +111,19 @@ header > div {
   display: block;
   width: 16px;
   height: 16px;
+}
+
+.navigation-button {
+  display: none;
+}
+
+@media (width < 640px) {
+  .icons {
+    display: none;
+  }
+
+  .navigation-button {
+    display: block;
+  }
 }
 </style>
