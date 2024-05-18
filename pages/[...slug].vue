@@ -14,14 +14,16 @@ const [prev, next] = await queryContent()
 <template>
   <main>
     <ContentDoc v-slot="{ doc }">
-      <div class="blog-header">
-        <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
-        <h1 class="title">{{ doc.title }}</h1>
-        <p class="description">{{ doc.description }}</p>
-      </div>
-      <div id="nuxt-content">
-        <ContentRenderer :value="doc" />
-      </div>
+      <article>
+        <div class="blog-header">
+          <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
+          <h1 class="title">{{ doc.title }}</h1>
+          <p class="description">{{ doc.description }}</p>
+        </div>
+        <div id="nuxt-content">
+          <ContentRenderer :value="doc" />
+        </div>
+      </article>
       <div class="link-box">
         <LinkToBack />
         <LinkToEdit :file-name="doc._file" />
