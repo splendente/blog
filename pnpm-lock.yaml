@@ -33,7 +33,7 @@ devDependencies:
     version: 0.3.8(eslint@9.2.0)(nuxt@3.11.1)(typescript@5.4.5)(vite@5.2.8)
   '@nuxt/test-utils':
     specifier: ^3.12.0
-    version: 3.12.0(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
+    version: 3.12.0(@vitest/ui@1.6.0)(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
   '@nuxtjs/sitemap':
     specifier: ^5.1.2
     version: 5.1.2(@nuxt/devtools@1.1.5)(@vue/compiler-core@3.4.26)(h3@1.11.1)(nuxt@3.11.1)(postcss@8.4.38)(vite@5.2.8)(vue@3.4.21)(webpack@5.91.0)
@@ -61,6 +61,9 @@ devDependencies:
   '@vitejs/plugin-vue':
     specifier: ^5.0.4
     version: 5.0.4(vite@5.2.8)(vue@3.4.21)
+  '@vitest/ui':
+    specifier: ^1.6.0
+    version: 1.6.0(vitest@1.6.0)
   '@vue/test-utils':
     specifier: ^2.4.5
     version: 2.4.5
@@ -99,7 +102,7 @@ devDependencies:
     version: 5.2.8
   vitest:
     specifier: ^1.6.0
-    version: 1.6.0(jsdom@24.0.0)
+    version: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)
 
 packages:
 
@@ -2728,7 +2731,7 @@ packages:
       - rollup
       - supports-color
 
-  /@nuxt/test-utils@3.12.0(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21):
+  /@nuxt/test-utils@3.12.0(@vitest/ui@1.6.0)(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-Q3HP53TDIYeqHT65r31HZhK/gRwVBmchSdVj1tfiYECyqstckvsQ4Cyt/GX/XmD7cLdD3d5aHow8LaMfP+BSqQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
     peerDependencies:
@@ -2770,6 +2773,7 @@ packages:
     dependencies:
       '@nuxt/kit': 3.11.1
       '@nuxt/schema': 3.11.1
+      '@vitest/ui': 1.6.0(vitest@1.6.0)
       '@vue/test-utils': 2.4.5
       c12: 1.10.0
       consola: 3.2.3
@@ -2794,8 +2798,8 @@ packages:
       unenv: 1.9.0
       unplugin: 1.10.1
       vite: 5.2.8
-      vitest: 1.6.0(jsdom@24.0.0)
-      vitest-environment-nuxt: 1.0.0(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
+      vitest: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)
+      vitest-environment-nuxt: 1.0.0(@vitest/ui@1.6.0)(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
       vue: 3.4.21(typescript@5.4.5)
       vue-router: 4.3.0(vue@3.4.21)
     transitivePeerDependencies:
@@ -4301,7 +4305,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.16
+      vue-component-type-helpers: 2.0.19
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4435,7 +4439,7 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.6.0(jsdom@24.0.0)
+      vitest: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)
     dev: true
 
   /@testing-library/user-event@14.5.2(@testing-library/dom@9.3.4):
@@ -5442,6 +5446,21 @@ packages:
     resolution: {integrity: sha512-leUTap6B/cqi/bQkXUu6bQV5TZPx7pmMBKBQiI0rJA8c3pB56ZsaTbREnF7CJfmvAS4V2cXIBAh/3rVwrrCYgw==}
     dependencies:
       tinyspy: 2.2.1
+    dev: true
+
+  /@vitest/ui@1.6.0(vitest@1.6.0):
+    resolution: {integrity: sha512-k3Lyo+ONLOgylctiGovRKy7V4+dIN2yxstX3eY5cWFXH6WP+ooVX79YSyi0GagdTQzLmT43BF27T0s6dOIPBXA==}
+    peerDependencies:
+      vitest: 1.6.0
+    dependencies:
+      '@vitest/utils': 1.6.0
+      fast-glob: 3.3.2
+      fflate: 0.8.2
+      flatted: 3.3.1
+      pathe: 1.1.2
+      picocolors: 1.0.0
+      sirv: 2.0.4
+      vitest: 1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0)
     dev: true
 
   /@vitest/utils@1.3.1:
@@ -8098,6 +8117,10 @@ packages:
 
   /fetch-retry@5.0.6:
     resolution: {integrity: sha512-3yurQZ2hD9VISAhJJP9bpYFNQrHHBXE2JxxjY5aLEcDi46RmAzJE2OC9FAde0yis5ElW0jTTzs0zfg/Cca4XqQ==}
+    dev: true
+
+  /fflate@0.8.2:
+    resolution: {integrity: sha512-cPJU47OaAoCbg0pBvzsgpTPhmhqI5eJjh/JIu8tPj5q+T7iLvW/JAYUqmE7KOB4R1ZyEhzBaIQpQpardBF5z8A==}
     dev: true
 
   /file-entry-cache@8.0.0:
@@ -13986,10 +14009,10 @@ packages:
     optionalDependencies:
       fsevents: 2.3.3
 
-  /vitest-environment-nuxt@1.0.0(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21):
+  /vitest-environment-nuxt@1.0.0(@vitest/ui@1.6.0)(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21):
     resolution: {integrity: sha512-AWMO9h4HdbaFdPWZw34gALFI8gbBiOpvfbyeZwHIPfh4kWg/TwElYHvYMQ61WPUlCGaS5LebfHkaI0WPyb//Iw==}
     dependencies:
-      '@nuxt/test-utils': 3.12.0(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
+      '@nuxt/test-utils': 3.12.0(@vitest/ui@1.6.0)(@vue/test-utils@2.4.5)(h3@1.11.1)(jsdom@24.0.0)(vite@5.2.8)(vitest@1.6.0)(vue-router@4.3.0)(vue@3.4.21)
     transitivePeerDependencies:
       - '@cucumber/cucumber'
       - '@jest/globals'
@@ -14009,7 +14032,7 @@ packages:
       - vue-router
     dev: true
 
-  /vitest@1.6.0(jsdom@24.0.0):
+  /vitest@1.6.0(@vitest/ui@1.6.0)(jsdom@24.0.0):
     resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -14038,6 +14061,7 @@ packages:
       '@vitest/runner': 1.6.0
       '@vitest/snapshot': 1.6.0
       '@vitest/spy': 1.6.0
+      '@vitest/ui': 1.6.0(vitest@1.6.0)
       '@vitest/utils': 1.6.0
       acorn-walk: 8.3.2
       chai: 4.4.1
@@ -14127,8 +14151,8 @@ packages:
     resolution: {integrity: sha512-xNO5B7DstNWETnoYflLkVgh8dK8h2ZDgxY1M2O0zrqGeBNq5yAZ8a10yCS9+HnixouNGYNX+ggU9MQQq86HTpg==}
     dev: true
 
-  /vue-component-type-helpers@2.0.16:
-    resolution: {integrity: sha512-qisL/iAfdO++7w+SsfYQJVPj6QKvxp4i1MMxvsNO41z/8zu3KuAw9LkhKUfP/kcOWGDxESp+pQObWppXusejCA==}
+  /vue-component-type-helpers@2.0.19:
+    resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
     dev: true
 
   /vue-component-type-helpers@2.0.7:
