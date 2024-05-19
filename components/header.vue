@@ -32,6 +32,22 @@ const toggleNavigationVisibleStatus = () => {
       </IconButton>
       <IconButton
         element="anchor-link"
+        href="https://zenn.dev/splendente"
+        target="_blank"
+        label="Zennを新しいタブで表示する"
+      >
+        <template #icon>
+          <img
+            class="icon"
+            width="16"
+            height="16"
+            src="@/assets/images/zenn.svg"
+            alt=""
+          />
+        </template>
+      </IconButton>
+      <IconButton
+        element="anchor-link"
         href="https://github.com/splendente/blog"
         target="_blank"
         label="GitHubを新しいタブで表示する"
