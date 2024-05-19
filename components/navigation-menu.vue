@@ -20,7 +20,7 @@ const links = [
     href: "https://zenn.dev/splendente",
   },
   {
-    name: "RSSフィード",
+    name: "RSS",
     href: "/feed.xml",
   },
 ];
@@ -43,6 +43,7 @@ const links = [
 <style scoped>
 .navigation-menu {
   width: fit-content;
+  min-width: 132px;
   border: 1px solid #ddd;
   border-radius: 4px;
   position: fixed;
