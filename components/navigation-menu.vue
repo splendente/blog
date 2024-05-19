@@ -16,6 +16,10 @@ const links = [
     href: "https://github.com/splendente/blog",
   },
   {
+    name: "Zenn",
+    href: "https://zenn.dev/splendente",
+  },
+  {
     name: "RSSフィード",
     href: "/feed.xml",
   },
