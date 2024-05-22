@@ -4,10 +4,28 @@ const navigationVisibleStatus = ref<boolean>(false);
 
 /**
  * ナビゲーションメニューの表示・非表示を切り替える
+ * @param {Boolean} status - 表示する場合はtrue、非表示にする場合はfalse
  */
-const toggleNavigationVisibleStatus = () => {
-  navigationVisibleStatus.value = !navigationVisibleStatus.value;
+const toggleNavigationVisibleStatus = (status: boolean) => {
+  navigationVisibleStatus.value = status;
 };
+
+/**
+ * ビューポートのサイズが変わった時にメニューが表示されていたら非表示にする
+ */
+const hideNavigationMenu = () => {
+  if (!toggleNavigationVisibleStatus) return;
+
+  toggleNavigationVisibleStatus(false);
+};
+
+onMounted(() => {
+  window.addEventListener("resize", hideNavigationMenu);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", hideNavigationMenu);
+});
 </script>
 
 <template>
@@ -83,7 +101,7 @@ const toggleNavigationVisibleStatus = () => {
       class="navigation-button"
       element="button"
       label="ナビゲーションメニューを表示する"
-      @on-click="toggleNavigationVisibleStatus"
+      @on-click="toggleNavigationVisibleStatus(!navigationVisibleStatus)"
     >
       <template #icon>
         <img
