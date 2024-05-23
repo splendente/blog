@@ -1,9 +1,9 @@
 <script setup lang="ts">
-interface Props {
+type Props = {
   _path?: string;
   title?: string;
   description?: string;
-}
+};
 
 defineProps({
   nextPage: {
