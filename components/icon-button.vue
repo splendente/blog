@@ -1,26 +1,17 @@
 <script setup lang="ts">
-const props = defineProps({
-  element: {
-    type: String,
-    required: true,
-  },
-  type: {
-    type: String,
-  },
-  to: {
-    type: String,
-  },
-  href: {
-    type: String,
-  },
-  target: {
-    type: String,
-    default: "_self",
-  },
-  label: {
-    type: String,
-    required: true,
-  },
+type Props = {
+  element: "button" | "anchor-link" | "nuxt-link";
+  type?: string;
+  to?: string;
+  href?: string;
+  target?: "_blank" | "_self" | "_top" | "_parent";
+  label: string;
+};
+
+const props = withDefaults(defineProps<Props>(), {
+  element: "button",
+  type: "button",
+  target: "_self",
 });
 
 defineSlots<{
