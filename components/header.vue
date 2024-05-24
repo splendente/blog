@@ -19,12 +19,39 @@ const hideNavigationMenu = () => {
   toggleNavigationVisibleStatus(false);
 };
 
+const navigationMenu = ref<HTMLElement | null>(null);
+const navigationButton = ref<HTMLElement | null>(null);
+
+/**
+ * ナビゲーションメニューが表示されている時に要素外のクリックを検知し、メニューを非表示にする
+ * @param {Event} event - クリックイベントのオブジェクト
+ */
+const detectClickOutside = (event: Event) => {
+  // ナビゲーションメニューが表示されていない場合は早期リターンする
+  if (!navigationVisibleStatus.value) return;
+
+  if (
+    event.target instanceof Node &&
+    !navigationMenu.value?.contains(event.target as HTMLElement) &&
+    !navigationButton.value?.contains(event.target as HTMLElement)
+  ) {
+    toggleNavigationVisibleStatus(false);
+  }
+};
+
 onMounted(() => {
   window.addEventListener("resize", hideNavigationMenu);
+  nextTick(() => {
+    navigationMenu.value = document.querySelector(".navigation-menu");
+    navigationButton.value = document.querySelector(".navigation-button");
+
+    window.addEventListener("click", detectClickOutside);
+  });
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", hideNavigationMenu);
+  window.removeEventListener("click", detectClickOutside);
 });
 </script>
 
