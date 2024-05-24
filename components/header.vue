@@ -28,7 +28,7 @@ const navigationButton = ref<HTMLElement | null>(null);
  */
 const detectClickOutside = (event: Event) => {
   // ナビゲーションメニューが表示されていない場合は早期リターンする
-  if (!navigationVisibleStatus) return;
+  if (!navigationVisibleStatus.value) return;
 
   if (
     event.target instanceof Node &&
