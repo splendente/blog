@@ -20,7 +20,7 @@ const hideNavigationMenu = () => {
 };
 
 const navigationMenu = ref<HTMLElement | null>(null);
-const navigationButton = ref<HTMLElement | null>(null);
+const navigationButton = ref<HTMLButtonElement | null>(null);
 
 /**
  * ナビゲーションメニューが表示されている時に要素外のクリックを検知し、メニューを非表示にする
@@ -32,8 +32,8 @@ const detectClickOutside = (event: Event) => {
 
   if (
     event.target instanceof Node &&
-    !navigationMenu.value?.contains(event.target as HTMLElement) &&
-    !navigationButton.value?.contains(event.target as HTMLElement)
+    !navigationMenu.value?.contains(event.target) &&
+    !navigationButton.value?.contains(event.target)
   ) {
     toggleNavigationVisibleStatus(false);
   }
