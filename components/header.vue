@@ -67,7 +67,6 @@ onUnmounted(() => {
       >
         <template #icon>
           <img
-            class="icon"
             width="16"
             height="16"
             src="@/assets/images/x-twitter.svg"
@@ -82,13 +81,7 @@ onUnmounted(() => {
         label="Zennを新しいタブで表示する"
       >
         <template #icon>
-          <img
-            class="icon"
-            width="16"
-            height="16"
-            src="@/assets/images/zenn.svg"
-            alt=""
-          />
+          <img width="16" height="16" src="@/assets/images/zenn.svg" alt="" />
         </template>
       </IconButton>
       <IconButton
@@ -98,13 +91,7 @@ onUnmounted(() => {
         label="GitHubを新しいタブで表示する"
       >
         <template #icon>
-          <img
-            class="icon"
-            width="16"
-            height="16"
-            src="@/assets/images/github.svg"
-            alt=""
-          />
+          <img width="16" height="16" src="@/assets/images/github.svg" alt="" />
         </template>
       </IconButton>
       <IconButton
@@ -114,13 +101,7 @@ onUnmounted(() => {
         label="RSSフィードを新しいタブで表示する"
       >
         <template #icon>
-          <img
-            class="icon"
-            width="16"
-            height="16"
-            src="@/assets/images/rss.svg"
-            alt=""
-          />
+          <img width="16" height="16" src="@/assets/images/rss.svg" alt="" />
         </template>
       </IconButton>
     </div>
@@ -131,13 +112,7 @@ onUnmounted(() => {
       @on-click="toggleNavigationVisibleStatus(!navigationVisibleStatus)"
     >
       <template #icon>
-        <img
-          class="icon"
-          width="16"
-          height="16"
-          src="@/assets/images/menu.svg"
-          alt=""
-        />
+        <img width="16" height="16" src="@/assets/images/menu.svg" alt="" />
       </template>
     </IconButton>
     <NavigationMenu :visible="navigationVisibleStatus" />
@@ -166,12 +141,6 @@ header > div {
   display: flex;
   align-items: center;
   gap: 0 8px;
-}
-
-.icon {
-  display: block;
-  width: 16px;
-  height: 16px;
 }
 
 .navigation-button {

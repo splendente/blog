@@ -112,4 +112,10 @@ const component = computed(() => {
   cursor: pointer;
   background-color: #f6f6f6;
 }
+
+:slotted(img) {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
 </style>
