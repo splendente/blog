@@ -27,17 +27,15 @@ const links = [
 </script>
 
 <template>
-  <Teleport to="body">
-    <Transition appear>
-      <nav v-show="visible" class="navigation-menu">
-        <ul>
-          <li v-for="(link, index) in links" :key="index">
-            <a :href="link.href" target="_blank">{{ link.name }}</a>
-          </li>
-        </ul>
-      </nav>
-    </Transition>
-  </Teleport>
+  <Transition appear>
+    <nav v-show="visible" class="navigation-menu">
+      <ul>
+        <li v-for="(link, index) in links" :key="index">
+          <a :href="link.href" target="_blank">{{ link.name }}</a>
+        </li>
+      </ul>
+    </nav>
+  </Transition>
 </template>
 
 <style scoped>
