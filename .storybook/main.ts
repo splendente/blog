@@ -36,7 +36,7 @@ const config = {
         AutoImportFunctions({
           imports: ["vue"],
           dirs: ["utils/**"],
-          dts: "../auto-import-functions.d.ts",
+          dts: "./auto-import-functions.d.ts",
         }),
         AutoImportComponents({ dirs: ["components"] }),
         Vue(),
