@@ -59,10 +59,11 @@ const formatDate = computed(() => {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
+  transition: all 0.5s ease;
 }
 
 .card:hover {
-  opacity: 0.7;
+  background-color: #f6f6f6;
 }
 
 .card article {
@@ -84,6 +85,11 @@ const formatDate = computed(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.5s ease;
+}
+
+.card:hover article span {
+  background-color: #e5e5e5;
 }
 
 .card article .created-at {
