@@ -48,7 +48,7 @@
     "chromatic": "^11.4.0",
     "eslint": "^9.3.0",
     "husky": "^9.0.11",
-    "jsdom": "^24.0.0",
+    "jsdom": "^24.1.0",
     "lint-staged": "^15.2.5",
     "nuxt-feedme": "^1.0.0",
     "prettier": "3.2.5",
