@@ -13,7 +13,7 @@ describe("Tagコンポーネント", () => {
     },
   });
 
-  test("「vitest」と表示される", () => {
+  test("「# vitest」と表示される", () => {
     expect(tag.find("p").exists()).toBe(true);
     expect(tag.find("p").text()).toBe("# " + props.text);
   });
