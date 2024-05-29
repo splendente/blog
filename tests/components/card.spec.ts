@@ -49,4 +49,8 @@ describe("Cardコンポーネント", () => {
     expect(createdAt.exists()).toBe(true);
     expect(createdAt.text()).toBe(formatedCreatedAt);
   });
+
+  test(`タグが${props.tags.length}つ表示されている`, () => {
+    expect(card.findAll(".tag").length).toBe(props.tags.length);
+  });
 });
