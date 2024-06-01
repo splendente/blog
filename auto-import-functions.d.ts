@@ -15,6 +15,7 @@ declare global {
   const formatDateString: typeof import('./utils/format-date-string')['default']
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
+  const getLinks: typeof import('./utils/get-links')['default']
   const h: typeof import('vue')['h']
   const inject: typeof import('vue')['inject']
   const isProxy: typeof import('vue')['isProxy']
