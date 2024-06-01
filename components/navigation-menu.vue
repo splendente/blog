@@ -5,32 +5,13 @@ defineProps({
     required: true,
   },
 });
-
-const links = [
-  {
-    name: "X",
-    href: "https://twitter.com/splendente_dev",
-  },
-  {
-    name: "GitHub",
-    href: "https://github.com/splendente/blog",
-  },
-  {
-    name: "Zenn",
-    href: "https://zenn.dev/splendente",
-  },
-  {
-    name: "RSS",
-    href: "/feed.xml",
-  },
-];
 </script>
 
 <template>
   <Transition appear>
     <nav v-show="visible" class="navigation-menu">
       <ul>
-        <li v-for="(link, index) in links" :key="index">
+        <li v-for="(link, index) in getLinks()" :key="index">
           <a :href="link.href" target="_blank">{{ link.name }}</a>
         </li>
       </ul>
