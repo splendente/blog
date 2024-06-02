@@ -14,6 +14,8 @@ const date = new Date();
 const thisYear = date.getFullYear();
 const thisMonth = date.getMonth();
 const today = date.getDate();
+const months = getMonths();
+const days = getDays();
 
 /**
  * 選択されている年が今年なら今月、去年以降であれば12月を返す
@@ -137,27 +139,14 @@ const setTooltipPosition = (event: MouseEvent) => {
     </Transition>
     <div class="calendar">
       <ul class="months">
-        <li><p>Jan</p></li>
-        <li><p>Feb</p></li>
-        <li><p>Mar</p></li>
-        <li><p>Apr</p></li>
-        <li><p>May</p></li>
-        <li><p>Jun</p></li>
-        <li><p>Jul</p></li>
-        <li><p>Aug</p></li>
-        <li><p>Sep</p></li>
-        <li><p>Oct</p></li>
-        <li><p>Nov</p></li>
-        <li><p>Dec</p></li>
+        <li v-for="month in months" :key="month">
+          <p>{{ month }}</p>
+        </li>
       </ul>
       <ul class="days">
-        <li><p>Mon</p></li>
-        <li><p>Tue</p></li>
-        <li><p>Wed</p></li>
-        <li><p>Thu</p></li>
-        <li><p>Fri</p></li>
-        <li><p>Sat</p></li>
-        <li><p>Sun</p></li>
+        <li v-for="day in days" :index="day">
+          <p>{{ day }}</p>
+        </li>
       </ul>
       <ul class="date">
         <li
