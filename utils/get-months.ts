@@ -6,6 +6,7 @@ export default function (): string[] {
   return [
     "Jan",
     "Feb",
+    "Mar",
     "Apr",
     "May",
     "Jun",
