@@ -17,10 +17,13 @@
     "build-storybook": "storybook build",
     "eslint": "eslint .",
     "eslint:fix": "eslint . --fix",
+    "textlint": "textlint .",
+    "textlint:fix": "textlint . --fix",
     "chromatic": "source .env && pnpm dlx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
   },
   "lint-staged": {
-    "*": "pnpm prettier"
+    "*": "pnpm prettier",
+    "*.md": "pnpm textlint:fix"
   },
   "dependencies": {
     "@nuxt/content": "^2.12.1",
