@@ -1,4 +1,10 @@
 <script setup lang="ts">
+const { page } = useContent();
+
+defineOgImageComponent("NuxtSeo", {
+  title: page.value.title,
+});
+
 // 現在のページを取得する
 const route = useRoute();
 
