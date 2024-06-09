@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     "@nuxtjs/sitemap",
     "nuxt-feedme",
     "@nuxt/eslint",
+    "nuxt-og-image",
   ],
   css: ["~/assets/css/reset.css", "~/assets/css/markdown.css"],
   content: {
