@@ -19,4 +19,7 @@ export default defineNuxtConfig({
   content: {
     highlight: { theme: "github-light" },
   },
+  site: {
+    url: "https://splendente.vercel.app",
+  },
 });
