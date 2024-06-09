@@ -1,4 +1,8 @@
 <script setup lang="ts">
+defineOgImageComponent("NuxtSeo", {
+  title: "Home",
+});
+
 // 降順かどうか
 const desc = ref<boolean>(true);
 
