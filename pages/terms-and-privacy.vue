@@ -1,3 +1,9 @@
+<script setup lang="ts">
+defineOgImageComponent("NuxtSeo", {
+  title: "Terms and Privacy",
+});
+</script>
+
 <template>
   <main>
     <h1>利用規約とプライバシーポリシー</h1>
