@@ -71,7 +71,7 @@ const activeDates = computed(() => {
         v-for="(article, index) in list"
         :key="index"
         :to="article._path"
-        :icon="article.icon"
+        :emoji="article.emoji"
         :title="article.title"
         :description="article.description"
         :created-at="article.createdAt"

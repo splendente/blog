@@ -4,7 +4,7 @@ const props = defineProps({
     type: String,
     required: true,
   },
-  icon: {
+  emoji: {
     type: String,
     required: true,
   },
@@ -38,7 +38,7 @@ const formatDate = computed(() => {
 <template>
   <NuxtLink :to="to" class="card">
     <article>
-      <span v-html="icon" />
+      <span v-html="emoji" />
       <p class="created-at">{{ formatDate }}</p>
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>

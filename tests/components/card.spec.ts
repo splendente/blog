@@ -5,7 +5,7 @@ import Card from "@/components/card.vue";
 describe("Cardコンポーネント", () => {
   const props = {
     to: "#",
-    icon: "&#127881;",
+    emoji: "&#127881;",
     title: "タイトル",
     description: "説明",
     createdAt: "2024-1-1",
