@@ -11,10 +11,16 @@ const route = useRoute();
 /**
  * 現在のページの前後のページ情報を取得する
  */
-const [prev, next] = await queryContent()
-  .only(["_path", "title", "description"])
-  .sort({ date: 1 })
-  .findSurround(route.path);
+const { data, error } = await useAsyncData("slug", () =>
+  queryContent("/")
+    .only(["_path", "title", "description"])
+    .findSurround(route.path),
+);
+
+// 前後のページ取得に失敗した場合はエラー画面を表示する
+if (error.value) {
+  showError({ ...error.value });
+}
 </script>
 
 <template>
@@ -35,7 +41,7 @@ const [prev, next] = await queryContent()
         <LinkToEdit :file-name="doc._file" />
       </div>
     </ContentDoc>
-    <Pager :prev-page="prev" :next-page="next" />
+    <Pager v-if="data" :prev-page="data[0]" :next-page="data[1]" />
   </main>
 </template>
 
