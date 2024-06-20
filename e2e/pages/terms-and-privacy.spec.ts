@@ -4,7 +4,7 @@ import { test, expect } from "@playwright/test";
 test.describe("/terms-and-privacy", () => {
   // TODO: アクセシビリティ改善時にコメントアウトを解除する
   // test("WCAG2.1に基づいたアクセシビリティテスト", async ({ page }) => {
-  //   await page.goto("http://localhost:3000/");
+  //   await page.goto("http://localhost:3000/terms-and-privacy");
 
   //   const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
   //   console.log(accessibilityScanResults);
