@@ -10,8 +10,8 @@ test.describe("/index", () => {
     expect(accessibilityScanResults.violations).toEqual([]);
   });
 
-  test("「Home」というタイトルが設定されている", async ({ page }) => {
+  test("「ホーム」というタイトルが設定されている", async ({ page }) => {
     await page.goto("http://localhost:3000/");
-    await expect(page).toHaveTitle(/Home/);
+    await expect(page).toHaveTitle(/ホーム/);
   });
 });
