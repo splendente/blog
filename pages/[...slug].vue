@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const { page } = useContent();
 
+useHead({
+  title: page.value.title,
+});
+
 defineOgImageComponent("NuxtSeo", {
   title: page.value.title,
 });
