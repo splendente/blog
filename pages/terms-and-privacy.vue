@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  title: "利用規約とプライバシーポリシー",
+});
+
 defineOgImageComponent("NuxtSeo", {
   title: "Terms and Privacy",
 });
