@@ -5,18 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@axe-core/playwright':
-    specifier: ^4.9.1
-    version: 4.9.1(playwright-core@1.44.1)
   '@nuxt/content':
     specifier: ^2.12.1
     version: 2.12.1(nuxt@3.12.2)(vue@3.4.29)
   '@nuxt/fonts':
     specifier: ^0.7.0
     version: 0.7.0(nuxt@3.12.2)(vite@5.3.1)
-  '@storybook/addon-a11y':
-    specifier: ^8.1.10
-    version: 8.1.10
   nuxt-og-image:
     specifier: 3.0.0-rc.53
     version: 3.0.0-rc.53(@lezer/common@1.2.1)(@nuxt/devtools@1.3.3)(@vue/compiler-core@3.4.29)(nuxt@3.12.2)(postcss@8.4.38)(vite@5.3.1)(vue@3.4.29)(webpack@5.92.0)
@@ -28,6 +22,9 @@ dependencies:
     version: 4.3.3(vue@3.4.29)
 
 devDependencies:
+  '@axe-core/playwright':
+    specifier: ^4.9.1
+    version: 4.9.1(playwright-core@1.44.1)
   '@chromatic-com/storybook':
     specifier: ^1.5.0
     version: 1.5.0(react@18.3.1)
@@ -43,6 +40,9 @@ devDependencies:
   '@playwright/test':
     specifier: ^1.44.1
     version: 1.44.1
+  '@storybook/addon-a11y':
+    specifier: ^8.1.10
+    version: 8.1.10
   '@storybook/addon-essentials':
     specifier: ^8.1.10
     version: 8.1.10(@types/react@18.3.3)(prettier@3.3.0)(react-dom@18.3.1)(react@18.3.1)
@@ -167,7 +167,7 @@ packages:
     dependencies:
       axe-core: 4.9.1
       playwright-core: 1.44.1
-    dev: false
+    dev: true
 
   /@azu/format-text@1.0.2:
     resolution: {integrity: sha512-Swi4N7Edy1Eqq82GxgEECXSSLyn6GOb5htRFPzBDdUkECGXtlf12ynO5oJSpWKPwCaUssOu7NfhDcCWpIC6Ywg==}
@@ -4222,7 +4222,7 @@ packages:
     dependencies:
       '@storybook/addon-highlight': 8.1.10
       axe-core: 4.9.1
-    dev: false
+    dev: true
 
   /@storybook/addon-actions@8.1.10:
     resolution: {integrity: sha512-1MjncuynvkT3rJtrkWPHLo92Pfno+LUWtaHiNDt9nXYowclTN2cT4a4gNDh6eKkB9dITHxkD7/4mxjHpFUvyrA==}
@@ -4321,6 +4321,7 @@ packages:
     resolution: {integrity: sha512-s9QKGtU6WGB/+CggNWg940NIi+u0tcxpPxqg/ltg3EOHr8J0NAZur6mibs3Z4Q5CXkAuNdWrvopLu+/27i1rQQ==}
     dependencies:
       '@storybook/global': 5.0.0
+    dev: true
 
   /@storybook/addon-interactions@8.1.10(vitest@1.6.0):
     resolution: {integrity: sha512-GGU66TxYv6Bis10mmlgMhLOyai1am1amKVvX7ML8XYfsi6lA9zCnfQSVXulYLfjfzyIR6Ld8Kxe5awvjucPxSw==}
@@ -4758,6 +4759,7 @@ packages:
 
   /@storybook/global@5.0.0:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
+    dev: true
 
   /@storybook/icons@1.2.9(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-cOmylsz25SYXaJL/gvTk/dl3pyk7yBFRfeXTsHvTA3dfhoU/LWSq0NKL9nM7WBasJyn6XPSGnLS4RtKXLw5EUg==}
@@ -4963,7 +4965,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.29(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.21
+      vue-component-type-helpers: 2.0.22
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -7079,7 +7081,7 @@ packages:
   /axe-core@4.9.1:
     resolution: {integrity: sha512-QbUdXJVTpvUTHU7871ppZkdOLBeGUKBQWHkHrvN2V9IQWGMt61zf3B45BtzjxEJzYuj0JBjBZP/hmYS/R9pmAw==}
     engines: {node: '>=4'}
-    dev: false
+    dev: true
 
   /axobject-query@4.0.0:
     resolution: {integrity: sha512-+60uv1hiVFhHZeO+Lz0RYzsVHy5Wr1ayX0mwda9KPDVLNJgZ1T9Ny7VmFbLDzxsH0D87I86vgj3gFrjTJUYznw==}
@@ -16356,6 +16358,10 @@ packages:
 
   /vue-component-type-helpers@2.0.21:
     resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
+    dev: true
+
+  /vue-component-type-helpers@2.0.22:
+    resolution: {integrity: sha512-gPr2Ba7efUwy/Vfbuf735bHSVdN4ycoZUCHfypkI33M9DUH+ieRblLLVM2eImccFYaWNWwEzURx02EgoXDBmaQ==}
     dev: true
 
   /vue-demi@0.14.8(vue@3.4.29):
