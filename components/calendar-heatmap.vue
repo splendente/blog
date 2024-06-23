@@ -144,7 +144,7 @@ const setTooltipPosition = (event: MouseEvent) => {
         </li>
       </ul>
       <ul class="days">
-        <li v-for="day in days" :index="day">
+        <li v-for="day in days" :key="day" :index="day">
           <p>{{ day }}</p>
         </li>
       </ul>
