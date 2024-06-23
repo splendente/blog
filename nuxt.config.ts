@@ -5,11 +5,6 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: "ja" },
     },
   },
-  nitro: {
-    prerender: {
-      autoSubfolderIndex: false,
-    },
-  },
   devtools: { enabled: true },
   modules: [
     "@nuxt/fonts",
