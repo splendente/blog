@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "@nuxt/eslint",
     "nuxt-og-image",
     "nuxt-gtag",
+    "@nuxt/image",
   ],
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
