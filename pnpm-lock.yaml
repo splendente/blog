@@ -97,6 +97,9 @@ devDependencies:
   nuxt-feedme:
     specifier: ^1.0.0
     version: 1.0.0(nuxt@3.12.2)(vue@3.4.30)
+  nuxt-gtag:
+    specifier: ^2.0.6
+    version: 2.0.6
   prettier:
     specifier: 3.3.0
     version: 3.3.0
@@ -3511,6 +3514,7 @@ packages:
     dependencies:
       is-glob: 4.0.3
       micromatch: 4.0.7
+      napi-wasm: 1.1.0
     bundledDependencies:
       - napi-wasm
 
@@ -11786,6 +11790,9 @@ packages:
     engines: {node: ^18 || >=20}
     hasBin: true
 
+  /napi-wasm@1.1.0:
+    resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
+
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: false
@@ -12121,6 +12128,19 @@ packages:
       - uWebSockets.js
       - utf-8-validate
       - vue
+    dev: true
+
+  /nuxt-gtag@2.0.6:
+    resolution: {integrity: sha512-KjHujiwX4mtmgtHLMQB25NP3vxAuzsEqmZDkUoq9ZUSRLXly6FaPT97BTM4slr72eSfaoPGDeFyFxVvJhN4LVg==}
+    dependencies:
+      '@nuxt/kit': 3.12.2(magicast@0.3.4)
+      defu: 6.1.4
+      pathe: 1.1.2
+      ufo: 1.5.3
+    transitivePeerDependencies:
+      - magicast
+      - rollup
+      - supports-color
     dev: true
 
   /nuxt-icon@0.6.10(vite@5.3.1)(vue@3.4.30):

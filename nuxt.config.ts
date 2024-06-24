@@ -14,7 +14,11 @@ export default defineNuxtConfig({
     "nuxt-feedme",
     "@nuxt/eslint",
     "nuxt-og-image",
+    "nuxt-gtag",
   ],
+  gtag: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
   css: ["~/assets/css/reset.css", "~/assets/css/markdown.css"],
   content: {
     highlight: { theme: "github-light" },
