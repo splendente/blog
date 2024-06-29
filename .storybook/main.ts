@@ -16,7 +16,7 @@ const config = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
   ],
-  staticDirs: ["../assets", "../public"],
+  staticDirs: ["../app/assets", "../public"],
   framework: {
     name: "@storybook/vue3-vite",
     options: {},
@@ -27,18 +27,18 @@ const config = {
   async viteFinal(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
-      "@": path.resolve(__dirname, "../"),
-      "~": path.resolve(__dirname, "../"),
+      "@": path.resolve(__dirname, "../app"),
+      "~": path.resolve(__dirname, "../app"),
     };
 
     if (config.plugins) {
       config.plugins.push(
         AutoImportFunctions({
           imports: ["vue"],
-          dirs: ["utils/**"],
+          dirs: ["app/utils/**"],
           dts: "./auto-import-functions.d.ts",
         }),
-        AutoImportComponents({ dirs: ["components"] }),
+        AutoImportComponents({ dirs: ["app/components"] }),
         Vue(),
       );
     }
