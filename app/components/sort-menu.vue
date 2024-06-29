@@ -53,11 +53,11 @@ defineEmits<{
 }
 
 .sort-menu > .desc {
-  background-image: url("/assets/images/sort-descending.svg");
+  background-image: url("@/assets/images/sort-descending.svg");
 }
 
 .sort-menu > .asc {
-  background-image: url("/assets/images/sort-ascending.svg");
+  background-image: url("@/assets/images/sort-ascending.svg");
 }
 
 .sort-menu > p {

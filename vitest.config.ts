@@ -8,7 +8,7 @@ export default defineVitestConfig({
   plugins: [
     Vue,
     AutoImportFunctions({ imports: "vue" }),
-    AutoImportComponents({ dirs: ["components"] }),
+    AutoImportComponents({ dirs: ["app/components"] }),
   ],
   test: {
     environment: "jsdom",
@@ -16,7 +16,7 @@ export default defineVitestConfig({
   },
   resolve: {
     alias: {
-      "@": `${__dirname}/`,
+      "@": `${__dirname}/app`,
     },
   },
 });

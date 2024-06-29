@@ -21,7 +21,7 @@ export default {
     template: `
       <IconButton v-bind="{ ...args }">
         <template #icon>
-          <img src="/assets/images/github.svg" width="16" height="16" style="display:block;" alt="" />
+          <img src="/app/assets/images/github.svg" width="16" height="16" style="display:block;" alt="" />
         </template>
       </IconButton>
     `,
