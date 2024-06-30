@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "nuxt-og-image",
     "nuxt-gtag",
     "@nuxt/image",
+    "@nuxtjs/robots",
   ],
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
