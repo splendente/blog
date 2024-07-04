@@ -7,15 +7,7 @@ defineOgImageComponent("NuxtSeo", {
   title: "Home",
 });
 
-// 降順かどうか
-const desc = ref<boolean>(true);
-
-/**
- * 降順と昇順を切り替える
- */
-const toggleSort = () => {
-  desc.value = !desc.value;
-};
+const { desc, toggleSort } = useSort();
 
 /**
  * クエリを作成する
