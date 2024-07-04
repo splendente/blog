@@ -7,7 +7,7 @@ import AutoImportComponents from "unplugin-vue-components/vite";
 export default defineVitestConfig({
   plugins: [
     Vue,
-    AutoImportFunctions({ imports: "vue" }),
+    AutoImportFunctions({ imports: "vue", dirs: ["app/composables"] }),
     AutoImportComponents({ dirs: ["app/components"] }),
   ],
   test: {
