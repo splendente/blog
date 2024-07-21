@@ -39,7 +39,7 @@ const formatDate = computed(() => {
   <NuxtLink :to="to" class="card">
     <article>
       <span v-html="emoji" />
-      <p class="created-at">{{ formatDate }}</p>
+      <time class="created-at" :datetime="createdAt">{{ formatDate }}</time>
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>
       <div>
