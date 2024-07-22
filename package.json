@@ -55,7 +55,7 @@
     "@vue/test-utils": "^2.4.6",
     "chromatic": "^11.5.4",
     "eslint": "^9.7.0",
-    "husky": "^9.0.11",
+    "husky": "^9.1.1",
     "jsdom": "^24.1.0",
     "lint-staged": "^15.2.7",
     "nuxt": "^3.12.3",
