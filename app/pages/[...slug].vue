@@ -31,7 +31,7 @@ if (error.value) {
         </div>
       </article>
       <div class="link-box">
-        <LinkToBack />
+        <LinkToBack to="/" text="一覧に戻る" />
         <LinkToEdit :file-name="doc._file" />
       </div>
     </ContentDoc>

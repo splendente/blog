@@ -1,5 +1,18 @@
+<script setup lang="ts">
+defineProps({
+  to: {
+    type: String,
+    required: true,
+  },
+  text: {
+    type: String,
+    required: true,
+  },
+});
+</script>
+
 <template>
-  <NuxtLink to="/" class="link-to-back">一覧に戻る</NuxtLink>
+  <NuxtLink :to="to" class="link-to-back">{{ text }}</NuxtLink>
 </template>
 
 <style scoped>

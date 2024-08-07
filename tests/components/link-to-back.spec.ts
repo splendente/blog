@@ -3,7 +3,15 @@ import { shallowMount, RouterLinkStub } from "@vue/test-utils";
 import LinkToBack from "@/components/link-to-back.vue";
 
 describe("LinkToBackコンポーネント", () => {
+  const props = {
+    to: "/",
+    text: "一覧に戻る",
+  };
+
   const linkToBack = shallowMount(LinkToBack, {
+    propsData: {
+      ...props,
+    },
     global: {
       stubs: {
         NuxtLink: RouterLinkStub,

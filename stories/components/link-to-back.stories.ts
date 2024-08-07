@@ -6,4 +6,9 @@ export default {
   tags: ["autodocs"],
 };
 
-export const Default = {};
+export const Default = {
+  args: {
+    to: "/",
+    text: "一覧に戻る",
+  },
+};
