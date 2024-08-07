@@ -43,7 +43,12 @@ const formatDate = computed(() => {
       <h2 class="title">{{ title }}</h2>
       <p class="description">{{ description }}</p>
       <div>
-        <Tag v-for="(tag, index) in tags" :key="index" :text="tag" />
+        <Tag
+          v-for="(tag, index) in tags"
+          :key="index"
+          element="p"
+          :text="tag"
+        />
       </div>
     </article>
   </NuxtLink>

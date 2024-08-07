@@ -1,14 +1,45 @@
 <script setup lang="ts">
-defineProps({
-  text: {
-    type: String,
-    required: true,
-  },
+type Props = {
+  element: "p" | "nuxt-link";
+  text: string;
+  to?: string;
+};
+
+const props = defineProps<Props>();
+
+const nuxtLinkProps = {
+  to: props.to,
+};
+
+const component = computed(() => {
+  switch (props.element) {
+    case "p":
+      return {
+        element: "p",
+      };
+    case "nuxt-link":
+      return {
+        element: resolveComponent("NuxtLink"),
+        props: nuxtLinkProps,
+      };
+    default: {
+      return {
+        // デフォルトではpタグとして表示する
+        element: "p",
+      };
+    }
+  }
 });
 </script>
 
 <template>
-  <p class="tag"># {{ text }}</p>
+  <component
+    class="tag"
+    :is="component.element"
+    v-bind="{ ...component.props }"
+  >
+    # {{ text }}
+  </component>
 </template>
 
 <style scoped>
@@ -21,5 +52,6 @@ defineProps({
   padding: 2px 8px;
   border: 1px solid #ddd;
   border-radius: 12px;
+  text-decoration: none;
 }
 </style>
