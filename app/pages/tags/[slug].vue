@@ -37,6 +37,7 @@ const query: QueryBuilderParams = {
         :tags="article.tags"
       />
     </ContentList>
+    <LinkToBack to="/tags" text="タグ一覧に戻る" />
   </main>
 </template>
 
