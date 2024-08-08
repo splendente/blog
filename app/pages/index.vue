@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { QueryBuilderParams } from "@nuxt/content/dist/runtime/types";
+
 useHead({
   title: "ホーム",
 });
@@ -9,13 +11,11 @@ defineOgImageComponent("NuxtSeo", {
 
 const { desc, toggleSort } = useSort();
 
-/**
- * クエリを作成する
- * @returns {object} クエリ
- */
-const query = computed(() => {
-  return { createdAt: desc.value ? -1 : 1, $numeric: true };
-});
+const query: QueryBuilderParams = {
+  path: "/",
+  sort: [{ createdAt: desc.value ? -1 : 1 }],
+  limit: 4,
+};
 
 const date = new Date();
 const targetYear = ref<number>(date.getFullYear());
@@ -62,7 +62,7 @@ const activeDates = computed(() => {
       :active-dates="activeDates"
     />
     <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
-    <ContentList v-slot="{ list }" path="/" :sort="query">
+    <ContentList v-slot="{ list }" :query="query">
       <Card
         v-for="(article, index) in list"
         :key="index"
@@ -74,6 +74,7 @@ const activeDates = computed(() => {
         :tags="article.tags"
       />
     </ContentList>
+    <NuxtLink to="/blog" class="link-to-blog">すべての記事を見る</NuxtLink>
   </main>
 </template>
 
@@ -87,5 +88,13 @@ main {
 main > .sort-menu,
 main > .year-select {
   justify-self: right;
+}
+
+.link-to-blog,
+.link-to-blog:active,
+.link-to-blog:visited {
+  font-size: 14px;
+  text-align: center;
+  color: #3c3c3c;
 }
 </style>
