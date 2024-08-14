@@ -3,12 +3,15 @@ export default defineNuxtConfig({
   future: {
     compatibilityVersion: 4,
   },
+
   app: {
     head: {
       htmlAttrs: { lang: "ja" },
     },
   },
+
   devtools: { enabled: true },
+
   modules: [
     "@nuxt/fonts",
     "@nuxt/content",
@@ -21,19 +24,23 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/robots",
   ],
+
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
+
   css: ["~/assets/css/reset.css", "~/assets/css/markdown.css"],
+
   content: {
     highlight: { theme: "github-light" },
+    experimental: {
+      search: true,
+    },
   },
+
   site: {
     url: "https://splendente.vercel.app",
   },
-  eslint: {
-    config: {
-      stylistic: true,
-    },
-  },
+
+  compatibilityDate: "2024-08-14",
 });
