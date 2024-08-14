@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useConfirmDialog } from "@vueuse/core";
+
+const { isRevealed, reveal, cancel } = useConfirmDialog();
+const { keyword, results } = useSearch();
+
 // ナビゲーションメニューの表示・非表示状態を管理
 const navigationVisibleStatus = ref<boolean>(false);
 
@@ -59,6 +64,11 @@ onUnmounted(() => {
   <header>
     <NuxtLink to="/" class="title">Blog</NuxtLink>
     <div class="icons">
+      <IconButton element="button" label="記事を検索する" @on-click="reveal">
+        <template #icon>
+          <img width="16" height="16" src="@/assets/images/search.svg" alt="" />
+        </template>
+      </IconButton>
       <IconButton
         element="anchor-link"
         href="https://twitter.com/splendente_dev"
@@ -116,6 +126,10 @@ onUnmounted(() => {
       </template>
     </IconButton>
     <NavigationMenu :visible="navigationVisibleStatus" />
+    <Modal :is-revealed="isRevealed" @outside-click="cancel">
+      <SearchInput v-model="keyword" />
+      <List :items="results" />
+    </Modal>
   </header>
 </template>
 
@@ -129,7 +143,7 @@ header {
   position: sticky;
   top: 0;
   background-color: #fff;
-  z-index: calc(infinity);
+  z-index: 10;
 }
 
 header .title {
