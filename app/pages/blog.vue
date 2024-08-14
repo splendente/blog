@@ -11,10 +11,12 @@ defineOgImageComponent("NuxtSeo", {
 
 const { desc, toggleSort } = useSort();
 
-const query: QueryBuilderParams = {
-  path: "/",
-  sort: [{ createdAt: desc.value ? -1 : 1 }],
-};
+const query: QueryBuilderParams = computed(() => {
+  return {
+    path: "/",
+    sort: [{ createdAt: desc.value ? -1 : 1 }],
+  };
+});
 </script>
 
 <template>
