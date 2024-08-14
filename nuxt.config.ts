@@ -31,4 +31,9 @@ export default defineNuxtConfig({
   site: {
     url: "https://splendente.vercel.app",
   },
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
 });
