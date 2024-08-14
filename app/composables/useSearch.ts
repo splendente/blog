@@ -1,5 +1,3 @@
-import { computedAsync } from "@vueuse/core";
-
 export function useSearch() {
   const keyword = ref<string>("");
 

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useConfirmDialog } from "@vueuse/core";
-
 const { isRevealed, reveal, cancel } = useConfirmDialog();
 const { keyword, results } = useSearch();
 
