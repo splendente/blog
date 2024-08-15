@@ -170,6 +170,9 @@ const setTooltipPosition = (event: MouseEvent) => {
         />
       </ul>
     </div>
+    <p class="annotation">
+      ※本ブログにおける記事の執筆および編集のアクティビティです。
+    </p>
   </div>
 </template>
 
@@ -261,6 +264,12 @@ const setTooltipPosition = (event: MouseEvent) => {
 
 .days > li:nth-child(even) {
   visibility: hidden;
+}
+
+.annotation {
+  font-size: 12px;
+  color: #3c3c3c;
+  margin-top: 16px;
 }
 
 .v-enter-active,
