@@ -1,5 +1,9 @@
 <script setup lang="ts">
 const props = defineProps({
+  keyword: {
+    type: String,
+    default: "",
+  },
   items: {
     type: Object,
     required: true,
@@ -12,27 +16,36 @@ const lists = computed(() => {
 </script>
 
 <template>
-  <div>
-    <ul v-if="0 < lists.length">
-      <li v-for="(item, index) in lists" :key="index">
-        <a :href="item.id">
-          <span>{{ item.content }}</span>
-        </a>
-      </li>
-    </ul>
-    <p v-else>検索結果は０件です</p>
+  <div class="container">
+    <p v-if="keyword && lists" class="">
+      {{ keyword }} の検索結果は {{ lists.length }} 件です。
+    </p>
+    <div class="wrapper">
+      <ul>
+        <li v-for="(item, index) in lists" :key="index">
+          <a :href="item.id">
+            <span>{{ item.content }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <style scoped>
-div {
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
   width: 100%;
   height: calc(100% - 48px);
   overflow-y: auto;
   margin: 16px 0;
 }
 
-div::-webkit-scrollbar {
+.wrapper::-webkit-scrollbar {
   display: none;
 }
 
@@ -46,8 +59,7 @@ ul {
 p {
   font-size: 14px;
   color: #3c3c3c;
-  align-self: center;
-  justify-self: center;
+  margin-top: 16px;
 }
 
 a {

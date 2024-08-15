@@ -126,7 +126,7 @@ onUnmounted(() => {
     <NavigationMenu :visible="navigationVisibleStatus" />
     <Modal :is-revealed="isRevealed" @outside-click="cancel">
       <SearchInput v-model="keyword" />
-      <List :items="results" />
+      <List :keyword="keyword" :items="results" />
     </Modal>
   </header>
 </template>
