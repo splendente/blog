@@ -34,8 +34,8 @@ const config = {
     if (config.plugins) {
       config.plugins.push(
         AutoImportFunctions({
-          imports: ["vue"],
-          dirs: ["app/utils/**"],
+          imports: ["vue", "@vueuse/core"],
+          dirs: ["app/utils/**", "app/composables/**"],
           dts: "./auto-import-functions.d.ts",
         }),
         AutoImportComponents({ dirs: ["app/components"] }),
