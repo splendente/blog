@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "@nuxt/image",
     "@nuxtjs/robots",
+    "@vueuse/nuxt",
   ],
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
@@ -27,13 +28,14 @@ export default defineNuxtConfig({
   css: ["~/assets/css/reset.css", "~/assets/css/markdown.css"],
   content: {
     highlight: { theme: "github-light" },
+    experimental: {
+      search: true,
+    },
   },
   site: {
     url: "https://splendente.vercel.app",
   },
-  eslint: {
-    config: {
-      stylistic: true,
-    },
+  imports: {
+    dirs: ["~/app/composables"],
   },
 });
