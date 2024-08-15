@@ -25,6 +25,15 @@ if (error.value) {
           <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
           <h1 class="title">{{ doc.title }}</h1>
           <p class="description">{{ doc.description }}</p>
+          <div class="tags">
+            <Tag
+              v-for="tag in doc.tags"
+              :key="tag"
+              element="nuxt-link"
+              :to="`/tags/${tag}`"
+              :text="tag"
+            />
+          </div>
         </div>
         <div id="nuxt-content">
           <ContentRenderer :value="doc" />
@@ -56,6 +65,14 @@ if (error.value) {
 .description {
   font-size: 14px;
   color: #3c3c3c;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
 }
 
 .created-at {
