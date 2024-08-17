@@ -270,6 +270,7 @@ const setTooltipPosition = (event: MouseEvent) => {
   font-size: 12px;
   color: #3c3c3c;
   margin-top: 16px;
+  white-space: nowrap;
 }
 
 .v-enter-active,
