@@ -7,11 +7,11 @@
 Make sure to install the dependencies.
 
 ```bash
-pnpm install
+npm ci
 ```
 
 Run the following command.
 
 ```bash
-pnpm dev
+npm run dev
 ```
