@@ -3,11 +3,11 @@
 Run the following command.
 
 ```bash
-pnpm vitest
+npm run vitest
 ```
 
 Also, you can check results of vitest on your browser.
 
 ```bash
-pnpm vitest:ui
+npm run vitest:ui
 ```

@@ -25,9 +25,18 @@ export default defineNuxtConfig({
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
-  css: ["~/assets/css/reset.css", "~/assets/css/markdown.css"],
+  css: [
+    "~/assets/css/reset.css",
+    "~/assets/css/markdown.css",
+    "~/assets/css/remark-link-card.css",
+  ],
   content: {
     highlight: { theme: "github-light" },
+    markdown: {
+      remarkPlugins: {
+        "remark-link-card": {},
+      },
+    },
     experimental: {
       search: true,
     },

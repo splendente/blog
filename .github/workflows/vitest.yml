@@ -18,17 +18,11 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-          run_install: false
-
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run vitest
-        run: pnpm vitest
+        run: npm run vitest
 
       - name: Clean up
         run: |
@@ -36,4 +30,4 @@ jobs:
           rm -rf ./*
 
       - name: Clear cache of npm
-        run: pnpm store prune
+        run: npm cache clean --force

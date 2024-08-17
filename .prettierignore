@@ -1,6 +1,6 @@
 content
 package.json
-pnpm-lock.yaml
+package-lock.yaml
 .github/dependabot.yml
 components.d.ts
 auto-import-functions.d.ts
