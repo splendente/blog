@@ -53,5 +53,11 @@ const component = computed(() => {
   border: 1px solid #ddd;
   border-radius: 12px;
   text-decoration: none;
+  transition: all 0.5s ease;
+}
+
+a:hover {
+  cursor: pointer;
+  background-color: #f6f6f6;
 }
 </style>
