@@ -112,17 +112,17 @@ onUnmounted(() => {
           <img width="16" height="16" src="@/assets/images/rss.svg" alt="" />
         </template>
       </IconButton>
+      <IconButton
+        class="navigation-button"
+        element="button"
+        label="ナビゲーションメニューを表示する"
+        @on-click="toggleNavigationVisibleStatus(!navigationVisibleStatus)"
+      >
+        <template #icon>
+          <img width="16" height="16" src="@/assets/images/menu.svg" alt="" />
+        </template>
+      </IconButton>
     </div>
-    <IconButton
-      class="navigation-button"
-      element="button"
-      label="ナビゲーションメニューを表示する"
-      @on-click="toggleNavigationVisibleStatus(!navigationVisibleStatus)"
-    >
-      <template #icon>
-        <img width="16" height="16" src="@/assets/images/menu.svg" alt="" />
-      </template>
-    </IconButton>
     <NavigationMenu :visible="navigationVisibleStatus" />
     <Modal :is-revealed="isRevealed" @outside-click="cancel">
       <SearchInput v-model="keyword" />
@@ -155,16 +155,15 @@ header > div {
   gap: 0 8px;
 }
 
-.navigation-button {
+.icons > button.icon-button:last-child {
   display: none;
 }
 
 @media (width < 640px) {
-  .icons {
+  .icons > a.icon-button {
     display: none;
   }
-
-  .navigation-button {
+  .icons > button.icon-button:last-child {
     display: block;
   }
 }
