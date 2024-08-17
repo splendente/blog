@@ -3,5 +3,5 @@
 Run the following command.
 
 ```bash
-npx exec playwright test
+npx playwright test
 ```
