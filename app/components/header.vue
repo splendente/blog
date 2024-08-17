@@ -2,6 +2,11 @@
 const { isRevealed, reveal, cancel } = useConfirmDialog();
 const { keyword, results } = useSearch();
 
+const resetSearchKeyword = () => {
+  keyword.value = "";
+  cancel();
+};
+
 // ナビゲーションメニューの表示・非表示状態を管理
 const navigationVisibleStatus = ref<boolean>(false);
 
@@ -124,7 +129,7 @@ onUnmounted(() => {
       </IconButton>
     </div>
     <NavigationMenu :visible="navigationVisibleStatus" />
-    <Modal :is-revealed="isRevealed" @outside-click="cancel">
+    <Modal :is-revealed="isRevealed" @outside-click="resetSearchKeyword">
       <SearchInput v-model="keyword" />
       <List :keyword="keyword" :items="results" />
     </Modal>
