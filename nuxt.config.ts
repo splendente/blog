@@ -36,6 +36,12 @@ export default defineNuxtConfig({
       remarkPlugins: {
         "remark-link-card": {},
       },
+      rehypePlugins: {
+        "rehype-external-links": {
+          target: "_blank",
+          rel: ["noopener", "noreferrer"],
+        },
+      },
     },
     experimental: {
       search: true,
