@@ -98,5 +98,8 @@ main > .year-select {
   font-size: 14px;
   text-align: center;
   color: #3c3c3c;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 </style>

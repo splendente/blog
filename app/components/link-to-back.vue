@@ -25,6 +25,7 @@ defineProps({
   display: flex;
   align-items: center;
   gap: 0 8px;
+  width: fit-content;
 }
 
 .link-to-back:hover {
