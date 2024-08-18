@@ -1,11 +1,7 @@
 <script setup lang="ts">
-type Props = {
-  element: "p" | "nuxt-link";
-  text: string;
-  to?: string;
-};
+import type { NavigationMenu } from "@/types";
 
-const props = defineProps<Props>();
+const props = defineProps<NavigationMenu>();
 
 const nuxtLinkProps = {
   to: props.to,

@@ -15,7 +15,7 @@ describe("Tooltipコンポーネント", () => {
     },
   });
 
-  test("「tooltip」と表示される", () => {
+  test("「tooltip」と表示されている", () => {
     expect(tooltip.find("p").exists()).toBe(true);
     expect(tooltip.find("p").text()).toBe(props.text);
   });
