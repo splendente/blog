@@ -19,7 +19,11 @@ describe("LinkToEditコンポーネント", () => {
     expect(linkToEdit.find("a").text()).toBe("GitHubで編集を提案する");
   });
 
-  test(`遷移先が ${baseUrl + props.fileName} である`, () => {
+  test(`遷移先が${baseUrl + props.fileName}である`, () => {
     expect(linkToEdit.attributes("href")).toBe(baseUrl + props.fileName);
+  });
+
+  test("外部リンクである", () => {
+    expect(linkToEdit.attributes("target")).toBe("_blank");
   });
 });

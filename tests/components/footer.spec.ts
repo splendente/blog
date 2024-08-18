@@ -16,7 +16,7 @@ describe("Footerコンポーネント", () => {
     expect(footer.find("p").text()).toBe("© 2024 Hikaru Kobayashi.");
   });
 
-  test("Terms and Privacyというリンクが表示されている", () => {
+  test("「Terms and Privacy」というリンクが表示されている", () => {
     const privacyPolicy = footer.findComponent(RouterLinkStub);
     expect(privacyPolicy.exists()).toBe(true);
     expect(privacyPolicy.text()).toBe("Terms and Privacy");
