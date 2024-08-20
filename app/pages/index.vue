@@ -58,6 +58,11 @@ const activeDates = computed(() => {
 
 <template>
   <main>
+    <hgroup>
+      <img src="@/assets/images/boy.png" alt="" width="150" height="150" />
+      <h1>Welcome to my Blog.</h1>
+      <p>フロントエンドに関する情報を発信しています。</p>
+    </hgroup>
     <YearSelect v-model="targetYear" class="year-select" />
     <CalendarHeatmap
       :target-year="Number(targetYear)"
@@ -81,6 +86,25 @@ const activeDates = computed(() => {
 </template>
 
 <style scoped>
+hgroup {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 24px 8px;
+}
+
+hgroup > h1 {
+  font-size: 32px;
+  color: #3c3c3c;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+hgroup > p {
+  font-size: 14px;
+  color: #3c3c3c;
+}
+
 main {
   display: grid;
   flex-direction: column;
