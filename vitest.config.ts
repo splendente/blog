@@ -10,8 +10,12 @@ export default defineVitestConfig({
     AutoImportFunctions({
       imports: "vue",
       dirs: ["app/composables", "app/utils"],
+      dts: "auto-import-functions.d.ts",
     }),
-    AutoImportComponents({ dirs: ["app/components"] }),
+    AutoImportComponents({
+      dirs: ["app/components"],
+      dts: "components.d.ts",
+    }),
   ],
   test: {
     environment: "jsdom",
