@@ -21,7 +21,13 @@ const query: QueryBuilderParams = computed(() => {
 
 <template>
   <main>
-    <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
+    <div class="title-wrapper">
+      <h1 class="title">
+        <span>すべて</span>
+        の記事一覧
+      </h1>
+      <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
+    </div>
     <ContentList v-slot="{ list }" :query="query">
       <Card
         v-for="(article, index) in list"
@@ -44,7 +50,14 @@ main {
   gap: 32px 0;
 }
 
-main > .sort-menu {
-  justify-self: right;
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  color: #3c3c3c;
 }
 </style>
