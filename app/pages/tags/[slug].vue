@@ -30,7 +30,7 @@ const query: QueryBuilderParams = computed(() => {
         <span>{{ route.params.slug }}</span>
         の記事一覧
       </h1>
-      <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
+      <SortMenu :desc="desc" @toggle-sort="toggleSort" />
     </div>
     <ContentList v-slot="{ list }" :query="query">
       <Card
