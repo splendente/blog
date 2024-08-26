@@ -1,7 +1,13 @@
 import withNuxt from "./.nuxt/eslint.config.mjs";
+import vitest from "@vitest/eslint-plugin";
 
 export default withNuxt({
+  plugins: {
+    vitest,
+  },
   rules: {
     "vue/multi-word-component-names": "off",
+    ...vitest.configs.recommended.rules,
+    "vitest/max-nested-describe": ["error", { max: 3 }],
   },
 });
