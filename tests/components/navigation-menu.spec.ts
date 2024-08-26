@@ -22,8 +22,10 @@ describe("NavigationMenuコンポーネント", () => {
   test("リンク情報と表示されているテキストおよび遷移先が一致する", () => {
     expect(() => {
       navigationMenu.findAll("a").forEach((item) => {
-        links.every((link) => {
-          link.name === item.text() && link.href === item.attributes("href");
+        return links.every((link) => {
+          return (
+            link.name === item.text() && link.href === item.attributes("href")
+          );
         });
       });
     }).toBeTruthy();
