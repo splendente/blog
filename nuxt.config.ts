@@ -51,7 +51,4 @@ export default defineNuxtConfig({
   site: {
     url: "https://splendente.vercel.app",
   },
-  imports: {
-    dirs: ["~/app/composables"],
-  },
 });
