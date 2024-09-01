@@ -59,7 +59,6 @@ const activeDates = computed(() => {
 <template>
   <main>
     <hgroup>
-      <img src="@/assets/images/boy.png" alt="" width="150" height="150" />
       <h1>Welcome to my Blog.</h1>
       <p>フロントエンドに関する情報を発信しています。</p>
     </hgroup>
@@ -90,7 +89,12 @@ hgroup {
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 24px 8px;
+  padding: 64px 24px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(2, 73, 255, 0.05),
+    rgba(255, 0, 255, 0.05)
+  );
 }
 
 hgroup > h1 {
