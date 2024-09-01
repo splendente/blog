@@ -172,17 +172,14 @@ header {
   justify-content: space-between;
 }
 
-.wrapper > div {
-  display: flex;
-  align-items: center;
-}
-
 .title {
   text-decoration: none;
   color: #3c3c3c;
 }
 
 .links {
+  display: flex;
+  align-items: center;
   justify-content: center;
   gap: 0 16px;
 }
@@ -203,6 +200,8 @@ header {
 }
 
 .icons {
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
   gap: 0 8px;
 }
@@ -212,6 +211,12 @@ header {
 }
 
 @media (width < 640px) {
+  .wrapper {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .links {
+    display: none;
+  }
   .icons > a.icon-button {
     display: none;
   }
