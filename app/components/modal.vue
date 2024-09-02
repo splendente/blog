@@ -58,4 +58,10 @@ onClickOutside(target, () => emit("outsideClick"));
 .v-leave-to {
   opacity: 0;
 }
+
+@media (width < 640px) {
+  .modal {
+    height: 90vh;
+  }
+}
 </style>
