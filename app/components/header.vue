@@ -147,8 +147,32 @@ onUnmounted(() => {
       <NavigationMenu :visible="navigationVisibleStatus" />
     </div>
     <Modal :is-revealed="isRevealed" @outside-click="resetSearchKeyword">
-      <SearchInput v-model="keyword" />
-      <List :keyword="keyword" :items="results" />
+      <div class="modal-wrapper">
+        <div class="modal-header">
+          <button
+            type="button"
+            @click="cancel()"
+            aria-label="モーダルを閉じる"
+            class="close-button"
+          >
+            <img
+              width="20"
+              height="20"
+              src="@/assets/images/cancel.svg"
+              alt=""
+            />
+          </button>
+        </div>
+        <div class="modal-body">
+          <SearchInput v-model="keyword" />
+          <List :keyword="keyword" :items="results" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="reset-button" @click="keyword = ''">
+            検索条件をリセット
+          </button>
+        </div>
+      </div>
     </Modal>
   </header>
 </template>
@@ -208,6 +232,64 @@ header {
 
 .icons > button.icon-button:last-child {
   display: none;
+}
+
+.modal-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.modal-header {
+  padding: 24px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  width: 100%;
+  height: calc(100% - 96px);
+  padding: 24px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  width: 100%;
+  padding: 24px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  transition: all 0.5s ease;
+}
+
+.reset-button {
+  color: #3c3c3c;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  transition: all 0.5s ease;
+}
+
+.reset-button:hover,
+.close-button:hover {
+  cursor: pointer;
+  background-color: #f6f6f6;
 }
 
 @media (width < 640px) {

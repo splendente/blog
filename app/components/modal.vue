@@ -45,7 +45,6 @@ onClickOutside(target, () => emit("outsideClick"));
   height: 60vh;
   max-width: 640px;
   background-color: #fff;
-  padding: 48px 24px;
   border-radius: 8px;
   overflow: hidden;
 }
