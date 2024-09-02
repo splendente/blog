@@ -17,7 +17,7 @@ const lists = computed(() => {
 
 <template>
   <div class="container">
-    <p v-if="keyword && lists" class="">
+    <p v-if="keyword && lists">
       {{ keyword }} の検索結果は {{ lists.length }} 件です。
     </p>
     <div class="wrapper">
@@ -40,7 +40,7 @@ const lists = computed(() => {
 
 .wrapper {
   width: 100%;
-  height: calc(100% - 48px);
+  height: calc(100% - 185px);
   overflow-y: auto;
   margin: 16px 0;
 }
@@ -59,7 +59,9 @@ ul {
 p {
   font-size: 14px;
   color: #3c3c3c;
-  margin-top: 16px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+  margin: 16px 0;
 }
 
 a {
