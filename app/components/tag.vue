@@ -30,8 +30,8 @@ const component = computed(() => {
 
 <template>
   <component
-    class="tag"
     :is="component.element"
+    class="tag"
     v-bind="{ ...component.props }"
   >
     # {{ text }}
