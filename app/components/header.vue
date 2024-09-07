@@ -67,11 +67,6 @@ onUnmounted(() => {
   <header>
     <div class="wrapper">
       <NuxtLink to="/" class="title">Blog</NuxtLink>
-      <div class="links">
-        <NuxtLink to="/about" class="about">About</NuxtLink>
-        <NuxtLink to="/blog" class="blog">Blog</NuxtLink>
-        <NuxtLink to="/tags" class="contact">Tags</NuxtLink>
-      </div>
       <div class="icons">
         <IconButton element="button" label="記事を検索する" @on-click="reveal">
           <template #icon>
@@ -179,7 +174,6 @@ onUnmounted(() => {
 
 <style scoped>
 header {
-  padding: 16px;
   border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
@@ -189,9 +183,9 @@ header {
 
 .wrapper {
   max-width: 1216px;
+  padding: 16px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
