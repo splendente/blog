@@ -49,6 +49,14 @@ if (error.value) {
 </template>
 
 <style scoped>
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
 .blog-header {
   text-align: center;
   padding-bottom: 32px;

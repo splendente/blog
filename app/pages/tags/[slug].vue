@@ -27,48 +27,72 @@ const query: QueryBuilderParams = computed(() => {
   <main>
     <div class="title-wrapper">
       <h1 class="title">
-        <span>{{ route.params.slug }}</span>
-        の記事一覧
+        {{ route.params.slug }}
+        <span>の記事一覧</span>
       </h1>
       <SortMenu :desc="desc" @toggle-sort="toggleSort" />
     </div>
-    <ContentList v-slot="{ list }" :query="query">
-      <Card
-        v-for="(article, index) in list"
-        :key="index"
-        :to="article._path"
-        :emoji="article.emoji"
-        :title="article.title"
-        :description="article.description"
-        :created-at="article.createdAt"
-        :tags="article.tags"
-      />
-    </ContentList>
+    <div class="lists">
+      <ContentList v-slot="{ list }" :query="query">
+        <Card
+          v-for="(article, index) in list"
+          :key="index"
+          :to="article._path"
+          :emoji="article.emoji"
+          :title="article.title"
+          :description="article.description"
+          :created-at="article.createdAt"
+          :tags="article.tags"
+        />
+      </ContentList>
+    </div>
     <LinkToBack to="/tags" text="タグ一覧に戻る" />
   </main>
 </template>
 
 <style scoped>
 main {
-  display: grid;
-  flex-direction: column;
-  gap: 32px 0;
+  flex: 1;
+  width: 100%;
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 32px 16px;
 }
 
 .title-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 48px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 32px;
   color: #3c3c3c;
 }
 
-@media (width < 640px) {
-  .title {
-    font-size: 20px;
+.title > span {
+  font-size: 16px;
+  color: #3c3c3c;
+  margin-left: 8px;
+}
+
+.lists {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 48px;
+}
+
+@media (width < 768px) {
+  .lists {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width < 576px) {
+  .lists {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 </style>

@@ -86,6 +86,14 @@ defineOgImageComponent("NuxtSeo", {
 </template>
 
 <style scoped>
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
 h1 {
   font-size: 32px;
   text-align: center;

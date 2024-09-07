@@ -9,12 +9,10 @@ defineOgImageComponent("NuxtSeo", {
   title: "Home",
 });
 
-const { desc, toggleSort } = useSort();
-
 const query: QueryBuilderParams = computed(() => {
   return {
     path: "/",
-    sort: [{ createdAt: desc.value ? -1 : 1 }],
+    sort: [{ createdAt: -1 }],
     limit: 4,
   };
 });
@@ -67,7 +65,6 @@ const activeDates = computed(() => {
       :target-year="Number(targetYear)"
       :active-dates="activeDates"
     />
-    <SortMenu :desc="desc" class="sort-menu" @toggle-sort="toggleSort" />
     <ContentList v-slot="{ list }" :query="query">
       <Card
         v-for="(article, index) in list"
@@ -85,16 +82,19 @@ const activeDates = computed(() => {
 </template>
 
 <style scoped>
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
 hgroup {
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 64px 24px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(2, 73, 255, 0.05),
-    rgba(255, 0, 255, 0.05)
-  );
 }
 
 hgroup > h1 {
