@@ -56,7 +56,7 @@ const formatDate = computed(() => {
   grid-template-columns: auto 1fr;
   padding: 24px;
   background-color: #fff;
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 8px;
   transition: all 0.5s ease;
   position: relative;
