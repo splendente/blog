@@ -29,6 +29,14 @@ if (data.value) {
 </template>
 
 <style scoped>
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1216px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
 .tags-list {
   display: flex;
   flex-wrap: wrap;
