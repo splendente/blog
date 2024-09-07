@@ -75,7 +75,7 @@ onUnmounted(() => {
               height="16"
               src="@/assets/images/search.svg"
               alt=""
-            />
+            >
           </template>
         </IconButton>
         <IconButton
@@ -90,7 +90,7 @@ onUnmounted(() => {
               height="16"
               src="@/assets/images/x-twitter.svg"
               alt=""
-            />
+            >
           </template>
         </IconButton>
         <IconButton
@@ -100,7 +100,7 @@ onUnmounted(() => {
           label="Zennを新しいタブで表示する"
         >
           <template #icon>
-            <img width="16" height="16" src="@/assets/images/zenn.svg" alt="" />
+            <img width="16" height="16" src="@/assets/images/zenn.svg" alt="" >
           </template>
         </IconButton>
         <IconButton
@@ -115,7 +115,7 @@ onUnmounted(() => {
               height="16"
               src="@/assets/images/github.svg"
               alt=""
-            />
+            >
           </template>
         </IconButton>
         <IconButton
@@ -125,7 +125,7 @@ onUnmounted(() => {
           label="RSSフィードを新しいタブで表示する"
         >
           <template #icon>
-            <img width="16" height="16" src="@/assets/images/rss.svg" alt="" />
+            <img width="16" height="16" src="@/assets/images/rss.svg" alt="" >
           </template>
         </IconButton>
         <IconButton
@@ -135,7 +135,7 @@ onUnmounted(() => {
           @on-click="toggleNavigationVisibleStatus(!navigationVisibleStatus)"
         >
           <template #icon>
-            <img width="16" height="16" src="@/assets/images/menu.svg" alt="" />
+            <img width="16" height="16" src="@/assets/images/menu.svg" alt="" >
           </template>
         </IconButton>
       </div>
@@ -146,16 +146,16 @@ onUnmounted(() => {
         <div class="modal-header">
           <button
             type="button"
-            @click="cancel()"
             aria-label="モーダルを閉じる"
             class="close-button"
+            @click="cancel()"
           >
             <img
               width="20"
               height="20"
               src="@/assets/images/cancel.svg"
               alt=""
-            />
+            >
           </button>
         </div>
         <div class="modal-body">
