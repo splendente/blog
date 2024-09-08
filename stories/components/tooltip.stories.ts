@@ -1,20 +1,20 @@
-import Tooltip from "@/components/tooltip.vue";
+import Tooltip from '@/components/tooltip.vue'
 
 export default {
-  title: "components/tooltip",
+  title: 'components/tooltip',
   component: Tooltip,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   decorators: [
     () => ({
       template: '<div style="position: relative;"><story /></div>',
     }),
   ],
-};
+}
 
 export const Default = {
   args: {
-    text: "2024-1-1",
+    text: '2024-1-1',
     top: 0,
     left: 0,
   },
-};
+}

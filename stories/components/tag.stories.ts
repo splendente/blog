@@ -1,13 +1,13 @@
-import Tag from "@/components/tag.vue";
+import Tag from '@/components/tag.vue'
 
 export default {
-  title: "components/tag",
+  title: 'components/tag',
   component: Tag,
-  tags: ["autodocs"],
-};
+  tags: ['autodocs'],
+}
 
 export const Default = {
   args: {
-    text: "Vue.js",
+    text: 'Vue.js',
   },
-};
+}

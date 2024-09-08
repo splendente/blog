@@ -1,9 +1,13 @@
 <script setup lang="ts">
-const keyword = defineModel<string>({ default: "" });
+const keyword = defineModel<string>({ default: '' })
 </script>
 
 <template>
-  <input v-model="keyword" type="search" placeholder="記事を検索する" >
+  <input
+    v-model="keyword"
+    type="search"
+    placeholder="記事を検索する"
+  >
 </template>
 
 <style scoped>

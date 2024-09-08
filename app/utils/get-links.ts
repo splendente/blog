@@ -1,7 +1,7 @@
 type Link = {
-  name: string;
-  href: string;
-};
+  name: string
+  href: string
+}
 
 /**
  * ナビゲーションメニューで使用するリンク情報を返却する
@@ -10,20 +10,20 @@ type Link = {
 export default function (): Link[] {
   return [
     {
-      name: "X",
-      href: "https://twitter.com/splendente_dev",
+      name: 'X',
+      href: 'https://twitter.com/splendente_dev',
     },
     {
-      name: "GitHub",
-      href: "https://github.com/splendente/blog",
+      name: 'GitHub',
+      href: 'https://github.com/splendente/blog',
     },
     {
-      name: "Zenn",
-      href: "https://zenn.dev/splendente",
+      name: 'Zenn',
+      href: 'https://zenn.dev/splendente',
     },
     {
-      name: "RSS",
-      href: "/feed.xml",
+      name: 'RSS',
+      href: '/feed.xml',
     },
-  ];
+  ]
 }

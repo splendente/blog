@@ -1,13 +1,13 @@
-import LinkToEdit from "@/components/link-to-edit.vue";
+import LinkToEdit from '@/components/link-to-edit.vue'
 
 export default {
-  title: "components/link-to-edit",
+  title: 'components/link-to-edit',
   component: LinkToEdit,
-  tags: ["autodocs"],
-};
+  tags: ['autodocs'],
+}
 
 export const Default = {
   args: {
-    fileName: "",
+    fileName: '',
   },
-};
+}

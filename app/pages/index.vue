@@ -59,6 +59,16 @@ const activeDates = computed(() => {
 
   return createdAtAndUpdatedAt
 })
+
+const tags = ref<string[]>([])
+
+const { data } = await useAsyncData('tags', () =>
+  queryContent('/').only(['tags']).find(),
+)
+
+if (data.value) {
+  tags.value = [...new Set(data.value.flatMap(values => values.tags))]
+}
 </script>
 
 <template>
@@ -79,10 +89,13 @@ const activeDates = computed(() => {
         {{ title }}
         <span>の記事一覧</span>
       </h1>
-      <SortMenu
-        :desc="desc"
-        @toggle-sort="toggleSort"
-      />
+      <div class="buttons">
+        <TagMenu :tags="tags" />
+        <SortMenu
+          :desc="desc"
+          @toggle-sort="toggleSort"
+        />
+      </div>
     </div>
     <div class="lists">
       <ContentList
@@ -146,6 +159,11 @@ main {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.buttons {
+  display: flex;
+  gap: 0 16px;
+}
+
 @media (width < 768px) {
   .lists {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -153,6 +171,12 @@ main {
 }
 
 @media (width < 576px) {
+  .title-wrapper {
+    display: block;
+  }
+  .title-wrapper > .buttons {
+    margin-top: 16px;
+  }
   .lists {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }

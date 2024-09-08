@@ -1,17 +1,19 @@
 <script setup lang="ts">
 useHead({
-  title: "利用規約とプライバシーポリシー",
-});
+  title: '利用規約とプライバシーポリシー',
+})
 
-defineOgImageComponent("NuxtSeo", {
-  title: "Terms and Privacy",
-});
+defineOgImageComponent('NuxtSeo', {
+  title: 'Terms and Privacy',
+})
 </script>
 
 <template>
   <main>
     <h1>利用規約とプライバシーポリシー</h1>
-    <p class="date-of-issue">発行日 2024年5月2日</p>
+    <p class="date-of-issue">
+      発行日 2024年5月2日
+    </p>
 
     <p>本規約は、当サイトの利用に関する規定を定めるものです。</p>
     <p>
@@ -78,7 +80,10 @@ defineOgImageComponent("NuxtSeo", {
     <h2>お問い合わせ</h2>
     <section>
       <p>本規約に関するお問い合わせは、以下の連絡先までご連絡ください。</p>
-      <a href="https://twitter.com/splendente_dev" target="_blank">
+      <a
+        href="https://twitter.com/splendente_dev"
+        target="_blank"
+      >
         https://twitter.com/splendente_dev
       </a>
     </section>
