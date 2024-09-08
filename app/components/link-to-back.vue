@@ -8,11 +8,16 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
 </script>
 
 <template>
-  <NuxtLink :to="to" class="link-to-back">{{ text }}</NuxtLink>
+  <NuxtLink
+    :to="to"
+    class="link-to-back"
+  >
+    {{ text }}
+  </NuxtLink>
 </template>
 
 <style scoped>

@@ -4,20 +4,26 @@ defineProps({
     type: Boolean,
     required: true,
   },
-});
+})
 
-const emit = defineEmits(["outsideClick"]);
+const emit = defineEmits(['outsideClick'])
 
-const target = ref<HTMLElement | null>(null);
+const target = ref<HTMLElement | null>(null)
 
-onClickOutside(target, () => emit("outsideClick"));
+onClickOutside(target, () => emit('outsideClick'))
 </script>
 
 <template>
   <teleport to="body">
     <Transition appear>
-      <div v-if="isRevealed" class="background">
-        <div ref="target" class="modal">
+      <div
+        v-if="isRevealed"
+        class="background"
+      >
+        <div
+          ref="target"
+          class="modal"
+        >
           <slot />
         </div>
       </div>

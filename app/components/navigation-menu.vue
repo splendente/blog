@@ -4,17 +4,26 @@ defineProps({
     type: Boolean,
     required: true,
   },
-});
+})
 
-const links = getLinks();
+const links = getLinks()
 </script>
 
 <template>
   <Transition appear>
-    <nav v-show="visible" class="navigation-menu">
+    <nav
+      v-show="visible"
+      class="navigation-menu"
+    >
       <ul>
-        <li v-for="(link, index) in links" :key="index">
-          <a :href="link.href" target="_blank">{{ link.name }}</a>
+        <li
+          v-for="(link, index) in links"
+          :key="index"
+        >
+          <a
+            :href="link.href"
+            target="_blank"
+          >{{ link.name }}</a>
         </li>
       </ul>
     </nav>

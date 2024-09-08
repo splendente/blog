@@ -4,11 +4,11 @@ defineProps({
     type: Boolean,
     required: true,
   },
-});
+})
 
 defineEmits<{
-  (e: "toggleSort"): void;
-}>();
+  (e: 'toggleSort'): void
+}>()
 </script>
 
 <template>

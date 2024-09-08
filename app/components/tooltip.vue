@@ -12,11 +12,14 @@ defineProps({
     type: Number,
     required: true,
   },
-});
+})
 </script>
 
 <template>
-  <div :style="`top:${top}px;left:${left}px;`" class="tooltip">
+  <div
+    :style="`top:${top}px;left:${left}px;`"
+    class="tooltip"
+  >
     <p>{{ text }}</p>
   </div>
 </template>

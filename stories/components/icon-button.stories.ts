@@ -1,22 +1,22 @@
-import IconButton from "@/components/icon-button.vue";
+import IconButton from '@/components/icon-button.vue'
 
 type Args = {
-  element: string;
-  type: string;
-  to: string;
-  href: string;
-  target: string;
-  label: string;
-};
+  element: string
+  type: string
+  to: string
+  href: string
+  target: string
+  label: string
+}
 
 export default {
-  title: "components/icon-button",
+  title: 'components/icon-button',
   component: IconButton,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   render: (args: Args) => ({
     components: { IconButton },
     setup() {
-      return { args };
+      return { args }
     },
     template: `
       <IconButton v-bind="{ ...args }">
@@ -26,29 +26,29 @@ export default {
       </IconButton>
     `,
   }),
-};
+}
 
 export const Button = {
   args: {
-    element: "button",
-    label: "ラベル",
+    element: 'button',
+    label: 'ラベル',
   },
-};
+}
 
 export const AnchorLink = {
   args: {
-    element: "anchor-link",
-    href: "#",
-    target: "_self",
-    label: "ラベル",
+    element: 'anchor-link',
+    href: '#',
+    target: '_self',
+    label: 'ラベル',
   },
-};
+}
 
 export const NuxtLink = {
   args: {
-    element: "nuxt-link",
-    to: "#",
-    target: "_blank",
-    label: "ラベル",
+    element: 'nuxt-link',
+    to: '#',
+    target: '_blank',
+    label: 'ラベル',
   },
-};
+}

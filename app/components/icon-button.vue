@@ -1,51 +1,51 @@
 <script setup lang="ts">
 type Props = {
-  element: "button" | "anchor-link" | "nuxt-link";
-  type?: string;
-  to?: string;
-  href?: string;
-  target?: "_blank" | "_self" | "_top" | "_parent";
-  label: string;
-};
+  element: 'button' | 'anchor-link' | 'nuxt-link'
+  type?: string
+  to?: string
+  href?: string
+  target?: '_blank' | '_self' | '_top' | '_parent'
+  label: string
+}
 
 const props = withDefaults(defineProps<Props>(), {
-  element: "button",
-  type: "button",
-  target: "_self",
-});
+  element: 'button',
+  type: 'button',
+  target: '_self',
+})
 
 defineSlots<{
-  icon: () => HTMLImageElement;
-}>();
+  icon: () => HTMLImageElement
+}>()
 
 const emit = defineEmits<{
-  (e: "onClick"): void;
-}>();
+  (e: 'onClick'): void
+}>()
 
 const onClick = () => {
-  emit("onClick");
-};
+  emit('onClick')
+}
 
 // buttonタグの場合に使用する属性情報と押下時の処理
 const buttonProps = {
-  "aria-label": props.label,
-  type: props.type,
+  'aria-label': props.label,
+  'type': props.type,
   onClick,
-};
+}
 
 // aタグの場合に使用する属性情報
 const anchorProps = {
-  "aria-label": props.label,
-  href: props.href,
-  target: props.target,
-};
+  'aria-label': props.label,
+  'href': props.href,
+  'target': props.target,
+}
 
 // NuxtLinkコンポーネントの場合に使用する属性情報
 const nuxtLinkProps = {
-  "aria-label": props.label,
-  to: props.href,
-  target: props.target,
-};
+  'aria-label': props.label,
+  'to': props.href,
+  'target': props.target,
+}
 
 /**
  * @typedef Component
@@ -60,30 +60,30 @@ const nuxtLinkProps = {
  */
 const component = computed(() => {
   switch (props.element) {
-    case "button":
+    case 'button':
       return {
-        element: "button",
+        element: 'button',
         props: buttonProps,
-      };
-    case "anchor-link":
+      }
+    case 'anchor-link':
       return {
-        element: "a",
+        element: 'a',
         props: anchorProps,
-      };
-    case "nuxt-link":
+      }
+    case 'nuxt-link':
       return {
-        element: resolveComponent("NuxtLink"),
+        element: resolveComponent('NuxtLink'),
         props: nuxtLinkProps,
-      };
+      }
     default: {
       return {
         // デフォルトではbuttonタグとして表示する
-        element: "button",
+        element: 'button',
         props: buttonProps,
-      };
+      }
     }
   }
-});
+})
 </script>
 
 <template>

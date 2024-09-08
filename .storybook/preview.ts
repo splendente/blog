@@ -1,5 +1,5 @@
 /** @type { import('@storybook/vue3').Preview } */
-import "../app/assets/css/reset.css";
+import '../app/assets/css/reset.css'
 
 const preview = {
   parameters: {
@@ -10,6 +10,6 @@ const preview = {
       },
     },
   },
-};
+}
 
-export default preview;
+export default preview

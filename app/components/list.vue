@@ -2,17 +2,17 @@
 const props = defineProps({
   keyword: {
     type: String,
-    default: "",
+    default: '',
   },
   items: {
     type: Object,
     required: true,
   },
-});
+})
 
 const lists = computed(() => {
-  return props.items.value;
-});
+  return props.items.value
+})
 </script>
 
 <template>
@@ -22,7 +22,10 @@ const lists = computed(() => {
     </p>
     <div class="wrapper">
       <ul>
-        <li v-for="(item, index) in lists" :key="index">
+        <li
+          v-for="(item, index) in lists"
+          :key="index"
+        >
           <a :href="item.id">
             <span>{{ item.content }}</span>
           </a>

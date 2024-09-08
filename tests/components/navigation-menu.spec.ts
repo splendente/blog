@@ -1,12 +1,12 @@
-import { describe, expect, test } from "vitest";
-import { shallowMount, RouterLinkStub } from "@vue/test-utils";
-import NavigationMenu from "@/components/navigation-menu.vue";
+import { describe, expect, test } from 'vitest'
+import { shallowMount, RouterLinkStub } from '@vue/test-utils'
+import NavigationMenu from '@/components/navigation-menu.vue'
 
-describe("NavigationMenuコンポーネント", () => {
+describe('NavigationMenuコンポーネント', () => {
   const props = {
     visible: true,
-  };
-  const links = getLinks();
+  }
+  const links = getLinks()
 
   const navigationMenu = shallowMount(NavigationMenu, {
     propsData: {
@@ -17,17 +17,17 @@ describe("NavigationMenuコンポーネント", () => {
         NuxtLink: RouterLinkStub,
       },
     },
-  });
+  })
 
-  test("リンク情報と表示されているテキストおよび遷移先が一致する", () => {
+  test('リンク情報と表示されているテキストおよび遷移先が一致する', () => {
     expect(() => {
-      navigationMenu.findAll("a").forEach((item) => {
+      navigationMenu.findAll('a').forEach((item) => {
         return links.every((link) => {
           return (
-            link.name === item.text() && link.href === item.attributes("href")
-          );
-        });
-      });
-    }).toBeTruthy();
-  });
-});
+            link.name === item.text() && link.href === item.attributes('href')
+          )
+        })
+      })
+    }).toBeTruthy()
+  })
+})

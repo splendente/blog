@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import type { NavigationMenu } from "@/types";
+import type { NavigationMenu } from '@/types'
 
-const props = defineProps<NavigationMenu>();
+const props = defineProps<NavigationMenu>()
 
 const nuxtLinkProps = {
   to: props.to,
-};
+}
 
 const component = computed(() => {
   switch (props.element) {
-    case "p":
+    case 'p':
       return {
-        element: "p",
-      };
-    case "nuxt-link":
+        element: 'p',
+      }
+    case 'nuxt-link':
       return {
-        element: resolveComponent("NuxtLink"),
+        element: resolveComponent('NuxtLink'),
         props: nuxtLinkProps,
-      };
+      }
     default: {
       return {
         // デフォルトではpタグとして表示する
-        element: "p",
-      };
+        element: 'p',
+      }
     }
   }
-});
+})
 </script>
 
 <template>

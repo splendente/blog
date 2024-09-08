@@ -1,16 +1,18 @@
 <script setup lang="ts">
 type ErrorProps = {
   error: {
-    statusCode: string;
-  };
-};
+    statusCode: string
+  }
+}
 
-defineProps<ErrorProps>();
+defineProps<ErrorProps>()
 </script>
 
 <template>
   <NuxtLayout>
-    <p class="status-code">{{ error.statusCode }}</p>
+    <p class="status-code">
+      {{ error.statusCode }}
+    </p>
   </NuxtLayout>
 </template>
 

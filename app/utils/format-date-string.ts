@@ -4,5 +4,5 @@
  * @returns {String} フォーマットされた状態の日付情報
  */
 export default function (date: string): string {
-  return new Date(date).toDateString();
+  return new Date(date).toDateString()
 }
