@@ -45,7 +45,6 @@ onClickOutside(target, () => emit("outsideClick"));
   height: 60vh;
   max-width: 640px;
   background-color: #fff;
-  padding: 48px 24px;
   border-radius: 8px;
   overflow: hidden;
 }
@@ -58,5 +57,11 @@ onClickOutside(target, () => emit("outsideClick"));
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+@media (width < 640px) {
+  .modal {
+    height: 90vh;
+  }
 }
 </style>

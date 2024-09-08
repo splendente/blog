@@ -1,9 +1,14 @@
 <template>
   <footer class="footer">
-    <NuxtLink to="/terms-and-privacy" class="terms-and-privacy" target="_blank">
+    <NuxtLink
+      to="/terms-and-privacy"
+      class="terms-and-privacy"
+    >
       Terms and Privacy
     </NuxtLink>
-    <p class="copyright">&copy; 2024 Hikaru Kobayashi.</p>
+    <p class="copyright">
+      &copy; 2024 Hikaru Kobayashi.
+    </p>
   </footer>
 </template>
 
