@@ -66,12 +66,12 @@ onUnmounted(() => {
 <template>
   <header>
     <div class="wrapper">
-      <NuxtLink
-        to="/"
+      <a
+        href="/"
         class="title"
       >
         Blog
-      </NuxtLink>
+      </a>
       <div class="icons">
         <IconButton
           element="button"
