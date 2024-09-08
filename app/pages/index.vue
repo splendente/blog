@@ -67,7 +67,7 @@ const { data } = await useAsyncData('tags', () =>
 )
 
 if (data.value) {
-  tags.value = data.value.flatMap(values => values.tags)
+  tags.value = [...new Set(data.value.flatMap(values => values.tags))]
 }
 </script>
 
