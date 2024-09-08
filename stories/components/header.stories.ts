@@ -1,9 +1,9 @@
-import Header from "@/components/header.vue";
+import Header from '@/components/header.vue'
 
 export default {
-  title: "components/header",
+  title: 'components/header',
   component: Header,
-  tags: ["autodocs"],
-};
+  tags: ['autodocs'],
+}
 
-export const Default = {};
+export const Default = {}

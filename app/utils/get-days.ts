@@ -3,5 +3,5 @@
  * @returns {Array} 月曜日から日曜日
  */
 export default function (): string[] {
-  return ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  return ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 }

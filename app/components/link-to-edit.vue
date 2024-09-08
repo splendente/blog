@@ -4,7 +4,7 @@ defineProps({
     type: String,
     required: true,
   },
-});
+})
 </script>
 
 <template>
@@ -13,7 +13,12 @@ defineProps({
     target="_blank"
     class="page-edit-link"
   >
-    <img src="@/assets/images/github.svg" alt="" width="20" height="20" >
+    <img
+      src="@/assets/images/github.svg"
+      alt=""
+      width="20"
+      height="20"
+    >
     GitHubで編集を提案する
   </a>
 </template>

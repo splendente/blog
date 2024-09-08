@@ -1,9 +1,9 @@
 <script setup lang="ts">
 type Props = {
-  _path?: string;
-  title?: string;
-  description?: string;
-};
+  _path?: string
+  title?: string
+  description?: string
+}
 
 defineProps({
   nextPage: {
@@ -12,7 +12,7 @@ defineProps({
   prevPage: {
     type: Object as () => Props,
   },
-});
+})
 </script>
 
 <template>
@@ -22,7 +22,11 @@ defineProps({
       !nextPage ? 'justify-content: end;' : 'justify-content: space-between;'
     "
   >
-    <NuxtLink v-if="nextPage" :to="nextPage._path" class="link">
+    <NuxtLink
+      v-if="nextPage"
+      :to="nextPage._path"
+      class="link"
+    >
       <div class="next-page">
         <button
           type="button"
@@ -30,16 +34,28 @@ defineProps({
           aria-label="前のページに戻る"
         />
         <div>
-          <p class="title">{{ nextPage.title }}</p>
-          <p class="description">{{ nextPage.description }}</p>
+          <p class="title">
+            {{ nextPage.title }}
+          </p>
+          <p class="description">
+            {{ nextPage.description }}
+          </p>
         </div>
       </div>
     </NuxtLink>
-    <NuxtLink v-if="prevPage" :to="prevPage._path" class="link">
+    <NuxtLink
+      v-if="prevPage"
+      :to="prevPage._path"
+      class="link"
+    >
       <div class="prev-page">
         <div>
-          <p class="title">{{ prevPage.title }}</p>
-          <p class="description">{{ prevPage.description }}</p>
+          <p class="title">
+            {{ prevPage.title }}
+          </p>
+          <p class="description">
+            {{ prevPage.description }}
+          </p>
         </div>
         <button
           type="button"

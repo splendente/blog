@@ -1,9 +1,9 @@
-import SearchInput from "@/components/search-input.vue";
+import SearchInput from '@/components/search-input.vue'
 
 export default {
-  title: "components/search-input",
+  title: 'components/search-input',
   component: SearchInput,
-  tags: ["autodocs"],
-};
+  tags: ['autodocs'],
+}
 
-export const Default = {};
+export const Default = {}

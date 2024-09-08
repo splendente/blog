@@ -24,25 +24,40 @@ const props = defineProps({
     type: Array as () => string[],
     required: true,
   },
-});
+})
 
 /**
  * 日付情報のフォーマットを変更する
  * @returns {String} - 日付情報
  */
 const formatDate = computed(() => {
-  return formatDateString(props.createdAt);
-});
+  return formatDateString(props.createdAt)
+})
 </script>
 
 <template>
   <article class="card">
     <span v-html="emoji" />
-    <time class="created-at" :datetime="createdAt">{{ formatDate }}</time>
-    <NuxtLink :to="to" class="title">{{ title }}</NuxtLink>
-    <p class="description">{{ description }}</p>
+    <time
+      class="created-at"
+      :datetime="createdAt"
+    >{{ formatDate }}</time>
+    <NuxtLink
+      :to="to"
+      class="title"
+    >
+      {{ title }}
+    </NuxtLink>
+    <p class="description">
+      {{ description }}
+    </p>
     <div>
-      <Tag v-for="(tag, index) in tags" :key="index" element="p" :text="tag" />
+      <Tag
+        v-for="(tag, index) in tags"
+        :key="index"
+        element="p"
+        :text="tag"
+      />
     </div>
   </article>
 </template>
