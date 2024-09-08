@@ -88,8 +88,8 @@ const component = computed(() => {
 
 <template>
   <component
-    class="icon-button"
     :is="component.element"
+    class="icon-button"
     v-bind="{ ...component.props }"
   >
     <slot name="icon" />
