@@ -1,19 +1,19 @@
 <script setup lang="ts">
 // 現在のページを取得する
-const route = useRoute();
+const route = useRoute()
 
 /**
  * 現在のページの前後のページ情報を取得する
  */
-const { data, error } = await useAsyncData("slug", () =>
-  queryContent("/")
-    .only(["_path", "title", "description"])
+const { data, error } = await useAsyncData('slug', () =>
+  queryContent('/')
+    .only(['_path', 'title', 'description'])
     .findSurround(route.path),
-);
+)
 
 // 前後のページ取得に失敗した場合はエラー画面を表示する
 if (error.value) {
-  showError({ ...error.value });
+  showError({ ...error.value })
 }
 </script>
 
@@ -22,15 +22,21 @@ if (error.value) {
     <ContentDoc v-slot="{ doc }">
       <article>
         <div class="blog-header">
-          <p class="created-at">{{ formatDateString(doc.createdAt) }}</p>
-          <h1 class="title">{{ doc.title }}</h1>
-          <p class="description">{{ doc.description }}</p>
+          <p class="created-at">
+            {{ formatDateString(doc.createdAt) }}
+          </p>
+          <h1 class="title">
+            {{ doc.title }}
+          </h1>
+          <p class="description">
+            {{ doc.description }}
+          </p>
           <div class="tags">
             <Tag
               v-for="tag in doc.tags"
               :key="tag"
               element="nuxt-link"
-              :to="`/tags/${tag}`"
+              :to="`/?tag=${tag}`"
               :text="tag"
             />
           </div>
@@ -40,11 +46,18 @@ if (error.value) {
         </div>
       </article>
       <div class="link-box">
-        <LinkToBack to="/blog" text="一覧に戻る" />
+        <LinkToBack
+          to="/"
+          text="一覧に戻る"
+        />
         <LinkToEdit :file-name="doc._file" />
       </div>
     </ContentDoc>
-    <Pager v-if="data" :prev-page="data[0]" :next-page="data[1]" />
+    <Pager
+      v-if="data"
+      :prev-page="data[0]"
+      :next-page="data[1]"
+    />
   </main>
 </template>
 
