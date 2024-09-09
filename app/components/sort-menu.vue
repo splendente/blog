@@ -30,39 +30,49 @@ defineEmits<{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0 6px;
-  padding: 6px 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.sort-menu::before {
-  content: "";
-  align-self: stretch;
-  width: 1px;
-  background-color: #3c3c3c;
-  order: 2;
+.sort-menu > button {
+  position: relative;
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 6px;
+  border-right: 1px solid #ddd;
+  transition: all 0.5s ease;
 }
 
-.sort-menu > button {
+.sort-menu > button:hover {
+  cursor: pointer;
+  background-color: #f6f6f6;
+}
+
+.desc::after, .asc::after {
+  content: '';
   display: block;
   width: 16px;
   height: 16px;
-  background: center top / cover no-repeat;
-  order: 1;
+  top: 0;
+  bottom: 0;
+  left: 6px;
+  margin: auto;
+  background: center top / contain no-repeat;
 }
 
-.sort-menu > .desc {
+.desc::after {
   background-image: url("@/assets/images/sort-descending.svg");
 }
 
-.sort-menu > .asc {
+.asc::after {
+  content: '';
   background-image: url("@/assets/images/sort-ascending.svg");
 }
 
 .sort-menu > p {
   font-size: 12px;
   color: #3c3c3c;
-  order: 3;
+  padding: 6px 12px;
 }
 </style>
