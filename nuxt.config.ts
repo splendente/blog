@@ -1,15 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+
   future: {
     compatibilityVersion: 4,
   },
+
   app: {
     head: {
       htmlAttrs: { lang: 'ja' },
     },
   },
+
   devtools: { enabled: true },
+
   modules: [
     '@nuxt/fonts',
     '@nuxt/content',
@@ -23,14 +27,17 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     '@vueuse/nuxt',
   ],
+
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
   },
+
   css: [
     '~/assets/css/reset.css',
     '~/assets/css/markdown.css',
     '~/assets/css/remark-link-card.css',
   ],
+
   content: {
     highlight: { theme: 'github-light' },
     markdown: {
@@ -48,12 +55,16 @@ export default defineNuxtConfig({
       search: true,
     },
   },
+
   site: {
     url: 'https://splendente.vercel.app',
   },
+
   eslint: {
     config: {
       stylistic: true,
     },
   },
+
+  compatibilityDate: '2024-09-09',
 })
