@@ -15,6 +15,8 @@ const { data, error } = await useAsyncData('slug', () =>
 if (error.value) {
   showError({ ...error.value })
 }
+
+const router = useRouter()
 </script>
 
 <template>
@@ -41,8 +43,20 @@ if (error.value) {
             />
           </div>
         </div>
-        <div id="nuxt-content">
-          <ContentRenderer :value="doc" />
+        <div class="content-wrapper">
+          <ShareButton
+            class="share-button-component"
+            title="記事をシェアする"
+            text="この記事をシェアしよう！"
+            :url="router.currentRoute.value.fullPath"
+          />
+          <div id="nuxt-content">
+            <ContentRenderer :value="doc" />
+          </div>
+          <Toc
+            class="toc-component"
+            :items="doc.body?.toc"
+          />
         </div>
       </article>
       <div class="link-box">
@@ -65,7 +79,7 @@ if (error.value) {
 main {
   flex: 1;
   width: 100%;
-  max-width: 840px;
+  max-width: 1216px;
   margin: 0 auto;
   padding: 32px 16px;
 }
@@ -112,5 +126,20 @@ main {
   border-bottom: 1px solid #ddd;
   padding: 32px 0;
   margin: 32px 0;
+}
+
+.share-button-component, .toc-component {
+  display: none;
+}
+
+@media (width > 768px) {
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 200px;
+    gap: 0 32px;
+  }
+  .share-button-component, .toc-component {
+    display: block;
+  }
 }
 </style>
