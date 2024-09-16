@@ -44,12 +44,13 @@ const router = useRouter()
           </div>
         </div>
         <div class="content-wrapper">
-          <ShareButton
-            class="share-button-component"
-            title="記事をシェアする"
-            text="この記事をシェアしよう！"
-            :url="router.currentRoute.value.fullPath"
-          />
+          <div class="share-button-component">
+            <ShareButton
+              title="記事をシェアする"
+              text="この記事をシェアしよう！"
+              :url="router.currentRoute.value.fullPath"
+            />
+          </div>
           <div id="nuxt-content">
             <ContentRenderer :value="doc" />
           </div>
