@@ -19,7 +19,7 @@ export const WithSelected = {
   args: {
     tags: tags,
   },
-  play: async ({ canvasElement }) => {
+  play: async ({ canvasElement }: { canvasElement: HTMLElement }) => {
     const canvas = within(canvasElement)
 
     const selectButton = canvas.getByRole('button', { name: 'タグで絞り込む' })
