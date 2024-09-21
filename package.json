@@ -43,6 +43,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxt/test-utils": "^3.13.1",
     "@nuxtjs/sitemap": "^5.3.2",
+    "@nuxtjs/storybook": "^8.2.0",
     "@playwright/test": "^1.46.0",
     "@storybook/addon-a11y": "^8.2.3",
     "@storybook/addon-essentials": "^8.2.3",
