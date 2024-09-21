@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/robots',
     '@vueuse/nuxt',
+    '@nuxtjs/storybook',
   ],
 
   gtag: {
