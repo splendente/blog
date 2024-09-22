@@ -2,13 +2,12 @@
 
 <template>
   <main>
-    <img
-      src="@/assets/images/splendente.png"
+    <NuxtImg
+      src="/images/splendente.png"
       width="160"
       height="160"
-      alt=""
       class="avatar"
-    >
+    />
     <h1 class="name">
       Hikaru Kobayashi
     </h1>
