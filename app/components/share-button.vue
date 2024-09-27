@@ -39,12 +39,11 @@ const startShare = () => {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  width:32px;
-  height:32px;
+  width:40px;
+  height:40px;
   padding: 16px;
-  position: sticky;
-  top: 90px;
-  background-color: #3c3c3c;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
 
 .share-button img {
