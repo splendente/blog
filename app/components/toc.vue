@@ -42,8 +42,6 @@ const router = useRouter()
   height: fit-content;
   border-radius: 8px;
   border: 1px solid #ddd;
-  position: sticky;
-  top: 90px;
   padding: 16px;
 }
 

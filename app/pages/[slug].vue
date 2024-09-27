@@ -45,6 +45,7 @@ const router = useRouter()
         </div>
         <div class="content-wrapper">
           <div class="share-button-component">
+            <p>シェア</p>
             <ShareButton
               title="記事をシェアする"
               text="この記事をシェアしよう！"
@@ -133,14 +134,32 @@ main {
   display: none;
 }
 
+.share-button-component > p {
+  font-size: 14px;
+  color: #3c3c3c;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
 @media (width > 768px) {
   .content-wrapper {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr) 200px;
     gap: 0 32px;
   }
-  .share-button-component, .toc-component {
+  .toc-component {
     display: block;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 90px;
+  }
+  .share-button-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 90px;
   }
 }
 </style>
