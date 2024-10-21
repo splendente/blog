@@ -38,6 +38,7 @@ declare global {
   const getDays: typeof import('./app/utils/get-days')['default']
   const getLinks: typeof import('./app/utils/get-links')['default']
   const getMonths: typeof import('./app/utils/get-months')['default']
+  const getStaff: typeof import('./app/utils/get-staff')['default']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']
   const inject: typeof import('vue')['inject']
