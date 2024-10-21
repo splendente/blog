@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { STAFF } from '~/constants'
+</script>
 
 <template>
   <main>
@@ -28,6 +30,25 @@
         target="_blank"
       >Zenn</a>
     </div>
+    <div>
+      <h2 class="sub-title">
+        Staff
+      </h2>
+      <ul class="staff">
+        <li
+          v-for="(data, index) in STAFF"
+          :key="index"
+        >
+          <a
+            class="link"
+            :href="data.url"
+            target="_blank"
+          >
+            {{ data.name }} - {{ data.date }}
+          </a>
+        </li>
+      </ul>
+    </div>
   </main>
 </template>
 
@@ -55,6 +76,13 @@ main {
   color: #3c3c3c;
 }
 
+.sub-title {
+  font-size: 24px;
+  text-align: center;
+  margin: 32px auto 16px;
+  color: #3c3c3c;
+}
+
 .overview {
   display: flex;
   flex-direction: column;
@@ -74,7 +102,14 @@ main {
   margin-top: 24px;
 }
 
-.links > a {
+.links > a,
+.link {
   color: #1558d6;
+}
+
+.staff {
+  width: fit-content;
+  list-style: none;
+  margin: 0 auto;
 }
 </style>
