@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { STAFF } from '~/constants'
+const staff = getStaff()
 </script>
 
 <template>
@@ -36,7 +36,7 @@ import { STAFF } from '~/constants'
       </h2>
       <ul class="staff">
         <li
-          v-for="(data, index) in STAFF"
+          v-for="(data, index) in staff"
           :key="index"
         >
           <a
@@ -44,7 +44,7 @@ import { STAFF } from '~/constants'
             :href="data.url"
             target="_blank"
           >
-            {{ data.name }} - {{ data.date }}
+            {{ data.name }}
           </a>
         </li>
       </ul>
