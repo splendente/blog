@@ -7,7 +7,8 @@ const { tags = [] } = defineProps({
 })
 
 const isVisible = ref<boolean>(false)
-const target = ref<HTMLElement | null>(null)
+
+const target = useTemplateRef('target')
 
 const toggleVisibility = () => {
   isVisible.value = !isVisible.value
