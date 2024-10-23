@@ -8,7 +8,7 @@ defineProps({
 
 const emit = defineEmits(['outsideClick'])
 
-const target = ref<HTMLElement | null>(null)
+const target = useTemplateRef('target')
 
 onClickOutside(target, () => emit('outsideClick'))
 </script>
