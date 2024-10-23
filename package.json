@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
-    "@chromatic-com/storybook": "^2.0.2",
-    "@nuxt/eslint": "^0.5.0",
+    "@chromatic-com/storybook": "^3.0.0",
+    "@nuxt/eslint": "^0.6.0",
     "@nuxt/image": "^1.8.0",
     "@nuxt/test-utils": "^3.13.1",
     "@nuxtjs/sitemap": "^6.1.0",
