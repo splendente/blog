@@ -66,13 +66,19 @@ onUnmounted(() => {
 <template>
   <header>
     <div class="wrapper">
-      <a
-        href="/"
-        class="title"
+      <NuxtLink
+        to="/"
+        class="link"
       >
         Blog
-      </a>
-      <div class="icons">
+      </NuxtLink>
+      <nav class="navigation">
+        <NuxtLink
+          to="/about"
+          class="link"
+        >
+          About
+        </NuxtLink>
         <IconButton
           element="button"
           label="記事を検索する"
@@ -162,7 +168,7 @@ onUnmounted(() => {
             >
           </template>
         </IconButton>
-      </div>
+      </nav>
       <NavigationMenu :visible="navigationVisibleStatus" />
     </div>
     <Modal
@@ -224,41 +230,26 @@ header {
   justify-content: space-between;
 }
 
-.title {
+.link {
+  display: block;
   text-decoration: none;
   color: #3c3c3c;
+  position: relative;
 }
 
-.links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0 16px;
-}
-
-.links > a {
-  font-size: 16px;
-  font-weight: bold;
-  color: #3c3c3c;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  transition: all 0.5s ease;
-}
-
-.links > a:hover {
+.link:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  text-decoration: underline;
 }
 
-.icons {
+.navigation {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0 8px;
+  gap: 0 12px;
 }
 
-.icons > button.icon-button:last-child {
+.navigation > button.icon-button:last-child {
   display: none;
 }
 
@@ -324,13 +315,10 @@ header {
   .wrapper {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .links {
+  .navigation > a.icon-button, .navigation > .link {
     display: none;
   }
-  .icons > a.icon-button {
-    display: none;
-  }
-  .icons > button.icon-button:last-child {
+  .navigation > button.icon-button:last-child {
     display: block;
   }
 }

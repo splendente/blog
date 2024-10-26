@@ -1,4 +1,12 @@
 <script setup lang="ts">
+useHead({
+  title: 'Hikaru Kobayashi',
+})
+
+defineOgImageComponent('NuxtSeo', {
+  title: 'Hikaru Kobayashi',
+})
+
 const staff = getStaff()
 </script>
 
