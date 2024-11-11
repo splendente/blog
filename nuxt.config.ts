@@ -1,18 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  ssr: true,
-
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  app: {
-    head: {
-      htmlAttrs: { lang: 'ja' },
-    },
-  },
-
-  devtools: { enabled: true },
 
   modules: [
     '@nuxt/fonts',
@@ -29,9 +16,14 @@ export default defineNuxtConfig({
     '@nuxtjs/storybook',
     '@nuxt/image',
   ],
+  ssr: true,
 
-  gtag: {
-    id: process.env.GOOGLE_ANALYTICS_ID,
+  devtools: { enabled: true },
+
+  app: {
+    head: {
+      htmlAttrs: { lang: 'ja' },
+    },
   },
 
   css: [
@@ -39,6 +31,10 @@ export default defineNuxtConfig({
     '~/assets/css/markdown.css',
     '~/assets/css/remark-link-card.css',
   ],
+
+  site: {
+    url: 'https://splendente.vercel.app',
+  },
 
   content: {
     highlight: { theme: 'github-light' },
@@ -58,9 +54,11 @@ export default defineNuxtConfig({
     },
   },
 
-  site: {
-    url: 'https://splendente.vercel.app',
+  future: {
+    compatibilityVersion: 4,
   },
+
+  compatibilityDate: '2024-09-09',
 
   eslint: {
     config: {
@@ -68,5 +66,7 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-09-09',
+  gtag: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
 })
