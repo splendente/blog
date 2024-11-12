@@ -120,4 +120,8 @@ main {
   list-style: none;
   margin: 0 auto;
 }
+
+.staff > li:not(:last-child) {
+  margin-bottom: 8px;
+}
 </style>
