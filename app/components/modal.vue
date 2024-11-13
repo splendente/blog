@@ -67,7 +67,7 @@ onClickOutside(target, () => emit('outsideClick'))
 
 @media (width < 640px) {
   .modal {
-    height: 90vh;
+    height: 80vh;
   }
 }
 </style>
