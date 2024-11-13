@@ -21,9 +21,7 @@ const config = {
     name: '@storybook/vue3-vite',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
-  },
+  docs: {},
   async viteFinal(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
