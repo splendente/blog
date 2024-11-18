@@ -37,6 +37,8 @@ declare global {
   const getCurrentInstance: typeof import('vue')['getCurrentInstance']
   const getCurrentScope: typeof import('vue')['getCurrentScope']
   const getDays: typeof import('./app/utils/get-days')['default']
+  const getExternalLinks: typeof import('./app/utils/get-links')['getExternalLinks']
+  const getInternalLinks: typeof import('./app/utils/get-links')['getInternalLinks']
   const getLinks: typeof import('./app/utils/get-links')['default']
   const getMonths: typeof import('./app/utils/get-months')['default']
   const getStaff: typeof import('./app/utils/get-staff')['default']
