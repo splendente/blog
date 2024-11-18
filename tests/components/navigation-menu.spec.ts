@@ -6,7 +6,8 @@ describe('NavigationMenuコンポーネント', () => {
   const props = {
     visible: true,
   }
-  const links = getLinks()
+  const internalLinks = getInternalLinks()
+  const externalLinks = getExternalLinks()
 
   const navigationMenu = shallowMount(NavigationMenu, {
     propsData: {
@@ -19,10 +20,22 @@ describe('NavigationMenuコンポーネント', () => {
     },
   })
 
-  test('リンク情報と表示されているテキストおよび遷移先が一致する', () => {
+  test('内部リンク情報と表示されているテキストおよび遷移先が一致する', () => {
     expect(() => {
-      navigationMenu.findAll('a').forEach((item) => {
-        return links.every((link) => {
+      navigationMenu.findAll('.internal-link').forEach((item) => {
+        return internalLinks.every((link) => {
+          return (
+            link.name === item.text() && link.href === item.attributes('href')
+          )
+        })
+      })
+    }).toBeTruthy()
+  })
+
+  test('外部リンク情報と表示されているテキストおよび遷移先が一致する', () => {
+    expect(() => {
+      navigationMenu.findAll('.external-link').forEach((item) => {
+        return externalLinks.every((link) => {
           return (
             link.name === item.text() && link.href === item.attributes('href')
           )
