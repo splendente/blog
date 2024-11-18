@@ -6,7 +6,8 @@ defineProps({
   },
 })
 
-const links = getLinks()
+const internalLinks = getInternalLinks()
+const externalLinks = getExternalLinks()
 </script>
 
 <template>
@@ -17,13 +18,27 @@ const links = getLinks()
     >
       <ul>
         <li
-          v-for="(link, index) in links"
+          v-for="(link, index) in internalLinks"
           :key="index"
         >
           <a
+            class="internal-link"
+            :href="link.href"
+          >
+            {{ link.name }}
+          </a>
+        </li>
+        <li
+          v-for="(link, index) in externalLinks"
+          :key="index"
+        >
+          <a
+            class="external-link"
             :href="link.href"
             target="_blank"
-          >{{ link.name }}</a>
+          >
+            {{ link.name }}
+          </a>
         </li>
       </ul>
     </nav>
@@ -32,13 +47,12 @@ const links = getLinks()
 
 <style scoped>
 .navigation-menu {
-  width: fit-content;
+  width: 100%;
+  height: calc(100vh - 59px);
   min-width: 132px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   position: fixed;
-  top: 80px;
-  right: 16px;
+  top: 59px;
+  right: 0;
   background-color: #fff;
   z-index: calc(infinity);
 }
@@ -47,22 +61,29 @@ const links = getLinks()
   list-style: none;
 }
 
-.navigation-menu li:not(:last-child) {
+.navigation-menu li {
   border-bottom: 1px solid #ddd;
 }
 
-a {
+.internal-link, .external-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #3c3c3c;
+  padding: 16px;
+}
+
+.internal-link {
+  display: block;
+}
+
+.external-link {
   display: flex;
   gap: 0 8px;
   align-items: center;
   justify-content: space-between;
-  text-decoration: none;
-  color: #3c3c3c;
-  font-size: 14px;
-  padding: 8px 16px;
 }
 
-a::after {
+.external-link::after {
   content: "";
   display: block;
   width: 16px;

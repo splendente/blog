@@ -4,10 +4,23 @@ type Link = {
 }
 
 /**
- * ナビゲーションメニューで使用するリンク情報を返却する
+ * ナビゲーションメニューで使用する内部リンク情報を返却する
  * @returns {Array} リンク情報
  */
-export default function (): Link[] {
+export const getInternalLinks = (): Link[] => {
+  return [
+    {
+      name: 'About',
+      href: '/about',
+    },
+  ]
+}
+
+/**
+ * ナビゲーションメニューで使用する外部リンク情報を返却する
+ * @returns {Array} リンク情報
+ */
+export const getExternalLinks = (): Link[] => {
   return [
     {
       name: 'X',
