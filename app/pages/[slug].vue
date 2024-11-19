@@ -24,9 +24,12 @@ const router = useRouter()
     <ContentDoc v-slot="{ doc }">
       <article>
         <div class="blog-header">
-          <p class="created-at">
+          <time
+            class="created-at"
+            datetime="{{ doc.createdAt }}"
+          >
             {{ formatDateString(doc.createdAt) }}
-          </p>
+          </time>
           <h1 class="title">
             {{ doc.title }}
           </h1>
