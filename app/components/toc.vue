@@ -12,8 +12,6 @@ type Props = {
 }
 
 defineProps<Props>()
-
-const router = useRouter()
 </script>
 
 <template>
@@ -25,7 +23,7 @@ const router = useRouter()
         :key="index"
       >
         <NuxtLink
-          :to="`${router.currentRoute.value.path}#${link.id}`"
+          :to="`#${link.id}`"
           :class="`heading-${link.depth}`"
           class="link"
         >
