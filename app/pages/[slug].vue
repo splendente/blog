@@ -159,6 +159,7 @@ main {
   }
   .share-button-component {
     display: flex;
+    height: fit-content;
     flex-direction: column;
     align-items: center;
     position: sticky;
