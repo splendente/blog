@@ -56,10 +56,14 @@ const router = useRouter()
             />
           </div>
           <div id="nuxt-content">
+            <Toc
+              class="toc-component-sp"
+              :items="doc.body?.toc"
+            />
             <ContentRenderer :value="doc" />
           </div>
           <Toc
-            class="toc-component"
+            class="toc-component-pc"
             :items="doc.body?.toc"
           />
         </div>
@@ -133,7 +137,11 @@ main {
   margin: 32px 0;
 }
 
-.share-button-component, .toc-component {
+.toc-component-sp {
+  margin-bottom: 48px;
+}
+
+.share-button-component, .toc-component-pc {
   display: none;
 }
 
@@ -150,7 +158,10 @@ main {
     grid-template-columns: auto minmax(0, 1fr) 200px;
     gap: 0 32px;
   }
-  .toc-component {
+  .toc-component-sp {
+    display: none;
+  }
+  .toc-component-pc {
     display: block;
     flex-direction: column;
     align-items: center;
