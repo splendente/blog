@@ -1,0 +1,13 @@
+html.light-mode{
+  --primary-text: #3c3c3c;
+  --primary-bg: #fff;
+  --secondary-bg: #f6f6f6;
+  --primary-border: #ddd;
+}
+
+html.dark-mode {
+  --primary-text: #F1F2F4;
+  --primary-bg: #101214;
+  --secondary-bg: #161A1D;
+  --primary-border: #22272B;
+}

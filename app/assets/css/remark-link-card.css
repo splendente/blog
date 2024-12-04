@@ -5,10 +5,10 @@
   max-height: 120px;
   margin: 0 auto 16px;
 
-  color: #3c3c3c;
+  color: var(--primary-text);
   text-decoration: none;
 
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-border);
   border-radius: 0.25rem;
   display: flex;
   align-items: stretch;
@@ -82,5 +82,5 @@
   border-bottom-right-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
   margin: 0 !important;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid var(--primary-border);
 }
