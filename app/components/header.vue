@@ -61,6 +61,8 @@ onUnmounted(() => {
   window.removeEventListener('resize', hideNavigationMenu)
   window.removeEventListener('click', detectClickOutside)
 })
+
+const { theme, toggleTheme } = useTheme()
 </script>
 
 <template>
@@ -153,10 +155,36 @@ onUnmounted(() => {
             >
           </template>
         </IconButton>
-        <select v-model="$colorMode.preference">
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
+        <IconButton
+          v-if="theme.value === 'light'"
+          element="button"
+          label="サイトのテーマをダークモードに切り替える"
+          @on-click="toggleTheme()"
+        >
+          <template #icon>
+            <img
+              width="16"
+              height="16"
+              src="@/assets/images/sun.svg"
+              alt=""
+            >
+          </template>
+        </IconButton>
+        <IconButton
+          v-else-if="theme.value === 'dark'"
+          element="button"
+          label="サイトのテーマをライトモードに切り替える"
+          @on-click="toggleTheme()"
+        >
+          <template #icon>
+            <img
+              width="16"
+              height="16"
+              src="@/assets/images/moon.svg"
+              alt=""
+            >
+          </template>
+        </IconButton>
         <IconButton
           class="navigation-button"
           element="button"
