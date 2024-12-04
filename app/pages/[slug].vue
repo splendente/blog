@@ -97,18 +97,18 @@ main {
   text-align: center;
   padding-bottom: 32px;
   margin-bottom: 48px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--primary-border);
 }
 
 .title {
   font-size: 32px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   margin-bottom: 16px;
 }
 
 .description {
   font-size: 14px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   margin-bottom: 16px;
 }
 
@@ -121,7 +121,7 @@ main {
 
 .created-at {
   font-size: 14px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   margin-bottom: 16px;
 }
 
@@ -131,8 +131,8 @@ main {
   gap: 16px;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border);
   padding: 32px 0;
   margin: 32px 0;
 }
@@ -147,7 +147,7 @@ main {
 
 .share-button-component > p {
   font-size: 14px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   font-weight: bold;
   margin-bottom: 8px;
 }

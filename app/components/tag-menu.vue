@@ -57,17 +57,17 @@ onClickOutside(target, () => {
   width: fit-content;
   height: fit-content;
   padding: 6px 28px 6px 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-border);
   border-radius: 4px;
   font-size: 12px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   transition: all 0.5s ease;
   position: relative;
 }
 
 .select-button:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  background-color: var(--secondary-bg);
 }
 
 .select-button::after {
@@ -86,8 +86,8 @@ onClickOutside(target, () => {
 .menu {
   list-style: none;
   border-radius: 4px;
-  border: 1px solid #ddd;
-  background-color: #fff;
+  border: 1px solid var(--primary-border);
+  background-color: var(--primary-bg);
   position: absolute;
   top: 36px;
   left: 0;
@@ -95,7 +95,7 @@ onClickOutside(target, () => {
 }
 
 .menu > li:not(:last-child) {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--primary-border);
 }
 
 .menu > li > a {
@@ -105,14 +105,14 @@ onClickOutside(target, () => {
   height: 100%;
   font-size: 12px;
   padding: 8px 16px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   text-align: left;
   transition: all 0.5s ease;
 }
 
 .menu > li > a:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  background-color: var(--secondary-bg);
 }
 
 .v-enter-active,
