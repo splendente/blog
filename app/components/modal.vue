@@ -50,7 +50,7 @@ onClickOutside(target, () => emit('outsideClick'))
   width: 100%;
   height: 60vh;
   max-width: 640px;
-  background-color: #fff;
+  background-color: var(--primary-bg);
   border-radius: 8px;
   overflow: hidden;
 }
