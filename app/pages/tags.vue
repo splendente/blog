@@ -27,7 +27,7 @@ if (data.value) {
       >
         <Tag
           element="nuxt-link"
-          :to="`/tags/${tag}`"
+          :to="`/?tag=${tag}`"
           :text="tag"
         />
       </li>
