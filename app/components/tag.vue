@@ -43,10 +43,10 @@ const component = computed(() => {
   display: block;
   width: fit-content;
   font-size: 12px;
-  color: #3c3c3c;
-  background-color: #fff;
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
   padding: 2px 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-border);
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.5s ease;
@@ -54,6 +54,6 @@ const component = computed(() => {
 
 a:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  background-color: var(--secondary-bg);
 }
 </style>

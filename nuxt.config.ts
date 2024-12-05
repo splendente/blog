@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     '@nuxtjs/storybook',
     '@nuxt/image',
     '@nuxtjs/seo',
+    '@nuxtjs/color-mode',
   ],
   ssr: true,
 
@@ -29,6 +30,7 @@ export default defineNuxtConfig({
 
   css: [
     '~/assets/css/reset.css',
+    '~/assets/css/main.css',
     '~/assets/css/markdown.css',
     '~/assets/css/remark-link-card.css',
   ],

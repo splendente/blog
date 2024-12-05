@@ -61,6 +61,8 @@ onUnmounted(() => {
   window.removeEventListener('resize', hideNavigationMenu)
   window.removeEventListener('click', detectClickOutside)
 })
+
+const { theme, toggleTheme } = useTheme()
 </script>
 
 <template>
@@ -154,6 +156,36 @@ onUnmounted(() => {
           </template>
         </IconButton>
         <IconButton
+          v-if="theme.value === 'light'"
+          element="button"
+          label="サイトのテーマをダークモードに切り替える"
+          @on-click="toggleTheme()"
+        >
+          <template #icon>
+            <img
+              width="16"
+              height="16"
+              src="@/assets/images/sun.svg"
+              alt=""
+            >
+          </template>
+        </IconButton>
+        <IconButton
+          v-else-if="theme.value === 'dark'"
+          element="button"
+          label="サイトのテーマをライトモードに切り替える"
+          @on-click="toggleTheme()"
+        >
+          <template #icon>
+            <img
+              width="16"
+              height="16"
+              src="@/assets/images/moon.svg"
+              alt=""
+            >
+          </template>
+        </IconButton>
+        <IconButton
           class="navigation-button"
           element="button"
           label="ナビゲーションメニューを表示する"
@@ -214,10 +246,10 @@ onUnmounted(() => {
 
 <style scoped>
 header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--primary-border);
   position: sticky;
   top: 0;
-  background-color: #fff;
+  background-color: var(--primary-bg);
   z-index: 10;
 }
 
@@ -233,7 +265,7 @@ header {
 .link {
   display: block;
   text-decoration: none;
-  color: #3c3c3c;
+  color: var(--primary-text);
   position: relative;
 }
 
@@ -261,7 +293,7 @@ header {
 
 .modal-header {
   padding: 24px;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--primary-border);
   display: flex;
   justify-content: flex-end;
 }
@@ -275,8 +307,8 @@ header {
 .modal-footer {
   display: flex;
   justify-content: center;
-  border-top: 1px solid #ddd;
-  background-color: #fff;
+  border-top: 1px solid var(--primary-border);
+  background-color: var(--primary-bg);
   width: 100%;
   padding: 24px;
   position: absolute;
@@ -296,19 +328,19 @@ header {
 }
 
 .reset-button {
-  color: #3c3c3c;
+  color: var(--primary-text);
   font-size: 12px;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: var(--primary-bg);
+  border: 1px solid var(--primary-border);
   transition: all 0.5s ease;
 }
 
 .reset-button:hover,
 .close-button:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  background-color: var(--secondary-bg);
 }
 
 @media (width < 640px) {

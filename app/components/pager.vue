@@ -77,7 +77,7 @@ defineProps({
   display: block;
   width: calc(50% - 16px);
   padding: 16px 24px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-border);
   border-radius: 8px;
   text-decoration: none;
   transition: all 0.5s ease;
@@ -85,7 +85,7 @@ defineProps({
 
 .link:hover {
   cursor: pointer;
-  background-color: #f6f6f6;
+  background-color: var(--secondary-bg);
 }
 
 .next-page,
@@ -125,14 +125,14 @@ defineProps({
 
 .title {
   font-size: 16px;
-  color: #3c3c3c;
+  color: var(--primary-text);
   font-weight: bold;
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #3c3c3c;
+  color: var(--primary-text);
 }
 
 @media (width < 640px) {

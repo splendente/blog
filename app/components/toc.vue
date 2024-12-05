@@ -39,13 +39,13 @@ defineProps<Props>()
   width: 100%;
   height: fit-content;
   border-radius: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--primary-border);
   padding: 16px;
 }
 
 .toc p {
   font-weight: bold;
-  color: #3c3c3c;
+  color: var(--primary-text);
   margin-bottom: 16px;
 }
 
@@ -58,7 +58,7 @@ defineProps<Props>()
 }
 
 .link {
-  color: #3c3c3c;
+  color: var(--primary-text);
   font-size: 14px;
   text-decoration: none;
 }
