@@ -61,8 +61,8 @@ ul {
 
 p {
   font-size: 14px;
-  color: var(--primary-text);
-  border-bottom: 1px solid var(--primary-border);
+  color: var(--primary-text-color);
+  border-bottom: 1px solid var(--primary-border-color);
   padding-bottom: 16px;
   margin: 16px 0;
 }
@@ -71,16 +71,16 @@ a {
   display: block;
   width: 100%;
   padding: 8px 16px;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   border-radius: 4px;
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   overflow: hidden;
   transition: all 0.5s ease;
 }
 
 a:hover {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 span {

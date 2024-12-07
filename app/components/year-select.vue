@@ -42,15 +42,15 @@ const options = computed(() => {
 .year-select {
   width: fit-content;
   height: fit-content;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   border-radius: 4px;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg-color);
 }
 
 .year-select > select {
   padding: 6px 12px;
   font-size: 12px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .year-select > select:hover {

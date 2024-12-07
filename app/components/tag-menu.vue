@@ -57,17 +57,17 @@ onClickOutside(target, () => {
   width: fit-content;
   height: fit-content;
   padding: 6px 28px 6px 12px;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   border-radius: 4px;
   font-size: 12px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   transition: all 0.5s ease;
   position: relative;
 }
 
 .select-button:hover {
   cursor: pointer;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 .select-button::after {
@@ -86,8 +86,8 @@ onClickOutside(target, () => {
 .menu {
   list-style: none;
   border-radius: 4px;
-  border: 1px solid var(--primary-border);
-  background-color: var(--primary-bg);
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--primary-bg-color);
   position: absolute;
   top: 36px;
   left: 0;
@@ -95,7 +95,7 @@ onClickOutside(target, () => {
 }
 
 .menu > li:not(:last-child) {
-  border-bottom: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border-color);
 }
 
 .menu > li > a {
@@ -105,14 +105,14 @@ onClickOutside(target, () => {
   height: 100%;
   font-size: 12px;
   padding: 8px 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   text-align: left;
   transition: all 0.5s ease;
 }
 
 .menu > li > a:hover {
   cursor: pointer;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 .v-enter-active,

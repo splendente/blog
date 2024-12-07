@@ -81,14 +81,14 @@ main {
   font-size: 32px;
   text-align: center;
   margin: 32px auto 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .sub-title {
   font-size: 24px;
   text-align: center;
   margin: 32px auto 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .overview {
@@ -99,7 +99,7 @@ main {
 }
 
 .overview > p {
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .links {

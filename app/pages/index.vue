@@ -144,12 +144,12 @@ main {
 
 .title {
   font-size: 32px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .title > span {
   font-size: 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   margin-left: 8px;
 }
 

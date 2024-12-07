@@ -29,11 +29,11 @@ defineProps({
   align-items: center;
   width: fit-content;
   border-radius: 4px;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   padding: 8px;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg-color);
   font-size: 12px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   text-decoration: none;
   gap: 0 8px;
   transition: all 0.5s ease;
@@ -41,6 +41,6 @@ defineProps({
 
 .page-edit-link:hover {
   cursor: pointer;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 </style>

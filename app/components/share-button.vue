@@ -43,7 +43,7 @@ const startShare = () => {
   height:40px;
   padding: 16px;
   background-color: #fff;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
 }
 
 .share-button img {

@@ -103,17 +103,17 @@ h1 {
   font-size: 32px;
   text-align: center;
   margin-bottom: 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 h2 {
   font-size: 24px;
   margin: 48px 0 16px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 p {
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   margin-bottom: 8px;
 }
 
@@ -126,6 +126,6 @@ section > p:last-child {
   font-size: 14px;
   padding-bottom: 32px;
   margin-bottom: 48px;
-  border-bottom: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border-color);
 }
 </style>

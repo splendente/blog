@@ -15,15 +15,15 @@
 <style scoped>
 .footer {
   padding: 16px 24px;
-  background-color: var(--primary-bg);
-  border-top: 1px solid var(--primary-border);
+  background-color: var(--primary-bg-color);
+  border-top: 1px solid var(--primary-border-color);
   text-align: center;
 }
 
 .terms-and-privacy,
 .copyright {
   font-size: 14px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .terms-and-privacy:hover {

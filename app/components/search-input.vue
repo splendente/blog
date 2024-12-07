@@ -15,8 +15,8 @@ input {
   display: block;
   width: 100%;
   padding: 16px;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   border-radius: 8px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 </style>
