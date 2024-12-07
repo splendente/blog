@@ -70,15 +70,15 @@ const formatDate = computed(() => {
   grid-template-rows: auto auto auto auto;
   grid-template-columns: auto 1fr;
   padding: 24px;
-  background-color: var(--primary-bg);
-  border: 1px solid var(--primary-border);
+  background-color: var(--primary-bg-color);
+  border: 1px solid var(--primary-border-color);
   border-radius: 8px;
   transition: all 0.5s ease;
   position: relative;
 }
 
 .card:hover {
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 .card span {
@@ -103,7 +103,7 @@ const formatDate = computed(() => {
   font-size: 14px;
   grid-row: 1 / 2;
   grid-column: 2 / 3;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
 }
 
 .card .title {
@@ -112,7 +112,7 @@ const formatDate = computed(() => {
   font-weight: bold;
   grid-row: 2 / 3;
   grid-column: 2 / 3;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -136,7 +136,7 @@ const formatDate = computed(() => {
   font-size: 14px;
   grid-row: 3 / 4;
   grid-column: 2 / 3;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;

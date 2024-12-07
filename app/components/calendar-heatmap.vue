@@ -231,7 +231,7 @@ const setTooltipPosition = (event: MouseEvent) => {
 
 .months > li > p,
 .days > li > p {
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   font-size: 12px;
 }
 
@@ -286,7 +286,7 @@ const setTooltipPosition = (event: MouseEvent) => {
 
 .annotation {
   font-size: 12px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   margin-top: 16px;
   white-space: nowrap;
 }

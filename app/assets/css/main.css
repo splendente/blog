@@ -1,13 +1,13 @@
 html.light-mode{
-  --primary-text: #3c3c3c;
-  --primary-bg: #fff;
-  --secondary-bg: #f6f6f6;
-  --primary-border: #ddd;
+  --primary-text-color: #3c3c3c;
+  --primary-bg-color: #fff;
+  --secondary-bg-color: #f6f6f6;
+  --primary-border-color: #ddd;
 }
 
 html.dark-mode {
-  --primary-text: #F1F2F4;
-  --primary-bg: #101214;
-  --secondary-bg: #161A1D;
-  --primary-border: #F1F2F4;
+  --primary-text-color: #F1F2F4;
+  --primary-bg-color: #101214;
+  --secondary-bg-color: #161A1D;
+  --primary-border-color: #F1F2F4;
 }

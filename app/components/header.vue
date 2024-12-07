@@ -246,10 +246,10 @@ const { theme, toggleTheme } = useTheme()
 
 <style scoped>
 header {
-  border-bottom: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border-color);
   position: sticky;
   top: 0;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg-color);
   z-index: 10;
 }
 
@@ -265,7 +265,7 @@ header {
 .link {
   display: block;
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   position: relative;
 }
 
@@ -293,7 +293,7 @@ header {
 
 .modal-header {
   padding: 24px;
-  border-bottom: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border-color);
   display: flex;
   justify-content: flex-end;
 }
@@ -307,8 +307,8 @@ header {
 .modal-footer {
   display: flex;
   justify-content: center;
-  border-top: 1px solid var(--primary-border);
-  background-color: var(--primary-bg);
+  border-top: 1px solid var(--primary-border-color);
+  background-color: var(--primary-bg-color);
   width: 100%;
   padding: 24px;
   position: absolute;
@@ -328,19 +328,19 @@ header {
 }
 
 .reset-button {
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   font-size: 12px;
   padding: 8px 16px;
   border-radius: 8px;
-  background-color: var(--primary-bg);
-  border: 1px solid var(--primary-border);
+  background-color: var(--primary-bg-color);
+  border: 1px solid var(--primary-border-color);
   transition: all 0.5s ease;
 }
 
 .reset-button:hover,
 .close-button:hover {
   cursor: pointer;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 @media (width < 640px) {

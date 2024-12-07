@@ -25,7 +25,7 @@ defineProps({
 .link-to-back:active,
 .link-to-back:visited {
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   font-size: 14px;
   display: flex;
   align-items: center;

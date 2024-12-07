@@ -30,7 +30,7 @@ defineEmits<{
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--primary-border);
+  border: 1px solid var(--primary-border-color);
   border-radius: 4px;
 }
 
@@ -40,13 +40,13 @@ defineEmits<{
   width: fit-content;
   height: fit-content;
   padding: 6px;
-  border-right: 1px solid var(--primary-border);
+  border-right: 1px solid var(--primary-border-color);
   transition: all 0.5s ease;
 }
 
 .sort-menu > button:hover {
   cursor: pointer;
-  background-color: var(--secondary-bg);
+  background-color: var(--secondary-bg-color);
 }
 
 .desc::after, .asc::after {
@@ -72,7 +72,7 @@ defineEmits<{
 
 .sort-menu > p {
   font-size: 12px;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   padding: 6px 12px;
 }
 </style>

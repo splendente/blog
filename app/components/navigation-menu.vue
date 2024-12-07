@@ -53,7 +53,7 @@ const externalLinks = getExternalLinks()
   position: fixed;
   top: 59px;
   right: 0;
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg-color);
   z-index: calc(infinity);
 }
 
@@ -62,13 +62,13 @@ const externalLinks = getExternalLinks()
 }
 
 .navigation-menu li {
-  border-bottom: 1px solid var(--primary-border);
+  border-bottom: 1px solid var(--primary-border-color);
 }
 
 .internal-link, .external-link {
   font-size: 14px;
   text-decoration: none;
-  color: var(--primary-text);
+  color: var(--primary-text-color);
   padding: 16px;
 }
 
