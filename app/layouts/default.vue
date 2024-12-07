@@ -1,11 +1,9 @@
 <template>
-  <ColorScheme>
-    <div class="wrapper">
-      <Header />
-      <slot />
-      <Footer />
-    </div>
-  </ColorScheme>
+  <div class="wrapper">
+    <Header />
+    <slot />
+    <Footer />
+  </div>
 </template>
 
 <style scoped>
