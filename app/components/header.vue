@@ -154,7 +154,7 @@ onUnmounted(() => {
           </template>
         </IconButton>
         <IconButton
-          v-if="$colorMode.preference === 'light'"
+          v-if="$colorMode.value === 'light' || $colorMode.preference === 'light'"
           element="button"
           label="サイトのテーマをダークモードに切り替える"
           @on-click="$colorMode.preference = 'dark'"
@@ -169,7 +169,7 @@ onUnmounted(() => {
           </template>
         </IconButton>
         <IconButton
-          v-else-if="$colorMode.preference === 'dark'"
+          v-else-if="$colorMode.value === 'dark' || $colorMode.preference === 'dark'"
           element="button"
           label="サイトのテーマをライトモードに切り替える"
           @on-click="$colorMode.preference = 'light'"
