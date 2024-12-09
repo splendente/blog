@@ -61,8 +61,6 @@ onUnmounted(() => {
   window.removeEventListener('resize', hideNavigationMenu)
   window.removeEventListener('click', detectClickOutside)
 })
-
-const colorMode = useColorMode()
 </script>
 
 <template>
@@ -171,7 +169,7 @@ const colorMode = useColorMode()
           </template>
         </IconButton>
         <IconButton
-          v-else-if="colorMode.value === 'dark' || colorMode.preference === 'dark'"
+          v-else-if="$colorMode.value === 'dark' || $colorMode.preference === 'dark'"
           element="button"
           label="サイトのテーマをライトモードに切り替える"
           @on-click="$colorMode.preference = 'light'"
