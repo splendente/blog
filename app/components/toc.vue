@@ -12,6 +12,22 @@ type Props = {
 }
 
 defineProps<Props>()
+
+/**
+ * クリックされたリンクのid属性名に対応する要素までスクロールさせる
+ * @param {String} id - クリックされたリンクのid属性名 
+ */
+const scrollToTarget = (id: string) => {
+  const target = document.querySelector(`a[href^="#${id}"]`)
+  const headerHeight = 90 // ヘッダーの高さ(58px) + タイトル上部の余白(32px) = 90px
+
+  if (target) {
+    window.scrollTo({
+      top: target.getBoundingClientRect().top + window.scrollY - headerHeight,
+      behavior: 'smooth',
+    })
+  }
+}
 </script>
 
 <template>
@@ -22,13 +38,13 @@ defineProps<Props>()
         v-for="(link, index) in Array.from(items?.links)"
         :key="index"
       >
-        <NuxtLink
-          :to="`#${link.id}`"
+        <a
+          @click.prevent="scrollToTarget(link.id)"
           :class="`heading-${link.depth}`"
           class="link"
         >
           {{ link.text }}
-        </NuxtLink>
+        </a>
       </li>
     </ul>
   </nav>
@@ -64,6 +80,7 @@ defineProps<Props>()
 }
 
 .link:hover {
+  cursor: pointer;
   font-weight: bold;
 }
 </style>
