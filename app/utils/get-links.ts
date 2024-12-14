@@ -13,6 +13,10 @@ export const getInternalLinks = (): Link[] => {
       name: 'About',
       href: '/about',
     },
+    {
+      name: 'Tags',
+      href: '/tags',
+    },
   ]
 }
 
