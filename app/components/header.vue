@@ -79,6 +79,12 @@ onUnmounted(() => {
         >
           About
         </NuxtLink>
+        <NuxtLink
+          to="/tags"
+          class="link"
+        >
+          Tags
+        </NuxtLink>
         <IconButton
           element="button"
           label="記事を検索する"
