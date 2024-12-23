@@ -6,6 +6,7 @@ import { BASE_URL } from './consts'
 const testCases = [
   { path: '', title: 'ホーム' },
   { path: 'blog', title: 'すべての記事一覧' },
+  { path: 'about', title: 'Hikaru Kobayashi' },
   { path: 'tags', title: 'タグ一覧' },
   { path: '?tag=Nuxt', title: 'Nuxtの記事一覧' },
   { path: 'released-on-nuxt-v3-11', title: '個別のページ' },
