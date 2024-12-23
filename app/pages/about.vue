@@ -17,6 +17,7 @@ const staff = getStaff()
       width="160"
       height="160"
       class="avatar"
+      alt=""
     />
     <h1 class="name">
       Hikaru Kobayashi

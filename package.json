@@ -18,7 +18,8 @@
     "eslint:fix": "eslint . --fix",
     "textlint": "textlint .",
     "textlint:fix": "textlint . --fix",
-    "chromatic": "source .env && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN"
+    "chromatic": "source .env && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
+    "test:e2e": "npx playwright test"
   },
   "lint-staged": {
     "*": "npm run eslint:fix",
