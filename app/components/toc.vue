@@ -15,7 +15,7 @@ defineProps<Props>()
 
 /**
  * クリックされたリンクのid属性名に対応する要素までスクロールさせる
- * @param {String} id - クリックされたリンクのid属性名 
+ * @param {String} id - クリックされたリンクのid属性名
  */
 const scrollToTarget = (id: string) => {
   const target = document.querySelector(`a[href^="#${id}"]`)
@@ -39,9 +39,9 @@ const scrollToTarget = (id: string) => {
         :key="index"
       >
         <a
-          @click.prevent="scrollToTarget(link.id)"
           :class="`heading-${link.depth}`"
           class="link"
+          @click.prevent="scrollToTarget(link.id)"
         >
           {{ link.text }}
         </a>
