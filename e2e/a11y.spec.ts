@@ -17,6 +17,7 @@ for (const { path, title } of testCases) {
   test.describe('WCAGの基準に基づいたアクセシビリティテスト', () => {
     test(`${title}`, async ({ page }) => {
       await page.goto(`${BASE_URL}/${path}`)
+      await page.waitForURL(`${BASE_URL}/${path}`)
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze()
