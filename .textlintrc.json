@@ -1,7 +1,12 @@
 {
   "plugins": {},
-  "filters": {},
+  "filters": {
+    "comments": true
+  },
   "rules": {
-    "no-dropping-the-ra": true
+    "no-dropping-the-ra": true,
+    "aws-service-name": true,
+    "ja-unnatural-alphabet": true,
+    "no-hankaku-kana": true
   }
 }
