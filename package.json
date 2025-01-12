@@ -64,6 +64,7 @@
     "axe-html-reporter": "^2.2.10",
     "chromatic": "^11.19.0",
     "eslint": "^9.16.0",
+    "eslint-plugin-vuejs-accessibility": "^2.4.1",
     "husky": "^9.1.1",
     "jsdom": "^25.0.0",
     "lint-staged": "^15.3.0",
