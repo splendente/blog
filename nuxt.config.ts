@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
+    '@nuxtjs/i18n',
   ],
   ssr: true,
 
@@ -71,5 +72,9 @@ export default defineNuxtConfig({
 
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
+  },
+
+  i18n: {
+    vueI18n: './i18n.config.ts',
   },
 })
