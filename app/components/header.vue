@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { setLocale } = useI18n()
+
 const { isRevealed, reveal, cancel } = useConfirmDialog()
 const { keyword, results } = useSearch()
 
@@ -155,6 +157,20 @@ onUnmounted(() => {
               width="16"
               height="16"
               src="@/assets/images/rss.svg"
+              alt=""
+            >
+          </template>
+        </IconButton>
+        <IconButton
+          element="button"
+          :label="$i18n.locale === 'ja' ? 'Switch to English' : '日本語に切り替える'"
+          @on-click="setLocale($i18n.locale === 'ja' ? 'en' : 'ja')"
+        >
+          <template #icon>
+            <img
+              width="16"
+              height="16"
+              src="@/assets/images/language.svg"
               alt=""
             >
           </template>
