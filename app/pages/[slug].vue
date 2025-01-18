@@ -1,12 +1,16 @@
 <script setup lang="ts">
 // 現在のページを取得する
 const route = useRoute()
+const lang = computed(() => {
+  if (route.path === '/en') return 'en'
+  return '/'
+})
 
 /**
  * 現在のページの前後のページ情報を取得する
  */
 const { data, error } = await useAsyncData('slug', () =>
-  queryContent('/')
+  queryContent(lang.value)
     .only(['_path', 'title', 'description'])
     .findSurround(route.path),
 )
@@ -48,7 +52,7 @@ const router = useRouter()
         </div>
         <div class="content-wrapper">
           <div class="share-button-component">
-            <p>シェア</p>
+            <p>{{ $t('share') }}</p>
             <ShareButton
               title="記事をシェアする"
               text="この記事をシェアしよう！"
@@ -69,10 +73,7 @@ const router = useRouter()
         </div>
       </article>
       <div class="link-box">
-        <LinkToBack
-          to="/"
-          text="一覧に戻る"
-        />
+        <LinkToBack />
         <LinkToEdit :file-name="doc._file" />
       </div>
     </ContentDoc>

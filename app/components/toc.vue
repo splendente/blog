@@ -32,7 +32,7 @@ const scrollToTarget = (id: string) => {
 
 <template>
   <nav class="toc">
-    <p>目次</p>
+    <p>{{ $t('toc') }}</p>
     <ul>
       <li
         v-for="(link, index) in Array.from(items?.links)"
