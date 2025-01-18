@@ -2,7 +2,7 @@
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
 const route = useRoute()
-const title = route.query.tag ? `${route.query.tag}` : 'すべて'
+const title = route.query.tag ? `${route.query.tag}` : (route.path === '/en' ? 'All' : 'すべて')
 
 const lang = computed(() => {
   if (route.path === '/en') return 'en'
@@ -92,7 +92,7 @@ if (data.value) {
     <div class="title-wrapper">
       <h1 class="title">
         {{ title }}
-        <span>の記事一覧</span>
+        <span>{{ $t('heading') }}</span>
       </h1>
       <div class="buttons">
         <TagMenu :tags="tags" />

@@ -187,9 +187,8 @@ const setTooltipPosition = (event: MouseEvent) => {
       </ul>
     </div>
     <p class="annotation">
-      ※本ブログにおける
       <span>{{ title }}</span>
-      の記事の執筆および編集のアクティビティです。
+      {{ $t('annotation') }}
     </p>
   </div>
 </template>
