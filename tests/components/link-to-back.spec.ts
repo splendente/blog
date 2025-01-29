@@ -1,20 +1,25 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi, beforeEach } from 'vitest'
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
 import LinkToBack from '@/components/link-to-back.vue'
 
 describe('LinkToBackコンポーネント', () => {
-  const props = {
-    to: '/',
-    text: '一覧に戻る',
+  const mockTranslations: { [key: string]: string } = {
+    linkToBack: '一覧に戻る',
   }
 
+  beforeEach(() => {
+    vi.stubGlobal('$t', (key: string) => mockTranslations[key] || key)
+  })
+
   const linkToBack = shallowMount(LinkToBack, {
-    propsData: {
-      ...props,
-    },
     global: {
       stubs: {
-        NuxtLink: RouterLinkStub,
+        NuxtLinkLocale: RouterLinkStub,
+      },
+      config: {
+        globalProperties: {
+          $t: (key: string) => mockTranslations[key] || key,
+        },
       },
     },
   })

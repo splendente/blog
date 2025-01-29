@@ -42,7 +42,7 @@ describe('Tagコンポーネント', () => {
       },
       global: {
         stubs: {
-          NuxtLink: RouterLinkStub,
+          NuxtLinkLocale: RouterLinkStub,
         },
       },
     })
