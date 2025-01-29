@@ -1,17 +1,7 @@
 <script setup lang="ts">
-type Props = {
-  items: {
-    title: string
-    searchDepth: number
-    links: {
-      id: string
-      depth: number
-      text: string
-    }[]
-  }
-}
+import type { TocProps } from '@/types'
 
-defineProps<Props>()
+defineProps<TocProps>()
 
 /**
  * クリックされたリンクのid属性名に対応する要素までスクロールさせる
