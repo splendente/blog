@@ -75,18 +75,18 @@ onUnmounted(() => {
         Blog
       </NuxtLinkLocale>
       <nav class="navigation">
-        <NuxtLink
+        <NuxtLinkLocale
           to="/about"
           class="link"
         >
           About
-        </NuxtLink>
-        <NuxtLink
+        </NuxtLinkLocale>
+        <NuxtLinkLocale
           to="/tags"
           class="link"
         >
           Tags
-        </NuxtLink>
+        </NuxtLinkLocale>
         <IconButton
           element="button"
           label="記事を検索する"

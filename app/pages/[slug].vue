@@ -1,8 +1,10 @@
 <script setup lang="ts">
-// 現在のページを取得する
 const route = useRoute()
-const lang = computed(() => {
-  if (route.path === '/en') return 'en'
+const { locale } = useI18n()
+
+// 現在のページを取得する
+const targetPath = computed(() => {
+  if (locale.value === 'en') return '/en'
   return '/'
 })
 
@@ -10,7 +12,7 @@ const lang = computed(() => {
  * 現在のページの前後のページ情報を取得する
  */
 const { data, error } = await useAsyncData('slug', () =>
-  queryContent(lang.value)
+  queryContent(targetPath.value)
     .only(['_path', 'title', 'description'])
     .findSurround(route.path),
 )

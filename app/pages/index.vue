@@ -3,9 +3,11 @@ import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
 const route = useRoute()
 const title = route.query.tag ? `${route.query.tag}` : (route.path === '/en' ? 'All' : 'すべて')
+const { locale } = useI18n()
 
-const lang = computed(() => {
-  if (route.path === '/en') return 'en'
+// 現在のページを取得する
+const targetPath = computed(() => {
+  if (locale.value === 'en') return '/en'
   return '/'
 })
 
@@ -21,8 +23,8 @@ const { desc, toggleSort } = useSort()
 
 const query: QueryBuilderParams = computed(() => {
   return {
-    path: lang.value,
-    where: [{ tags: route.query.tag && { $contains: route.query.tag } }],
+    path: targetPath.value,
+    where: [{ tags: route.query.tag && { $contains: route.query.tag }, _path: locale.value === 'ja' ? { $not: /^\/en(\/|$)/ } : { $regex: /^\/en(\/|$)/ } }],
     sort: [{ createdAt: desc.value ? -1 : 1 }],
   }
 })
@@ -34,7 +36,7 @@ const targetYear = ref<number>(date.getFullYear())
  * contentディレクトリ配下のコンテンツの全ての情報を取得する
  */
 const { data: page } = await useAsyncData('articles', () =>
-  queryContent(lang.value)
+  queryContent(targetPath.value)
     .where({ tags: route.query.tag && { $contains: route.query.tag } })
     .find(),
 )
@@ -68,7 +70,7 @@ const activeDates = computed(() => {
 const tags = ref<string[]>([])
 
 const { data } = await useAsyncData('tags', () =>
-  queryContent(lang.value).only(['tags']).find(),
+  queryContent(targetPath.value).only(['tags']).find(),
 )
 
 if (data.value) {
