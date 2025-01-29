@@ -15,7 +15,7 @@ const component = computed(() => {
       }
     case 'nuxt-link':
       return {
-        element: resolveComponent('NuxtLink'),
+        element: resolveComponent('NuxtLinkLocale'),
         props: nuxtLinkProps,
       }
     default: {
