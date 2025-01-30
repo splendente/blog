@@ -26,7 +26,7 @@ export default {
       return { ...args }
     },
     template: `
-      <CalendarHeatmap :target-year="target-year" :active-dates="active-dates" :title="title" />
+      <CalendarHeatmap :target-year="targetYear" :active-dates="activeDates" :title="title" />
     `,
   }),
 }
