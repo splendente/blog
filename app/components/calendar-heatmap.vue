@@ -1,18 +1,7 @@
 <script setup lang="ts">
-const props = defineProps({
-  targetYear: {
-    type: Number,
-    required: true,
-  },
-  activeDates: {
-    type: Array as () => string[],
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-})
+import type { CalendarHeatmapProps } from '@/types'
+
+const props = defineProps<CalendarHeatmapProps>()
 
 const date = new Date()
 const thisYear = date.getFullYear()
@@ -187,9 +176,8 @@ const setTooltipPosition = (event: MouseEvent) => {
       </ul>
     </div>
     <p class="annotation">
-      ※本ブログにおける
       <span>{{ title }}</span>
-      の記事の執筆および編集のアクティビティです。
+      {{ $t('annotation') }}
     </p>
   </div>
 </template>

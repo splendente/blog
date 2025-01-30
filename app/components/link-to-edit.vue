@@ -19,7 +19,7 @@ defineProps({
       width="20"
       height="20"
     >
-    GitHubで編集を提案する
+    {{ $t('linkToEdit') }}
   </a>
 </template>
 
