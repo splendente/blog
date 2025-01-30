@@ -16,7 +16,7 @@ export default {
   render: (args: Args) => ({
     components: { IconButton },
     setup() {
-      return { args }
+      return { ...args }
     },
     template: `
       <IconButton v-bind="{ ...args }">

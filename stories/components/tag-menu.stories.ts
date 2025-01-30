@@ -24,7 +24,7 @@ export default {
       if (app) {
         app.config.globalProperties.$t = (key: string) => locale === 'ja' ? messages.ja[key] || key : messages.en[key] || key
       }
-      return { args }
+      return { ...args }
     },
     template: `
       <TagMenu :tags='tags' />
