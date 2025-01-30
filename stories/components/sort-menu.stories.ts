@@ -1,3 +1,5 @@
+import type { GlobalTypes } from 'storybook/internal/types'
+
 import ja from './../../i18n/locales/ja'
 import en from './../../i18n/locales/en'
 
@@ -12,7 +14,7 @@ export default {
   title: 'components/sort-menu',
   component: SortMenu,
   tags: ['autodocs'],
-  render: (args: { desc: boolean }, { globals }) => ({
+  render: (args: { desc: boolean }, { globals }: { globals: GlobalTypes }) => ({
     components: { SortMenu },
     setup() {
       const locale = globals.locale || 'ja'

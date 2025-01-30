@@ -1,3 +1,5 @@
+import type { GlobalTypes } from 'storybook/internal/types'
+
 import ja from './../../i18n/locales/ja'
 import en from './../../i18n/locales/en'
 
@@ -12,7 +14,7 @@ export default {
   title: 'components/link-to-back',
   component: LinkToBack,
   tags: ['autodocs'],
-  render: (args, { globals }) => ({
+  render: (args: undefined, { globals }: { globals: GlobalTypes }) => ({
     components: { LinkToBack },
     setup() {
       const locale = globals.locale || 'ja'
