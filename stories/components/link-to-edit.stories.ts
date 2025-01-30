@@ -1,3 +1,5 @@
+import type { GlobalTypes } from 'storybook/internal/types'
+
 import ja from './../../i18n/locales/ja'
 import en from './../../i18n/locales/en'
 
@@ -12,7 +14,7 @@ export default {
   title: 'components/link-to-edit',
   component: LinkToEdit,
   tags: ['autodocs'],
-  render: (args: { fileName: string }, { globals }) => ({
+  render: (args: { fileName: string }, { globals }: { globals: GlobalTypes }) => ({
     components: { LinkToEdit },
     setup() {
       const locale = globals.locale || 'ja'

@@ -1,3 +1,5 @@
+import type { GlobalTypes } from 'storybook/internal/types'
+
 import ja from './../../i18n/locales/ja'
 import en from './../../i18n/locales/en'
 
@@ -13,7 +15,7 @@ export default {
   title: 'components/calendar-heatmap',
   component: CalendarHeatmap,
   tags: ['autodocs'],
-  render: (args: CalendarHeatmapProps, { globals }) => ({
+  render: (args: CalendarHeatmapProps, { globals }: { globals: GlobalTypes }) => ({
     components: { CalendarHeatmap },
     setup() {
       const locale = globals.locale || 'ja'

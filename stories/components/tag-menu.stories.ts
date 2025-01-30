@@ -1,5 +1,7 @@
 import { userEvent, within } from '@storybook/test'
 
+import type { GlobalTypes } from 'storybook/internal/types'
+
 import ja from './../../i18n/locales/ja'
 import en from './../../i18n/locales/en'
 
@@ -14,7 +16,7 @@ export default {
   title: 'components/tag-menu',
   component: TagMenu,
   tags: ['autodocs'],
-  render: (args: { tags: string[] }, { globals }) => ({
+  render: (args: { tags: string[] }, { globals }: { globals: GlobalTypes }) => ({
     components: { TagMenu },
     setup() {
       const locale = globals.locale || 'ja'
