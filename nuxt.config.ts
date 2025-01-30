@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxtjs/color-mode',
+    '@nuxtjs/i18n',
   ],
   ssr: true,
 
@@ -71,5 +72,15 @@ export default defineNuxtConfig({
 
   gtag: {
     id: process.env.GOOGLE_ANALYTICS_ID,
+  },
+
+  i18n: {
+    locales: [
+      { code: 'ja', name: 'Japanese', iso: 'ja_JP', file: 'ja.ts' },
+      { code: 'en', name: 'English', iso: 'en-US', file: 'en.ts' },
+    ],
+    defaultLocale: 'ja',
+    langDir: 'locales/',
+    lazy: true,
   },
 })

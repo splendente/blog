@@ -1,17 +1,7 @@
 <script setup lang="ts">
-type Props = {
-  items: {
-    title: string
-    searchDepth: number
-    links: {
-      id: string
-      depth: number
-      text: string
-    }[]
-  }
-}
+import type { TocProps } from '@/types'
 
-defineProps<Props>()
+defineProps<TocProps>()
 
 /**
  * クリックされたリンクのid属性名に対応する要素までスクロールさせる
@@ -32,7 +22,7 @@ const scrollToTarget = (id: string) => {
 
 <template>
   <nav class="toc">
-    <p>目次</p>
+    <p>{{ $t('toc') }}</p>
     <ul>
       <li
         v-for="(link, index) in Array.from(items?.links)"

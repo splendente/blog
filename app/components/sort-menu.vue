@@ -19,7 +19,7 @@ defineEmits<{
       :aria-label="desc ? '昇順に並び替える' : '降順に並び替える'"
       @click="$emit('toggleSort')"
     />
-    <p>作成日時</p>
+    <p>{{ $t('createdAt') }}</p>
   </div>
 </template>
 

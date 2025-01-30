@@ -6,7 +6,7 @@ describe('Footerコンポーネント', () => {
   const footer = shallowMount(Footer, {
     global: {
       stubs: {
-        NuxtLink: RouterLinkStub,
+        NuxtLinkLocale: RouterLinkStub,
       },
     },
   })

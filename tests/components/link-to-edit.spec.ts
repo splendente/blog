@@ -1,8 +1,16 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
 import LinkToEdit from '@/components/link-to-edit.vue'
 
 describe('LinkToEditコンポーネント', () => {
+  const mockTranslations: { [key: string]: string } = {
+    linkToEdit: 'GitHubで編集を提案する',
+  }
+
+  beforeEach(() => {
+    vi.stubGlobal('$t', (key: string) => mockTranslations[key] || key)
+  })
+
   const baseUrl = 'https://github.com/splendente/blog/tree/main/content/'
   const props = {
     fileName: 'vitest',
@@ -11,6 +19,13 @@ describe('LinkToEditコンポーネント', () => {
   const linkToEdit = shallowMount(LinkToEdit, {
     propsData: {
       ...props,
+    },
+    global: {
+      config: {
+        globalProperties: {
+          $t: (key: string) => mockTranslations[key] || key,
+        },
+      },
     },
   })
 

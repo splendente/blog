@@ -26,7 +26,7 @@ onClickOutside(target, () => {
       type="button"
       @click="toggleVisibility()"
     >
-      タグで絞り込む
+      {{ $t('filterByTag') }}
     </button>
     <Transition appear>
       <ul

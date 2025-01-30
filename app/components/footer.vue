@@ -1,11 +1,11 @@
 <template>
   <footer class="footer">
-    <NuxtLink
+    <NuxtLinkLocale
       to="/terms-and-privacy"
       class="terms-and-privacy"
     >
       Terms and Privacy
-    </NuxtLink>
+    </NuxtLinkLocale>
     <p class="copyright">
       &copy; 2024 Hikaru Kobayashi.
     </p>
