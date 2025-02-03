@@ -40,7 +40,7 @@
   "devDependencies": {
     "@axe-core/playwright": "^4.10.0",
     "@chromatic-com/storybook": "^3.2.2",
-    "@nuxt/eslint": "^0.7.0",
+    "@nuxt/eslint": "^1.0.0",
     "@nuxt/image": "^1.9.0",
     "@nuxt/test-utils": "^3.13.1",
     "@nuxtjs/color-mode": "^3.5.2",
@@ -57,7 +57,7 @@
     "@storybook/test": "^8.4.2",
     "@storybook/vue3": "^8.5.0",
     "@storybook/vue3-vite": "^8.5.0",
-    "@types/node": "^22.10.1",
+    "@types/node": "^22.13.0",
     "@vitejs/plugin-vue": "^5.2.0",
     "@vitest/eslint-plugin": "^1.1.4",
     "@vitest/ui": "^3.0.2",
