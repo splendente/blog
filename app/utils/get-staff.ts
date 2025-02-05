@@ -1,6 +1,11 @@
 export default function () {
   return [
     {
+      name: 'Vue Fes Japan 2025',
+      url: '#',
+      date: '2025-5-23/24',
+    },
+    {
       name: 'TSKaigi2025',
       url: '#',
       date: '2025-?-?',
