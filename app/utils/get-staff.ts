@@ -3,12 +3,12 @@ export default function () {
     {
       name: 'Vue Fes Japan 2025',
       url: '#',
-      date: '2025-5-23/24',
+      date: '2025-?-?',
     },
     {
       name: 'TSKaigi2025',
-      url: '#',
-      date: '2025-?-?',
+      url: 'https://2025.tskaigi.org',
+      date: '2025-5-23/24',
     },
     {
       name: 'Vue Fes Japan 2024',
