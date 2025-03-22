@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { mount, RouterLinkStub } from '@vue/test-utils'
-import Card from '~/components/card/index.vue'
+import Card from '@/components/card/index.vue'
 
 describe('Cardコンポーネント', () => {
   const props = {

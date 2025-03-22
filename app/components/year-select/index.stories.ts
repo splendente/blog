@@ -1,4 +1,4 @@
-import YearSelect from '~/components/year-select/index.vue'
+import YearSelect from '@/components/year-select/index.vue'
 
 export default {
   title: 'components/year-select',

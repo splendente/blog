@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import Tag from '~/components/tag/index.vue'
+import Tag from '@/components/tag/index.vue'
 import type { NavigationMenu } from '@/types'
 
 describe('Tagコンポーネント', () => {

@@ -3,7 +3,7 @@ import type { GlobalTypes } from 'storybook/internal/types'
 import ja from './../../../i18n/locales/ja'
 import en from './../../../i18n/locales/en'
 
-import SortMenu from '~/components/sort-menu/index.vue'
+import SortMenu from '@/components/sort-menu/index.vue'
 
 const messages: { ja: Record<string, string>, en: Record<string, string> } = {
   ja: ja,

@@ -3,7 +3,7 @@ import type { GlobalTypes } from 'storybook/internal/types'
 import ja from './../../../i18n/locales/ja'
 import en from './../../../i18n/locales/en'
 
-import CalendarHeatmap from '~/components/calendar-heatmap/index.vue'
+import CalendarHeatmap from '@/components/calendar-heatmap/index.vue'
 import type { CalendarHeatmapProps } from '@/types'
 
 const messages: { ja: Record<string, string>, en: Record<string, string> } = {

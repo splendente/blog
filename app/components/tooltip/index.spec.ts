@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import Tooltip from '~/components/tooltip/index.vue'
+import Tooltip from '@/components/tooltip/index.vue'
 
 describe('Tooltipコンポーネント', () => {
   const props = {

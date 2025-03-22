@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import NavigationMenu from '~/components/navigation-menu/index.vue'
+import NavigationMenu from '@/components/navigation-menu/index.vue'
 
 describe('NavigationMenuコンポーネント', () => {
   const props = {
