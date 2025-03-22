@@ -1,5 +1,5 @@
 import type { GlobalTypes } from 'storybook/internal/types'
-import Header from '~/components/header/index.vue'
+import Header from '@/components/header/index.vue'
 
 export default {
   title: 'components/header',

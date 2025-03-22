@@ -5,7 +5,7 @@ import type { GlobalTypes } from 'storybook/internal/types'
 import ja from './../../../i18n/locales/ja'
 import en from './../../../i18n/locales/en'
 
-import TagMenu from '~/components/tag-menu/index.vue'
+import TagMenu from '@/components/tag-menu/index.vue'
 
 const messages: { ja: Record<string, string>, en: Record<string, string> } = {
   ja: ja,

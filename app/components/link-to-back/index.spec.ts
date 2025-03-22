@@ -1,6 +1,6 @@
 import { describe, expect, test, vi, beforeEach } from 'vitest'
 import { shallowMount, RouterLinkStub } from '@vue/test-utils'
-import LinkToBack from '~/components/link-to-back/index.vue'
+import LinkToBack from '@/components/link-to-back/index.vue'
 
 describe('LinkToBackコンポーネント', () => {
   const mockTranslations: { [key: string]: string } = {

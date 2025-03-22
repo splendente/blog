@@ -1,6 +1,6 @@
 import { describe, expect, test, vi, beforeEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import LinkToEdit from '~/components/link-to-edit/index.vue'
+import LinkToEdit from '@/components/link-to-edit/index.vue'
 
 describe('LinkToEditコンポーネント', () => {
   const mockTranslations: { [key: string]: string } = {

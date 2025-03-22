@@ -1,4 +1,4 @@
-import SearchInput from '~/components/search-input/index.vue'
+import SearchInput from '@/components/search-input/index.vue'
 
 export default {
   title: 'components/search-input',

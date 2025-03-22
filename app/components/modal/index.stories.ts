@@ -1,4 +1,4 @@
-import Modal from '~/components/modal/index.vue'
+import Modal from '@/components/modal/index.vue'
 
 export default {
   title: 'components/modal',

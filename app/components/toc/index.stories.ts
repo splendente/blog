@@ -3,7 +3,7 @@ import type { GlobalTypes } from 'storybook/internal/types'
 import ja from './../../../i18n/locales/ja'
 import en from './../../../i18n/locales/en'
 
-import Toc from '~/components/toc/index.vue'
+import Toc from '@/components/toc/index.vue'
 import type { TocProps } from '@/types'
 
 const messages: { ja: Record<string, string>, en: Record<string, string> } = {

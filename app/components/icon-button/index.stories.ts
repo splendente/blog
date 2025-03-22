@@ -1,4 +1,4 @@
-import IconButton from '~/components/icon-button/index.vue'
+import IconButton from '@/components/icon-button/index.vue'
 
 type Args = {
   element: string

@@ -1,4 +1,4 @@
-import Tooltip from '~/components/tooltip/index.vue'
+import Tooltip from '@/components/tooltip/index.vue'
 
 export default {
   title: 'components/tooltip',

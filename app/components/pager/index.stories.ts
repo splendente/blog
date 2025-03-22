@@ -1,4 +1,4 @@
-import Pager from '~/components/pager/index.vue'
+import Pager from '@/components/pager/index.vue'
 
 export default {
   title: 'components/pager',
