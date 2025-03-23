@@ -8,8 +8,6 @@ on:
 jobs:
   run-vitest:
     runs-on: ubuntu-latest
-    env:
-      WORKING_DIRECTORY: app
 
     steps:
       - name: Checkout
@@ -27,5 +25,3 @@ jobs:
         run: npm run vitest
       - name: Show coverage report
         uses: davelosert/vitest-coverage-report-action@v2
-        with:
-          working-directory: ${{ env.WORKING_DIRECTORY }}
