@@ -21,7 +21,7 @@ export default defineVitestConfig({
     environment: 'jsdom',
     exclude: [...configDefaults.exclude, 'e2e/**/*.spec.ts'],
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json-summary', 'json'],
       exclude: ['app/**/*.stories.ts', 'e2e/**/*.spec.ts'],
     },
   },
