@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - "**"
+  pull_request:
+    branches:
+      - "**"
+    types: [opened, reopened, synchronize, ready_for_review]
 
 jobs:
   run-vitest:
