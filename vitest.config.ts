@@ -23,9 +23,9 @@ export default defineVitestConfig({
     coverage: {
       reporter: ['text', 'json-summary', 'json'],
       exclude: ['app/**/*.stories.ts', 'e2e/**/*.spec.ts'],
-      // thresholds: {
-      //   statements: 80,
-      // },
+      thresholds: {
+        statements: 80,
+      },
     },
   },
   resolve: {
