@@ -8,6 +8,8 @@ on:
 jobs:
   run-vitest:
     runs-on: ubuntu-latest
+    env:
+      WORKING_DIRECTORY: app
 
     steps:
       - name: Checkout
@@ -23,11 +25,7 @@ jobs:
 
       - name: Run vitest
         run: npm run vitest
-
-      - name: Clean up
-        run: |
-          ls -la ./
-          rm -rf ./*
-
-      - name: Clear cache of npm
-        run: npm cache clean --force
+      - name: Show coverage report
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          working-directory: ${{ env.WORKING_DIRECTORY }}

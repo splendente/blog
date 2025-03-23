@@ -20,6 +20,10 @@ export default defineVitestConfig({
   test: {
     environment: 'jsdom',
     exclude: [...configDefaults.exclude, 'e2e/**/*.spec.ts'],
+    coverage: {
+      reporter: ['text', 'json', 'html'],
+      exclude: ['app/**/*.stories.ts', 'e2e/**/*.spec.ts'],
+    },
   },
   resolve: {
     alias: {
