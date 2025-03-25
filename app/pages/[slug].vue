@@ -1,84 +1,84 @@
 <script setup lang="ts">
+const router = useRouter()
 const route = useRoute()
-const { locale } = useI18n()
 
-// 現在のページを取得する
-const targetPath = computed(() => {
-  if (locale.value === 'en') return '/en'
-  return '/'
+/**
+ * 現在のページの情報を取得する
+ */
+const { data: doc } = await useAsyncData(route.path, () => {
+  return queryCollection('content').path(route.path).first()
 })
 
 /**
  * 現在のページの前後のページ情報を取得する
  */
-const { data, error } = await useAsyncData('slug', () =>
-  queryContent(targetPath.value)
-    .only(['_path', 'title', 'description'])
-    .findSurround(route.path),
+const data = await queryCollectionItemSurroundings(
+  'content',
+  route.path,
+  {
+    fields: ['path', 'title', 'description'],
+  },
 )
-
-// 前後のページ取得に失敗した場合はエラー画面を表示する
-if (error.value) {
-  showError({ ...error.value })
-}
-
-const router = useRouter()
 </script>
 
 <template>
   <main>
-    <ContentDoc v-slot="{ doc }">
-      <article>
-        <div class="blog-header">
-          <time
-            class="created-at"
-            datetime="{{ doc.createdAt }}"
-          >
-            {{ formatDateString(doc.createdAt) }}
-          </time>
-          <h1 class="title">
-            {{ doc.title }}
-          </h1>
-          <p class="description">
-            {{ doc.description }}
-          </p>
-          <div class="tags">
-            <Tag
-              v-for="tag in doc.tags"
-              :key="tag"
-              element="nuxt-link"
-              :to="`/?tag=${tag}`"
-              :text="tag"
-            />
-          </div>
-        </div>
-        <div class="content-wrapper">
-          <div class="share-button-component">
-            <p>{{ $t('share') }}</p>
-            <ShareButton
-              title="記事をシェアする"
-              text="この記事をシェアしよう！"
-              :url="router.currentRoute.value.fullPath"
-            />
-          </div>
-          <div id="nuxt-content">
-            <Toc
-              class="toc-component-sp"
-              :items="doc.body?.toc"
-            />
-            <ContentRenderer :value="doc" />
-          </div>
-          <Toc
-            class="toc-component-pc"
-            :items="doc.body?.toc"
+    <article>
+      <div class="blog-header">
+        <time
+          v-if="doc?.createdAt"
+          class="created-at"
+          datetime="{{ doc.createdAt }}"
+        >
+          {{ formatDateString(doc.createdAt) }}
+        </time>
+        <h1 class="title">
+          {{ doc?.title }}
+        </h1>
+        <p class="description">
+          {{ doc?.description }}
+        </p>
+        <div class="tags">
+          <Tag
+            v-for="tag in doc?.tags"
+            :key="tag"
+            element="nuxt-link"
+            :to="`/?tag=${tag}`"
+            :text="tag"
           />
         </div>
-      </article>
-      <div class="link-box">
-        <LinkToBack />
-        <LinkToEdit :file-name="doc._file" />
       </div>
-    </ContentDoc>
+      <div class="content-wrapper">
+        <div class="share-button-component">
+          <p>{{ $t('share') }}</p>
+          <ShareButton
+            title="記事をシェアする"
+            text="この記事をシェアしよう！"
+            :url="router.currentRoute.value.fullPath"
+          />
+        </div>
+        <div id="nuxt-content">
+          <Toc
+            v-if="doc?.body?.toc"
+            class="toc-component-sp"
+            :items="doc.body.toc"
+          />
+          <ContentRenderer :value="doc" />
+        </div>
+        <Toc
+          v-if="doc?.body?.toc"
+          class="toc-component-pc"
+          :items="doc.body.toc"
+        />
+      </div>
+    </article>
+    <div class="link-box">
+      <LinkToBack />
+      <LinkToEdit
+        v-if="doc?.id"
+        :file-name="doc.id"
+      />
+    </div>
     <Pager
       v-if="data"
       :prev-page="data[0]"
