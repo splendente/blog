@@ -12,13 +12,15 @@ const { data: doc } = await useAsyncData(route.path, () => {
 /**
  * 現在のページの前後のページ情報を取得する
  */
-const data = await queryCollectionItemSurroundings(
-  'content',
-  route.path,
-  {
-    fields: ['path', 'title', 'description'],
-  },
-)
+const { data } = await useAsyncData('pager', () => {
+  return queryCollectionItemSurroundings(
+    'content',
+    route.path,
+    {
+      fields: ['path', 'title', 'description'],
+    },
+  ).where('published', '=', true)
+})
 </script>
 
 <template>
@@ -63,7 +65,10 @@ const data = await queryCollectionItemSurroundings(
             class="toc-component-sp"
             :items="doc.body.toc"
           />
-          <ContentRenderer :value="doc" />
+          <ContentRenderer
+            v-if="doc"
+            :value="doc"
+          />
         </div>
         <Toc
           v-if="doc?.body?.toc"

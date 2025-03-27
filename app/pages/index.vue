@@ -1,13 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
 const title = route.query.tag ? `${route.query.tag}` : (route.path === '/en' ? 'All' : 'すべて')
-const { locale } = useI18n()
-
-// 現在のページを取得する
-const targetPath = computed(() => {
-  if (locale.value === 'en') return '/en'
-  return '/'
-})
 
 useHead({
   title: `${title}の記事一覧`,
@@ -19,12 +12,19 @@ defineOgImageComponent('NuxtSeo', {
 
 const { desc, toggleSort } = useSort()
 
-// TODO:where句を使って取得する
-const { data: articleList } = await useAsyncData('article-list', () => {
+const { data: articleList, refresh } = await useAsyncData('articles', () => {
   return queryCollection('content')
+    .where('published', '=', true)
+    .andWhere((query) => {
+      return query.where('tags', 'LIKE', route.query.tag ? `%${route.query.tag}%` : '%')
+    })
     .select('path', 'emoji', 'title', 'description', 'createdAt', 'tags')
     .order('createdAt', desc.value ? 'DESC' : 'ASC')
     .all()
+})
+
+watch(desc, () => {
+  refresh()
 })
 
 const date = new Date()
@@ -33,9 +33,9 @@ const targetYear = ref<number>(date.getFullYear())
 /**
  * contentディレクトリ配下のコンテンツの全ての情報を取得する
  */
-const { data: page } = await useAsyncData('all-content', () => {
+const { data: page } = await useAsyncData('content', () => {
   return queryCollection('content')
-    .path(targetPath.value)
+    .select('createdAt', 'updatedAt')
     .all()
 })
 
