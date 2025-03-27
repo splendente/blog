@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { isRevealed, reveal, cancel } = useConfirmDialog()
-const { keyword, results } = useSearch()
+const { keyword, results } = await useSearch()
 
 const resetSearchKeyword = () => {
   keyword.value = ''

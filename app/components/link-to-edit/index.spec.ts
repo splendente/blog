@@ -11,9 +11,9 @@ describe('LinkToEditコンポーネント', () => {
     vi.stubGlobal('$t', (key: string) => mockTranslations[key] || key)
   })
 
-  const baseUrl = 'https://github.com/splendente/blog/tree/main/content/'
+  const baseUrl = 'https://github.com/splendente/blog/tree/main/'
   const props = {
-    fileName: 'vitest',
+    fileName: 'content/vitest',
   }
 
   const linkToEdit = shallowMount(LinkToEdit, {

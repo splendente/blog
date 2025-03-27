@@ -3,15 +3,14 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/fonts',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/test-utils/module',
-    '@nuxtjs/sitemap',
-    'nuxt-feedme',
     '@nuxt/eslint',
     'nuxt-og-image',
     'nuxt-gtag',
     '@nuxt/image',
-    '@nuxtjs/robots',
     '@vueuse/nuxt',
     '@nuxtjs/storybook',
     '@nuxt/image',

@@ -8,10 +8,12 @@ defineOgImageComponent('NuxtSeo', {
 })
 
 const tags = ref<string[]>([])
-
-const { data } = await useAsyncData('tags', () =>
-  queryContent('/').only(['tags']).find(),
-)
+const route = useRoute()
+const { data } = await useAsyncData(route.path, () => {
+  return queryCollection('content')
+    .select('tags')
+    .all()
+})
 
 if (data.value) {
   tags.value = data.value.flatMap(values => values.tags)

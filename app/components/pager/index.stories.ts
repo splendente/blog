@@ -7,13 +7,13 @@ export default {
 }
 
 const nextPage = {
-  _path: '/',
+  path: '/',
   title: '次のページのタイトルが入ります',
   description: '次のページの説明が入ります',
 }
 
 const prevPage = {
-  _path: '/',
+  path: '/',
   title: '前のページのタイトルが入ります',
   description: '前のページの説明が入ります',
 }

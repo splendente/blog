@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type Props = {
-  _path?: string
+  path?: string
   title?: string
   description?: string
 }
@@ -24,7 +24,7 @@ defineProps({
   >
     <NuxtLink
       v-if="nextPage"
-      :to="nextPage._path"
+      :to="nextPage.path"
       class="link"
     >
       <div class="next-page">
@@ -45,7 +45,7 @@ defineProps({
     </NuxtLink>
     <NuxtLink
       v-if="prevPage"
-      :to="prevPage._path"
+      :to="prevPage.path"
       class="link"
     >
       <div class="prev-page">
