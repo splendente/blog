@@ -3,7 +3,7 @@ import Fuse from 'fuse.js'
 
 const { isRevealed, reveal, cancel } = useConfirmDialog()
 const keyword = ref('')
-const { data } = useAsyncData('search-data', () => queryCollectionSearchSections('content'))
+const { data } = await useAsyncData('search-data', () => queryCollectionSearchSections('content'))
 const fuse = new Fuse(data.value ?? [], {
   keys: ['title', 'description'],
 })
