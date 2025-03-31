@@ -1,15 +1,6 @@
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-
 const route = useRoute()
 const title = route.query.tag ? `${route.query.tag}` : (route.path === '/en' ? 'All' : 'すべて')
-const { locale } = useI18n()
-
-// 現在のページを取得する
-const targetPath = computed(() => {
-  if (locale.value === 'en') return '/en'
-  return '/'
-})
 
 useHead({
   title: `${title}の記事一覧`,
@@ -21,12 +12,19 @@ defineOgImageComponent('NuxtSeo', {
 
 const { desc, toggleSort } = useSort()
 
-const query: QueryBuilderParams = computed(() => {
-  return {
-    path: targetPath.value,
-    where: [{ tags: route.query.tag && { $contains: route.query.tag }, _path: locale.value === 'ja' ? { $not: /^\/en(\/|$)/ } : { $regex: /^\/en(\/|$)/ } }],
-    sort: [{ createdAt: desc.value ? -1 : 1 }],
-  }
+const { data: articleList, refresh } = await useAsyncData('articles', () => {
+  return queryCollection('content')
+    .where('published', '=', true)
+    .andWhere((query) => {
+      return query.where('tags', 'LIKE', route.query.tag ? `%${route.query.tag}%` : '%')
+    })
+    .select('path', 'emoji', 'title', 'description', 'createdAt', 'tags')
+    .order('createdAt', desc.value ? 'DESC' : 'ASC')
+    .all()
+})
+
+watch(desc, () => {
+  refresh()
 })
 
 const date = new Date()
@@ -35,11 +33,11 @@ const targetYear = ref<number>(date.getFullYear())
 /**
  * contentディレクトリ配下のコンテンツの全ての情報を取得する
  */
-const { data: page } = await useAsyncData('articles', () =>
-  queryContent(targetPath.value)
-    .where({ tags: route.query.tag && { $contains: route.query.tag } })
-    .find(),
-)
+const { data: page } = await useAsyncData('content', () => {
+  return queryCollection('content')
+    .select('createdAt', 'updatedAt')
+    .all()
+})
 
 /**
  * コンテンツの作成日と更新日を取得する
@@ -69,9 +67,11 @@ const activeDates = computed(() => {
 
 const tags = ref<string[]>([])
 
-const { data } = await useAsyncData('tags', () =>
-  queryContent(targetPath.value).only(['tags']).find(),
-)
+const { data } = await useAsyncData('tags', () => {
+  return queryCollection('content')
+    .select('tags')
+    .all()
+})
 
 if (data.value) {
   tags.value = [...new Set(data.value.flatMap(values => values.tags))]
@@ -105,21 +105,16 @@ if (data.value) {
       </div>
     </div>
     <div class="lists">
-      <ContentList
-        v-slot="{ list }"
-        :query="query"
-      >
-        <Card
-          v-for="(article, index) in list"
-          :key="index"
-          :to="article._path"
-          :emoji="article.emoji"
-          :title="article.title"
-          :description="article.description"
-          :created-at="article.createdAt"
-          :tags="article.tags"
-        />
-      </ContentList>
+      <Card
+        v-for="(article, index) in articleList"
+        :key="index"
+        :to="article.path"
+        :emoji="article.emoji"
+        :title="article.title"
+        :description="article.description"
+        :created-at="article.createdAt"
+        :tags="article.tags"
+      />
     </div>
   </main>
 </template>
