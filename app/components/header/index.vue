@@ -1,6 +1,17 @@
 <script setup lang="ts">
+import Fuse from 'fuse.js'
+
 const { isRevealed, reveal, cancel } = useConfirmDialog()
-const { keyword, results } = await useSearch()
+const keyword = ref('')
+const { data } = await useAsyncData('search-data', () => queryCollectionSearchSections('content'))
+const fuse = new Fuse(data.value ?? [], {
+  keys: ['title', 'description'],
+})
+
+const results = computed(() => {
+  if (!keyword.value) return []
+  return fuse.search(toValue(keyword))
+})
 
 const resetSearchKeyword = () => {
   keyword.value = ''
