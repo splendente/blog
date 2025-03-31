@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const props = defineProps({
+defineProps({
   keyword: {
     type: String,
     default: '',
@@ -9,25 +9,21 @@ const props = defineProps({
     required: true,
   },
 })
-
-const lists = computed(() => {
-  return props.items.value
-})
 </script>
 
 <template>
   <div class="container">
-    <p v-if="keyword && lists">
-      {{ keyword }} の検索結果は {{ lists.length }} 件です。
+    <p v-if="keyword && items">
+      {{ keyword }} の検索結果は {{ items.length }} 件です。
     </p>
     <div class="wrapper">
       <ul>
         <li
-          v-for="(item, index) in lists"
+          v-for="(data, index) in items"
           :key="index"
         >
-          <a :href="item.id">
-            <span>{{ item.content }}</span>
+          <a :href="data.item.id">
+            <span>{{ data.item.title }}</span>
           </a>
         </li>
       </ul>
