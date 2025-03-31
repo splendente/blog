@@ -1,6 +1,17 @@
 <script setup lang="ts">
+import Fuse from 'fuse.js'
+
 const { isRevealed, reveal, cancel } = useConfirmDialog()
-const { keyword, results } = useSearch()
+const keyword = ref('')
+const { data } = await useAsyncData('search-data', () => queryCollectionSearchSections('content'))
+const fuse = new Fuse(data.value ?? [], {
+  keys: ['title', 'description'],
+})
+
+const results = computed(() => {
+  if (!keyword.value) return []
+  return fuse.search(toValue(keyword))
+})
 
 const resetSearchKeyword = () => {
   keyword.value = ''
@@ -66,12 +77,12 @@ onUnmounted(() => {
 <template>
   <header>
     <div class="wrapper">
-      <NuxtLinkLocale
-        to="/"
+      <a
+        href="/"
         class="link"
       >
         Blog
-      </NuxtLinkLocale>
+      </a>
       <nav class="navigation">
         <NuxtLinkLocale
           to="/about"
@@ -144,7 +155,8 @@ onUnmounted(() => {
             >
           </template>
         </IconButton>
-        <IconButton
+        <!-- MEMO: nuxt-feedme does not compatible with Nuxt Content v3 -->
+        <!-- <IconButton
           element="anchor-link"
           href="/feed.xml"
           target="_blank"
@@ -158,7 +170,7 @@ onUnmounted(() => {
               alt=""
             >
           </template>
-        </IconButton>
+        </IconButton> -->
         <IconButton
           element="button"
           :label="$i18n.locale === 'ja' ? 'Switch to English' : '日本語に切り替える'"

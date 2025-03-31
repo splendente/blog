@@ -29,7 +29,14 @@ export default {
       return {}
     },
     template: `
-      <Header />
+      <Suspense>
+        <template #default>
+          <Header />
+        </template>
+        <template #fallback>
+          Loading...
+        </template>
+      </Suspense>
     `,
   }),
 }
