@@ -66,12 +66,12 @@ onUnmounted(() => {
 <template>
   <header>
     <div class="wrapper">
-      <NuxtLinkLocale
-        to="/"
+      <a
+        href="/"
         class="link"
       >
         Blog
-      </NuxtLinkLocale>
+      </a>
       <nav class="navigation">
         <NuxtLinkLocale
           to="/about"
@@ -144,7 +144,8 @@ onUnmounted(() => {
             >
           </template>
         </IconButton>
-        <IconButton
+        <!-- MEMO: nuxt-feedme does not compatible with Nuxt Content v3 -->
+        <!-- <IconButton
           element="anchor-link"
           href="/feed.xml"
           target="_blank"
@@ -158,7 +159,7 @@ onUnmounted(() => {
               alt=""
             >
           </template>
-        </IconButton>
+        </IconButton> -->
         <IconButton
           element="button"
           :label="$i18n.locale === 'ja' ? 'Switch to English' : '日本語に切り替える'"
