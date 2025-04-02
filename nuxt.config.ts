@@ -36,7 +36,11 @@ export default defineNuxtConfig({
   ],
 
   site: {
-    url: 'https://splendente.vercel.app',
+    url: 'https://www.hikaru-kobayashi.me',
+    name: 'blog by Hikaru Kobayashi',
+    fonts: [
+      'Noto+Sans+JP',
+    ],
   },
 
   content: {
