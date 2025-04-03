@@ -38,9 +38,6 @@ export default defineNuxtConfig({
   site: {
     url: 'https://www.hikaru-kobayashi.me',
     name: 'blog by Hikaru Kobayashi',
-    fonts: [
-      'Noto+Sans+JP',
-    ],
   },
 
   content: {
@@ -85,5 +82,11 @@ export default defineNuxtConfig({
     defaultLocale: 'ja',
     langDir: 'locales/',
     lazy: true,
+  },
+
+  ogImage: {
+    fonts: [
+      'Noto+Sans+JP',
+    ],
   },
 })
