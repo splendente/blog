@@ -21,6 +21,14 @@ const { data } = await useAsyncData('pager', () => {
     },
   ).where('published', '=', true)
 })
+
+useHead({
+  title: doc.value?.title,
+})
+
+defineOgImageComponent('NuxtSeo', {
+  title: doc.value?.title,
+})
 </script>
 
 <template>
