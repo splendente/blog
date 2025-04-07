@@ -86,7 +86,7 @@ export default defineNuxtConfig({
 
   ogImage: {
     fonts: [
-      'Noto+Sans+JP',
+      'Noto+Sans+JP:700',
     ],
   },
 })
