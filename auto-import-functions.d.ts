@@ -42,6 +42,7 @@ declare global {
   const getInternalLinks: typeof import('./app/utils/get-links')['getInternalLinks']
   const getLinks: typeof import('./app/utils/get-links')['default']
   const getMonths: typeof import('./app/utils/get-months')['default']
+  const getSns: typeof import('./app/utils/get-links')['getSns']
   const getStaff: typeof import('./app/utils/get-staff')['default']
   const h: typeof import('vue')['h']
   const ignorableWatch: typeof import('@vueuse/core')['ignorableWatch']

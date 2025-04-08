@@ -79,13 +79,12 @@ defineOgImageComponent('NuxtSeo', {
 
     <h2>お問い合わせ</h2>
     <section>
-      <p>本規約に関するお問い合わせは、以下の連絡先までご連絡ください。</p>
-      <a
-        href="https://twitter.com/splendente_dev"
-        target="_blank"
-      >
-        https://twitter.com/splendente_dev
-      </a>
+      <p>
+        本規約および当サイトに関するお問い合わせは、<a
+          href="https://twitter.com/splendente_dev"
+          target="_blank"
+        >X</a>のDMにてご連絡ください。
+      </p>
     </section>
   </main>
 </template>
