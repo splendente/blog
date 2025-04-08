@@ -8,6 +8,7 @@ defineOgImageComponent('NuxtSeo', {
 })
 
 const staff = getStaff()
+const sns = getSns()
 </script>
 
 <template>
@@ -23,21 +24,17 @@ const staff = getStaff()
       Hikaru Kobayashi
     </h1>
     <div class="overview">
-      <p>Frontend Developer from Japan.</p>
+      <p>I am Hikaru Kobayashi, frontend developer from Japan.</p>
+      <p>I write <a href="/">blog</a> about coding, idea, etc.</p>
+      <p>Outside of working, I enjoy swimming and traveling.</p>
     </div>
     <div class="links">
       <a
-        href="https://github.com/splendente"
+        v-for="(data, index) in sns"
+        :key="index"
+        :href="data.href"
         target="_blank"
-      >GitHub</a>
-      <a
-        href="https://twitter.com/splendente_dev"
-        target="_blank"
-      >X</a>
-      <a
-        href="https://zenn.dev/splendente"
-        target="_blank"
-      >Zenn</a>
+      >{{ data.name }}</a>
     </div>
     <div>
       <h2 class="sub-title">
