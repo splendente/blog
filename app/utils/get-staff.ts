@@ -2,8 +2,8 @@ export default function () {
   return [
     {
       name: 'Vue Fes Japan 2025',
-      url: '#',
-      date: '2025-?-?',
+      url: 'https://vuefes.jp/2025',
+      date: '2025-10-25',
     },
     {
       name: 'TSKaigi2025',

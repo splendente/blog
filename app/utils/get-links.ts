@@ -44,3 +44,25 @@ export const getExternalLinks = (): Link[] => {
     },
   ]
 }
+
+/**
+ * プロフィールページで使用するSNSのリンク情報を返却する
+ * @returns {Array} SNSのリンク情報
+ */
+export const getSns = (): Link[] => {
+  return [
+    {
+      name: 'GitHub',
+      href: 'https://twitter.com/splendente_dev',
+    },
+    {
+      name: 'X',
+      href: 'https://twitter.com/splendente_dev',
+    },
+    {
+      name: 'Zenn',
+      href: 'https://zenn.dev/splendente',
+    },
+
+  ]
+}
