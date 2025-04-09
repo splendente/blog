@@ -1,15 +1,17 @@
 <script setup lang="ts">
+const { locale } = useI18n()
+
 useHead({
-  title: '利用規約とプライバシーポリシー',
+  title: locale.value === 'ja' ? '利用規約とプライバシーポリシー' : 'Terms and Privacy',
 })
 
 defineOgImageComponent('NuxtSeo', {
-  title: 'Terms and Privacy',
+  title: locale.value === 'ja' ? '利用規約とプライバシーポリシー' : 'Terms and Privacy',
 })
 </script>
 
 <template>
-  <main>
+  <main v-if="locale === 'ja'">
     <h1>利用規約とプライバシーポリシー</h1>
     <p class="date-of-issue">
       発行日 2024年5月2日
@@ -84,6 +86,84 @@ defineOgImageComponent('NuxtSeo', {
           href="https://twitter.com/splendente_dev"
           target="_blank"
         >X</a>のDMにてご連絡ください。
+      </p>
+    </section>
+  </main>
+  <main v-else>
+    <h1>Terms and Privacy</h1>
+    <p class="date-of-issue">
+      Issued on May 2, 2024
+    </p>
+
+    <p>These terms govern the use of this website.</p>
+    <p>
+      By using this site, you are deemed to have agreed to the following conditions.
+    </p>
+
+    <h2>Information Collected</h2>
+    <section>
+      <p>
+        When users view blog posts on this site, general information such as IP address, cookies, browser type, and device used may be automatically collected.
+      </p>
+      <p>However, this information is not used to personally identify individuals.</p>
+    </section>
+
+    <h2>Use of Cookies</h2>
+    <section>
+      <p>This site may use cookies for ad delivery purposes.</p>
+      <p>
+        Cookies are used to improve the user browsing experience and do not store personally identifiable information.
+      </p>
+    </section>
+
+    <h2>Use of Ad Services</h2>
+    <section>
+      <p>This site may use third-party ad delivery services.</p>
+      <p>
+        Ad service providers may use technologies such as cookies and web beacons to display advertisements on this and other websites based on user interests.
+      </p>
+      <p>These technologies do not collect any personally identifiable information.</p>
+    </section>
+
+    <h2>External Links</h2>
+    <section>
+      <p>This site may contain links to other websites.</p>
+      <p>
+        This site is not responsible for the protection of personal information on external websites.
+      </p>
+      <p>
+        When clicking on external links, please check the privacy policy of the destination website.
+      </p>
+    </section>
+
+    <h2>Disclaimer</h2>
+    <section>
+      <p>
+        The content of this site is operated as a personal website and is not intended to replace professional advice.
+      </p>
+      <p>Actions taken based on the information on this site are at the user's own responsibility.</p>
+      <p>
+        This site assumes no responsibility for any direct or indirect damages caused by the use of its content.
+      </p>
+    </section>
+
+    <h2>Changes to These Terms</h2>
+    <section>
+      <p>
+        These terms may be updated from time to time. The revised terms will take effect once posted on this site.
+      </p>
+      <p>
+        Continued use of the site after changes are made implies acceptance of the new terms.
+      </p>
+    </section>
+
+    <h2>Contact</h2>
+    <section>
+      <p>
+        For inquiries regarding these terms or the site, please contact us via DM on <a
+          href="https://twitter.com/splendente_dev"
+          target="_blank"
+        >X</a>.
       </p>
     </section>
   </main>
