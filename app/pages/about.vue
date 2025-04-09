@@ -27,6 +27,7 @@ const sns = getSns()
       <p>I am Hikaru Kobayashi, frontend developer from Japan.</p>
       <p>I write <a href="/">blog</a> about coding, idea, etc.</p>
       <p>Outside of working, I enjoy swimming and traveling.</p>
+      <p>Also, I join as a staff in events such as VueFesJapn.</p>
     </div>
     <div class="links">
       <a
@@ -62,7 +63,7 @@ const sns = getSns()
 main {
   flex: 1;
   width: 100%;
-  max-width: 840px;
+  max-width: 480px;
   margin: 0 auto;
   padding: 32px 16px;
 }
@@ -77,14 +78,12 @@ main {
 
 .name {
   font-size: 32px;
-  text-align: center;
   margin: 32px auto 16px;
   color: var(--primary-text-color);
 }
 
 .sub-title {
   font-size: 24px;
-  text-align: center;
   margin: 32px auto 16px;
   color: var(--primary-text-color);
 }
@@ -92,7 +91,6 @@ main {
 .overview {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 8px;
 }
 
@@ -102,7 +100,6 @@ main {
 
 .links {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0 8px;
   margin-top: 24px;
@@ -116,7 +113,6 @@ main {
 .staff {
   width: fit-content;
   list-style: none;
-  margin: 0 auto;
 }
 
 .staff > li:not(:last-child) {
