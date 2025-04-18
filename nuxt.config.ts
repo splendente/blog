@@ -42,14 +42,16 @@ export default defineNuxtConfig({
 
   content: {
     highlight: { theme: 'github-light' },
-    markdown: {
-      remarkPlugins: {
-        'remark-link-card': {},
-      },
-      rehypePlugins: {
-        'rehype-external-links': {
-          target: '_blank',
-          rel: ['noopener', 'noreferrer'],
+    build: {
+      markdown: {
+        remarkPlugins: {
+          'remark-link-card': {},
+        },
+        rehypePlugins: {
+          'rehype-external-links': {
+            target: '_blank',
+            rel: ['noopener', 'noreferrer'],
+          },
         },
       },
     },
