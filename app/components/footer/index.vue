@@ -26,7 +26,12 @@
   color: var(--primary-text-color);
 }
 
+.terms-and-privacy {
+  text-decoration: none;
+}
+
 .terms-and-privacy:hover {
+  text-decoration: underline;
   opacity: 0.7;
 }
 
