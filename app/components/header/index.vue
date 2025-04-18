@@ -185,36 +185,38 @@ onUnmounted(() => {
             >
           </template>
         </IconButton>
-        <IconButton
-          v-if="$colorMode.value === 'light' || $colorMode.preference === 'light'"
-          element="button"
-          label="サイトのテーマをダークモードに切り替える"
-          @on-click="$colorMode.preference = 'dark'"
-        >
-          <template #icon>
-            <img
-              width="16"
-              height="16"
-              src="@/assets/images/sun.svg"
-              alt=""
-            >
-          </template>
-        </IconButton>
-        <IconButton
-          v-else-if="$colorMode.value === 'dark' || $colorMode.preference === 'dark'"
-          element="button"
-          label="サイトのテーマをライトモードに切り替える"
-          @on-click="$colorMode.preference = 'light'"
-        >
-          <template #icon>
-            <img
-              width="16"
-              height="16"
-              src="@/assets/images/moon.svg"
-              alt=""
-            >
-          </template>
-        </IconButton>
+        <ClientOnly fallback-tag="span">
+          <IconButton
+            v-if="$colorMode.value === 'light' || $colorMode.preference === 'light'"
+            element="button"
+            label="サイトのテーマをダークモードに切り替える"
+            @on-click="$colorMode.preference = 'dark'"
+          >
+            <template #icon>
+              <img
+                width="16"
+                height="16"
+                src="@/assets/images/sun.svg"
+                alt=""
+              >
+            </template>
+          </IconButton>
+          <IconButton
+            v-else-if="$colorMode.value === 'dark' || $colorMode.preference === 'dark'"
+            element="button"
+            label="サイトのテーマをライトモードに切り替える"
+            @on-click="$colorMode.preference = 'light'"
+          >
+            <template #icon>
+              <img
+                width="16"
+                height="16"
+                src="@/assets/images/moon.svg"
+                alt=""
+              >
+            </template>
+          </IconButton>
+        </ClientOnly>
         <IconButton
           class="navigation-button"
           element="button"
