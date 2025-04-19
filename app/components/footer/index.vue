@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const thisYear = new Date().getFullYear()
+</script>
+
 <template>
   <footer class="footer">
     <NuxtLinkLocale
@@ -7,7 +11,7 @@
       Terms and Privacy
     </NuxtLinkLocale>
     <p class="copyright">
-      &copy; 2024 Hikaru Kobayashi.
+      &copy; 2024 - {{ thisYear }} Hikaru Kobayashi.
     </p>
   </footer>
 </template>
