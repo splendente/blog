@@ -71,7 +71,7 @@
     "husky": "^9.1.1",
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.1",
-    "nuxt": "^3.16.0",
+    "nuxt": "^3.17.0",
     "nuxt-gtag": "^3.0.1",
     "storybook": "^8.6.12",
     "textlint": "^14.4.0",
