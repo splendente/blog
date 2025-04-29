@@ -9,21 +9,22 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "prepare": "husky",
-    "vitest": "vitest run --coverage",
-    "vitest:ui": "vitest --ui",
     "preinstall": "npx only-allow npm",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix",
-    "textlint": "textlint .",
-    "textlint:fix": "textlint . --fix",
     "chromatic": "source .env && npx chromatic --project-token=$CHROMATIC_PROJECT_TOKEN",
-    "test:e2e": "npx playwright test"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:text": "textlint .",
+    "lint:text:fix": "textlint . --fix",
+    "test:unit": "vitest run --coverage",
+    "test:unit:ui": "vitest --ui",
+    "test:e2e": "npx playwright test",
+    "test:e2e:ui": "npx playwright test --ui"
   },
   "lint-staged": {
-    "*": "npm run eslint:fix",
-    "*.md": "npm run textlint:fix"
+    "*": "npm run lint:fix",
+    "*.md": "npm run lint:text:fix"
   },
   "dependencies": {
     "@nuxt/content": "^3.4.0",
