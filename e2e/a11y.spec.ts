@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { AxeBuilder } from '@axe-core/playwright'
 import { createHtmlReport } from 'axe-html-reporter'
-import { BASE_URL } from './consts'
 
 const testCases = [
   { path: '', title: 'ホーム' },
@@ -16,8 +15,8 @@ const testCases = [
 for (const { path, title } of testCases) {
   test.describe('WCAGの基準に基づいたアクセシビリティテスト', () => {
     test(`${title}`, async ({ page }) => {
-      await page.goto(`${BASE_URL}/${path}`)
-      await page.waitForURL(`${BASE_URL}/${path}`)
+      await page.goto(`http://localhost:3000/${path}`)
+      await page.waitForURL(`http://localhost:3000/${path}`)
       const results = await new AxeBuilder({ page })
         .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
         .analyze()

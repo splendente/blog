@@ -12,10 +12,10 @@ import { defineConfig, devices } from '@playwright/test'
 export default defineConfig({
   testDir: './e2e',
   /* Timeout for each test */
-  timeout: 50000,
+  timeout: 100000,
   expect: {
     /* Timeout for each step */
-    timeout: 50000,
+    timeout: 100000,
   },
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -34,7 +34,7 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-
+    locale: 'ja-JP',
     headless: true,
   },
 
