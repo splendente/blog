@@ -106,11 +106,11 @@ test('昇順に並び替えるボタンをクリックすると、降順に並�
 
 test('記事が昇順に並び替えられていることを確認する', async ({ page }) => {
   await page.goto('http://localhost:3000')
+  const articles = await page.locator('.card .created-at').allTextContents()
 
   const descButton = await page.locator('.desc')
   await descButton.click()
 
-  const articles = await page.locator('.card .created-at').allTextContents()
   const sortedArticles = [...articles].sort()
   expect(articles).toEqual(sortedArticles)
 })
@@ -126,7 +126,7 @@ test('「タグで絞り込む」をクリックすると、タグの選択肢�
 
   await page.locator('.tag-menu').getByRole('button', { name: 'タグで絞り込む' }).click()
 
-  await expect(page.locator('.tag-menu').getByRole('link', { name: 'Nuxt' })).toBeVisible()
+  await expect(page.locator('.menu').getByRole('link', { name: 'Nuxt' })).toBeVisible()
 })
 
 test('タグの選択肢をクリックすると、選択されたタグで絞り込みされること', async ({ page }) => {
@@ -134,8 +134,8 @@ test('タグの選択肢をクリックすると、選択されたタグで絞�
 
   await page.locator('.tag-menu').getByRole('button', { name: 'タグで絞り込む' }).click()
   await page.locator('.tag-menu').getByRole('link', { name: 'Nuxt' }).click()
-
   await page.waitForURL('http://localhost:3000/?tag=Nuxt')
+
   await expect(page).toHaveTitle('Nuxtの記事一覧')
   await expect(page.getByRole('heading', { name: 'Nuxt の記事一覧' })).toBeVisible()
   await expect(page.url()).toContain('?tag=Nuxt')
@@ -146,7 +146,7 @@ test('タグでフィルタリングされた記事が正しいことを確認�
 
   await page.locator('.tag-menu').getByRole('button', { name: 'タグで絞り込む' }).click()
 
-  await page.locator('.tag-menu').getByRole('link', { name: 'Nuxt' }).click()
+  await page.locator('.menu').getByRole('link', { name: 'Nuxt' }).click()
   await page.waitForURL('http://localhost:3000/?tag=Nuxt')
 
   const articles = await page.locator('.card .tags').allTextContents()
