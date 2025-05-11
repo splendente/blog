@@ -27,7 +27,7 @@
     "*.md": "npm run lint:text:fix"
   },
   "dependencies": {
-    "@nuxt/content": "^3.4.0",
+    "@nuxt/content": "^3.5.1",
     "@nuxt/fonts": "^0.11.0",
     "@nuxtjs/robots": "^5.0.0",
     "@vueuse/core": "^13.1.0",
