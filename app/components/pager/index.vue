@@ -25,44 +25,32 @@ defineProps({
     <NuxtLink
       v-if="nextPage"
       :to="nextPage.path"
-      class="link"
+      class="next-page link"
     >
-      <div class="next-page">
-        <button
-          type="button"
-          class="chevron-left"
-          aria-label="前のページに戻る"
-        />
-        <div>
-          <p class="title">
-            {{ nextPage.title }}
-          </p>
-          <p class="description">
-            {{ nextPage.description }}
-          </p>
-        </div>
+      <span class="chevron-left" />
+      <div>
+        <p class="title">
+          {{ nextPage.title }}
+        </p>
+        <p class="description">
+          {{ nextPage.description }}
+        </p>
       </div>
     </NuxtLink>
     <NuxtLink
       v-if="prevPage"
       :to="prevPage.path"
-      class="link"
+      class="prev-page link"
     >
-      <div class="prev-page">
-        <div>
-          <p class="title">
-            {{ prevPage.title }}
-          </p>
-          <p class="description">
-            {{ prevPage.description }}
-          </p>
-        </div>
-        <button
-          type="button"
-          class="chevron-right"
-          aria-label="次のページに進む"
-        />
+      <div>
+        <p class="title">
+          {{ prevPage.title }}
+        </p>
+        <p class="description">
+          {{ prevPage.description }}
+        </p>
       </div>
+      <span class="chevron-right" />
     </NuxtLink>
   </div>
 </template>
@@ -91,7 +79,6 @@ defineProps({
 .next-page,
 .prev-page {
   width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
   gap: 0 16px;
