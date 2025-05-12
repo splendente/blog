@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: 22
 
+      - name: Clean temp directories
+        run: |
+          rm -rf /tmp/chromatic-*
+          rm -rf ./.chromatic
+
       - name: Install dependencies
         run: npm install
 
@@ -27,11 +32,15 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          forceRebuild: true
 
       - name: Clean up
+        if: always()
         run: |
-          ls -la ./
+          rm -rf /tmp/chromatic-*
+          rm -rf ./.chromatic
           rm -rf ./*
 
       - name: Clear cache of npm
+        if: always()
         run: npm cache clean --force
