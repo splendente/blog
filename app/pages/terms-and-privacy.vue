@@ -83,7 +83,7 @@ defineOgImageComponent('NuxtSeo', {
     <section>
       <p>
         本規約および当サイトに関するお問い合わせは、<a
-          href="https://twitter.com/splendente_dev"
+          href="https://twitter.com/hikkobay"
           target="_blank"
         >X</a>のDMにてご連絡ください。
       </p>
@@ -161,7 +161,7 @@ defineOgImageComponent('NuxtSeo', {
     <section>
       <p>
         For inquiries regarding these terms or the site, please contact us via DM on <a
-          href="https://twitter.com/splendente_dev"
+          href="https://twitter.com/hikkobay"
           target="_blank"
         >X</a>.
       </p>

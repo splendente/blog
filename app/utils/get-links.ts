@@ -28,7 +28,7 @@ export const getExternalLinks = (): Link[] => {
   return [
     {
       name: 'X',
-      href: 'https://twitter.com/splendente_dev',
+      href: 'https://twitter.com/hikkobay',
     },
     {
       name: 'GitHub',
@@ -53,11 +53,11 @@ export const getSns = (): Link[] => {
   return [
     {
       name: 'GitHub',
-      href: 'https://twitter.com/splendente_dev',
+      href: 'https://twitter.com/hikkobay',
     },
     {
       name: 'X',
-      href: 'https://twitter.com/splendente_dev',
+      href: 'https://twitter.com/hikkobay',
     },
     {
       name: 'Zenn',

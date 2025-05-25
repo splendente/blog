@@ -67,7 +67,7 @@ test('Xのボタンをクリックすると、Xのプロフィールが別タブ
   ])
 
   await newPage.waitForLoadState()
-  await expect(newPage).toHaveURL('https://x.com/splendente_dev')
+  await expect(newPage).toHaveURL('https://x.com/hikkobay')
 })
 
 test('GitHubのボタンをクリックすると、GitHubが別タブで開くこと', async ({ page, context }, testInfo) => {
