@@ -112,7 +112,7 @@ onUnmounted(() => {
         </IconButton>
         <IconButton
           element="anchor-link"
-          href="https://twitter.com/splendente_dev"
+          href="https://twitter.com/hikkobay"
           target="_blank"
           label="X(旧Twitter)を新しいタブで表示する"
         >
