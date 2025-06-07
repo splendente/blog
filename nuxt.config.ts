@@ -41,7 +41,6 @@ export default defineNuxtConfig({
   },
 
   content: {
-    highlight: { theme: 'github-light' },
     build: {
       markdown: {
         remarkPlugins: {
@@ -53,10 +52,8 @@ export default defineNuxtConfig({
             rel: ['noopener', 'noreferrer'],
           },
         },
+        highlight: { theme: 'github-light' },
       },
-    },
-    experimental: {
-      search: true,
     },
   },
 
@@ -90,5 +87,9 @@ export default defineNuxtConfig({
     fonts: [
       'Noto+Sans+JP:700',
     ],
+  },
+
+  sitemap: {
+    exclude: ['/404'],
   },
 })

@@ -24,6 +24,18 @@ const { data } = await useAsyncData('pager', () => {
 
 useHead({
   title: doc.value?.title,
+  meta: [
+    { name: 'description', content: doc.value?.description },
+    { property: 'og:title', content: doc.value?.title },
+    { property: 'og:description', content: doc.value?.description },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:url', content: `https://www.hikaru-kobayashi.me${route.path}` },
+    { property: 'og:image', content: 'https://www.hikaru-kobayashi.me/images/splendente.png' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+  ],
+  link: [
+    { rel: 'canonical', href: `https://www.hikaru-kobayashi.me${route.path}` },
+  ],
 })
 
 defineOgImageComponent('NuxtSeo', {
@@ -38,7 +50,7 @@ defineOgImageComponent('NuxtSeo', {
         <time
           v-if="doc?.createdAt"
           class="created-at"
-          datetime="{{ doc.createdAt }}"
+          :datetime="doc.createdAt"
         >
           {{ formatDateString(doc.createdAt) }}
         </time>
