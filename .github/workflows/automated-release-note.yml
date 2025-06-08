@@ -11,6 +11,7 @@ permissions:
 
 jobs:
   create-release:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -20,9 +21,8 @@ jobs:
 
       - name: Get latest release
         id: get_latest_release
-        uses: bruceadams/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          echo "pre_tag=$(curl -H 'Accept: application/vnd.github.v3+json' -H 'Authorization: token ${{ secrets.GITHUB_TOKEN }}' https://api.github.com/repos/${{ github.repository }}/releases/latest | jq -r .tag_name)" >> $GITHUB_OUTPUT
 
       - name: Generate Changelog
         id: changelog
@@ -133,4 +133,5 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ github.token }} 
+          GITHUB_TOKEN: ${{ github.token }}
+          TZ: "Asia/Tokyo"
