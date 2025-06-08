@@ -125,6 +125,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           name: ${{ env.RELEASE_TITLE }}
+          tag_name: v${{ env.RELEASE_TITLE }}
           body: ${{ env.RELEASE_BODY }}
           generate_release_notes: true
           files: |
