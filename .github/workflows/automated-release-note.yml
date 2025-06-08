@@ -20,7 +20,7 @@ jobs:
 
       - name: Get latest release
         id: get_latest_release
-        uses: bruceadams/get-release@v3.3
+        uses: bruceadams/get-release@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
