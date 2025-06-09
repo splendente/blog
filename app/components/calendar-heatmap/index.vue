@@ -38,6 +38,20 @@ const pastYearDates = computed(() => {
         ? today // 今日
         : new Date(props.targetYear, month + 1, 0).getDate() // その月の最終日
 
+    // 1月の場合のみ、月の最初の日の曜日を調整
+    if (month === 0) {
+      // 月の最初の日付を取得
+      const firstDayOfMonth = new Date(props.targetYear, month, 1)
+      // 月の最初の日の曜日を取得（0: 日曜日, 1: 月曜日, ..., 6: 土曜日）
+      // 月曜日始まりに調整（0: 月曜日, 1: 火曜日, ..., 6: 日曜日）
+      const firstDayOfWeek = (firstDayOfMonth.getDay() + 6) % 7
+
+      // 月の最初の日が月曜日以外の場合、空の日付を追加して曜日を合わせる
+      for (let i = 0; i < firstDayOfWeek; i++) {
+        dates.push('')
+      }
+    }
+
     for (let date = 1; date <= lastDayOfMonth; date++) {
       const $date = new Date(props.targetYear, month, date)
       const $year = $date.getFullYear() // 年を取得
@@ -157,21 +171,21 @@ const setTooltipPosition = (event: MouseEvent) => {
         <li
           v-for="(date, index) in pastYearDates"
           :key="index"
-          :class="checkActiveDate(date) && 'active'"
-          @mouseover="
-            (event) => {
+          :class="[date && checkActiveDate(date) && 'active', !date && 'empty']"
+          @mouseover="(e: MouseEvent) => {
+            if (date) {
               toggleTooltipVisibleStatus(true);
               setTooltipText(date);
-              setTooltipPosition(event);
+              setTooltipPosition(e);
             }
-          "
-          @mouseleave="
-            (event) => {
+          }"
+          @mouseleave="(e: MouseEvent) => {
+            if (date) {
               toggleTooltipVisibleStatus(false);
               setTooltipText('');
-              setTooltipPosition(event);
+              setTooltipPosition(e);
             }
-          "
+          }"
         />
       </ul>
     </div>
@@ -237,6 +251,11 @@ const setTooltipPosition = (event: MouseEvent) => {
 .date > .active {
   background-color: #87ceeb;
   border-color: #1e90ff;
+}
+
+.date > li.empty {
+  background-color: transparent;
+  border: none;
 }
 
 .months {
