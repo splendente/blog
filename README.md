@@ -1,6 +1,7 @@
 # blog
 
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](./LICENSE)
+[![test](https://github.com/splendente/blog/actions/workflows/vitest.yml/badge.svg)](https://github.com/splendente/blog/actions/workflows/vitest.yml)
 
 This website is my personal blog.
 
