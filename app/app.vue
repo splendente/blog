@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/vue'
+
 useSeoMeta({
   title: 'Hikaru Kobayashi\'s blog',
   ogTitle: 'Hikaru Kobayashi\'s blog',
@@ -13,4 +15,5 @@ useSeoMeta({
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+  <Analytics />
 </template>
