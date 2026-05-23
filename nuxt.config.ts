@@ -74,7 +74,6 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'ja',
     langDir: 'locales/',
-    lazy: true,
   },
 
   sitemap: {
